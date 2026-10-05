@@ -30,9 +30,23 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           ),
-          home: const Scaffold(),
+          home:Scaffold(
+            body: Center(
+              child:  Text(
+                'Rafeeqa',
+                style: TextStyle(
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
         );
+        
       },
+    
     );
+    
   }
+  
 }

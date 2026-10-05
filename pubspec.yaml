@@ -33,21 +33,20 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   remove_alpha_ios: true
-  image_path: "assets/images/appLogo.png"
+  background_color_ios: Theme.backgroundApp
+  image_path: Assets.appLogo
   min_sdk_android: 21
-  adaptive_icon_background: "#FFF5F7"
-  adaptive_icon_foreground: "assets/images/appLogo.png"
-  adaptive_icon_foreground_inset: 0
+  adaptive_icon_background: Theme.backgroundApp
+  adaptive_icon_foreground: Assets.appLogo
+  adaptive_icon_foreground_inset: 25
 
 flutter_native_splash:
   android: true
   ios: true
-  color: "#FFF5F7"
-  image: assets/images/appLogo.png
+  color: Theme.backgroundApp
+  image: Assets.splashNative
   fullscreen: true
   android_12:
-    color: "#FFF5F7"
-    image: assets/images/appLogo.png
+    color: Theme.backgroundApp
+    image: Assets.splashNative
     icon_background_color: "#FFF5F7"
-flutter_intl:
-  enabled: true
