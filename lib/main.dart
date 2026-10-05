@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rafeeqa/features/splash/presentations/views/pages/splash_view.dart';
 import 'package:rafeeqa/generated/l10n.dart';
 
 void main() {
@@ -30,17 +31,9 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           ),
-          home:Scaffold(
-            body: Center(
-              child:  Text(
-                'Rafeeqa',
-                style: TextStyle(
-                  fontSize: 24.sp,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
+          home: SplashView()
+
+          
         );
         
       },
