@@ -50,3 +50,5 @@ flutter_native_splash:
     color: Theme.backgroundApp
     image: Assets.splashNative
     icon_background_color: "#FFF5F7"
+flutter_intl:
+  enabled: true
