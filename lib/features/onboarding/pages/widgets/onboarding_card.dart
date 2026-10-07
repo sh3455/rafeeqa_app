@@ -18,7 +18,6 @@ class OnboardingCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children:[
-            _skip(),
             Spacer(flex: 3,),
             _image(imagePath: model.image),
             Spacer(flex: 3,),
@@ -31,31 +30,6 @@ class OnboardingCard extends StatelessWidget {
   }
 }
 
-class _skip extends StatelessWidget {
-  const _skip();
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top + 12.sp),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          GestureDetector(
-            onTap: (){},
-            child: CustomText(
-              text: "skip",
-               size: 18.sp,
-               type: Type.medium,
-               opacity: FontOpacity.medium
-            )
-          ),
-        ],
-      ),
-    );
-    
-  }
-}
 
 class _image extends StatelessWidget {
   const _image({required this.imagePath});

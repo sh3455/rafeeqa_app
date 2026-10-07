@@ -7,7 +7,15 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'onboarding_card.dart';
 
 class OnboardingBody extends StatelessWidget {
-  const OnboardingBody({super.key});
+   const OnboardingBody({
+    super.key,
+    required this.pageController,
+     this.onPageChanged
+     });
+
+
+  final PageController pageController;
+  final ValueChanged<int>? onPageChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +24,19 @@ class OnboardingBody extends StatelessWidget {
         children: [
           Expanded(
             child:PageView.builder(
+              controller: pageController,
+              onPageChanged: onPageChanged,
               itemCount: data.length,
               itemBuilder: (context , index){
                 return OnboardingCard(model: data[index]);
               }
               )
           ),
-          _PageIndicator(pageController:PageController())
+          _PageIndicator(pageController:pageController)
       ],);
 
   }
 }
-
 
 class _PageIndicator extends StatelessWidget {
   const _PageIndicator({required this.pageController});
