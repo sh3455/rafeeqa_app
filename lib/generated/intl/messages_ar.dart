@@ -23,6 +23,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("رفيقة"),
+        "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+        "egypt": MessageLookupByLibrary.simpleMessage("مصر"),
+        "english": MessageLookupByLibrary.simpleMessage("الإنكليزية"),
         "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
@@ -35,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboardingTitle2":
             MessageLookupByLibrary.simpleMessage("تابعي كل لحظة"),
         "onboardingTitle3": MessageLookupByLibrary.simpleMessage("اسألي رفيقة"),
-        "skip": MessageLookupByLibrary.simpleMessage("تخطي")
+        "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+        "unitedStates": MessageLookupByLibrary.simpleMessage("الولايات المتحدة")
       };
 }
