@@ -17,6 +17,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.20.2
+  smooth_page_indicator: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -50,3 +51,5 @@ flutter_native_splash:
     color: Theme.backgroundApp
     image: Assets.splashNative
     icon_background_color: "#FFF5F7"
+flutter_intl:
+  enabled: true

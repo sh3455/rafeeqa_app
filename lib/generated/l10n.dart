@@ -49,6 +49,106 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Rafeeqa`
+  String get appName {
+    return Intl.message(
+      'Rafeeqa',
+      name: 'appName',
+      desc: 'The name of the app',
+      args: [],
+    );
+  }
+
+  /// `Understand your baby`
+  String get onboardingTitle1 {
+    return Intl.message(
+      'Understand your baby',
+      name: 'onboardingTitle1',
+      desc: 'Onboarding screen 1 - title',
+      args: [],
+    );
+  }
+
+  /// `Learn what your baby needs, from feeding to sleep, and feel more confident every day.`
+  String get onboardingDescription1 {
+    return Intl.message(
+      'Learn what your baby needs, from feeding to sleep, and feel more confident every day.',
+      name: 'onboardingDescription1',
+      desc: 'Onboarding screen 1 - description',
+      args: [],
+    );
+  }
+
+  /// `Track every moment`
+  String get onboardingTitle2 {
+    return Intl.message(
+      'Track every moment',
+      name: 'onboardingTitle2',
+      desc: 'Onboarding screen 2 - title',
+      args: [],
+    );
+  }
+
+  /// `Keep a simple journal of daily activities and never miss an important milestone.`
+  String get onboardingDescription2 {
+    return Intl.message(
+      'Keep a simple journal of daily activities and never miss an important milestone.',
+      name: 'onboardingDescription2',
+      desc: 'Onboarding screen 2 - description',
+      args: [],
+    );
+  }
+
+  /// `Ask Rafeeqa`
+  String get onboardingTitle3 {
+    return Intl.message(
+      'Ask Rafeeqa',
+      name: 'onboardingTitle3',
+      desc: 'Onboarding screen 3 - title',
+      args: [],
+    );
+  }
+
+  /// `Get instant answers to your questions, anytime, in a kind and supportive way.`
+  String get onboardingDescription3 {
+    return Intl.message(
+      'Get instant answers to your questions, anytime, in a kind and supportive way.',
+      name: 'onboardingDescription3',
+      desc: 'Onboarding screen 3 - description',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: 'Next button label',
+      args: [],
+    );
+  }
+
+  /// `Get Started`
+  String get getStarted {
+    return Intl.message(
+      'Get Started',
+      name: 'getStarted',
+      desc: 'Get Started button label (last onboarding screen)',
+      args: [],
+    );
+  }
+
+  /// `Skip`
+  String get skip {
+    return Intl.message(
+      'Skip',
+      name: 'skip',
+      desc: 'Skip button label',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,1 +1,50 @@
-{}
+{
+  "@@locale": "en",
+
+  "appName": "Rafeeqa",
+  "@appName": {
+    "description": "The name of the app"
+  },
+
+  "onboardingTitle1": "Understand your baby",
+  "@onboardingTitle1": {
+    "description": "Onboarding screen 1 - title"
+  },
+  "onboardingDescription1": "Learn what your baby needs, from feeding to sleep, and feel more confident every day.",
+  "@onboardingDescription1": {
+    "description": "Onboarding screen 1 - description"
+  },
+
+  "onboardingTitle2": "Track every moment",
+  "@onboardingTitle2": {
+    "description": "Onboarding screen 2 - title"
+  },
+  "onboardingDescription2": "Keep a simple journal of daily activities and never miss an important milestone.",
+  "@onboardingDescription2": {
+    "description": "Onboarding screen 2 - description"
+  },
+
+  "onboardingTitle3": "Ask Rafeeqa",
+  "@onboardingTitle3": {
+    "description": "Onboarding screen 3 - title"
+  },
+  "onboardingDescription3": "Get instant answers to your questions, anytime, in a kind and supportive way.",
+  "@onboardingDescription3": {
+    "description": "Onboarding screen 3 - description"
+  },
+
+  "next": "Next",
+  "@next": {
+    "description": "Next button label"
+  },
+
+  "getStarted": "Get Started",
+  "@getStarted": {
+    "description": "Get Started button label (last onboarding screen)"
+  },
+
+  "skip": "Skip",
+  "@skip": {
+    "description": "Skip button label"
+  }
+}

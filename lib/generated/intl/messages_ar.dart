@@ -21,5 +21,20 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "appName": MessageLookupByLibrary.simpleMessage("رفيقة"),
+        "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+        "next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
+            "تعرّفي على احتياجات طفلكِ، من الرضاعة إلى النوم، وشعري بثقة أكبر كل يوم."),
+        "onboardingDescription2": MessageLookupByLibrary.simpleMessage(
+            "احتفظي بسجل بسيط للأنشطة اليومية، ولا تفوّتي أي مرحلة مهمة من مراحل نمو طفلكِ."),
+        "onboardingDescription3": MessageLookupByLibrary.simpleMessage(
+            "احصلي على إجابات فورية لأسئلتكِ في أي وقت، بطريقة لطيفة وداعمة."),
+        "onboardingTitle1": MessageLookupByLibrary.simpleMessage("افهمي طفلكِ"),
+        "onboardingTitle2":
+            MessageLookupByLibrary.simpleMessage("تابعي كل لحظة"),
+        "onboardingTitle3": MessageLookupByLibrary.simpleMessage("اسألي رفيقة"),
+        "skip": MessageLookupByLibrary.simpleMessage("تخطي")
+      };
 }

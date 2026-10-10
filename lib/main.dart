@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rafeeqa/features/splash/presentations/views/pages/splash_view.dart';
+import 'package:rafeeqa/core/utils/theme.dart';
+import 'package:rafeeqa/features/onboarding/pages/views/onboarding_view.dart';
 import 'package:rafeeqa/generated/l10n.dart';
 
 void main() {
@@ -28,10 +29,10 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          ),
-          home: SplashView()
+          theme: AppTheme.light,
+          themeMode: ThemeMode.light,
+          darkTheme: AppTheme.dark,
+          home: OnboardingView()
 
           
         );

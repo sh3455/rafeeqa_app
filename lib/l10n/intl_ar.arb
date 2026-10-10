@@ -1,1 +1,50 @@
-{}
+{
+  "@@locale": "ar",
+
+  "appName": "رفيقة",
+  "@appName": {
+    "description": "The name of the app"
+  },
+
+  "onboardingTitle1": "افهمي طفلكِ",
+  "@onboardingTitle1": {
+    "description": "Onboarding screen 1 - title"
+  },
+  "onboardingDescription1": "تعرّفي على احتياجات طفلكِ، من الرضاعة إلى النوم، وشعري بثقة أكبر كل يوم.",
+  "@onboardingDescription1": {
+    "description": "Onboarding screen 1 - description"
+  },
+
+  "onboardingTitle2": "تابعي كل لحظة",
+  "@onboardingTitle2": {
+    "description": "Onboarding screen 2 - title"
+  },
+  "onboardingDescription2": "احتفظي بسجل بسيط للأنشطة اليومية، ولا تفوّتي أي مرحلة مهمة من مراحل نمو طفلكِ.",
+  "@onboardingDescription2": {
+    "description": "Onboarding screen 2 - description"
+  },
+
+  "onboardingTitle3": "اسألي رفيقة",
+  "@onboardingTitle3": {
+    "description": "Onboarding screen 3 - title"
+  },
+  "onboardingDescription3": "احصلي على إجابات فورية لأسئلتكِ في أي وقت، بطريقة لطيفة وداعمة.",
+  "@onboardingDescription3": {
+    "description": "Onboarding screen 3 - description"
+  },
+
+  "next": "التالي",
+  "@next": {
+    "description": "Next button label"
+  },
+
+  "getStarted": "ابدأ الآن",
+  "@getStarted": {
+    "description": "Get Started button label (last onboarding screen)"
+  },
+
+  "skip": "تخطي",
+  "@skip": {
+    "description": "Skip button label"
+  }
+}
