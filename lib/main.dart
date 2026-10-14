@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:rafeeqa/core/model/baby_model.dart';
+import 'package:rafeeqa/core/model/vaccination_model.dart';
 import 'package:rafeeqa/core/utils/my_bloc_observer.dart';
 import 'package:rafeeqa/core/utils/theme.dart';
 import 'package:rafeeqa/di/server_locator.dart';
@@ -11,6 +14,7 @@ import 'package:rafeeqa/features/settings/model/app_user_pref_model.dart';
 import 'package:rafeeqa/features/settings/presentaions/manager/settings_cubit.dart';
 import 'package:rafeeqa/generated/l10n.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:rafeeqa/hive_registrar.g.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +23,10 @@ Future<void> main() async {
   storageDirectory: HydratedStorageDirectory(
     (await getApplicationDocumentsDirectory()).path,
   ), );
+   await Hive.initFlutter();
+  Hive.registerAdapters();
+  await Hive.openBox<BabyModel>('babies');
+  await Hive.openBox<VaccinationModel>('vaccinations');
      setupLocator();
   runApp(const MyApp());
 }

@@ -1,8 +1,18 @@
+import 'package:hive_ce/hive.dart';
+import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+part 'vaccination_model.g.dart';
+
+@HiveType(typeId: 0)
 class VaccinationModel {
+  @HiveField(0)
   final int id;
+  @HiveField(1)
   final String name;
+  @HiveField(2)
   final double age;
+  @HiveField(3)
   final String routeOfAdministration;
+  @HiveField(4)
   final String reason;
 
   const VaccinationModel({
