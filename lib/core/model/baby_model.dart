@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_this
-
 class BabyModel {
   final int id;
   final String name;
@@ -10,7 +8,7 @@ class BabyModel {
   final String birthType;
   final double weight;
   final double height;
-  final String? question;
+  final List<int> vaccinations; 
 
   const BabyModel({
     required this.id,
@@ -22,31 +20,29 @@ class BabyModel {
     required this.birthType,
     required this.weight,
     required this.height,
-    this.question, 
+    required this.vaccinations,
   });
 
   factory BabyModel.newBaby({
-    required int id,
     required String name,
-    required DateTime birthday,
+    required DateTime dateOfBirth,
     required String gender,
     String? image,
     required String birthType,
     required double weight,
     required double height,
-    String? question,
   }) {
     return BabyModel(
-      id :DateTime.now().millisecondsSinceEpoch,
+      id: DateTime.now().millisecondsSinceEpoch,
       name: name,
       createdAt: DateTime.now(),
-      dateOfBirth: birthday,
+      dateOfBirth: dateOfBirth,
       gender: gender,
       image: image,
       birthType: birthType,
       weight: weight,
       height: height,
-      question: question, 
+      vaccinations: const [],
     );
   }
 
@@ -54,25 +50,25 @@ class BabyModel {
     int? id,
     String? name,
     DateTime? createdAt,
-    DateTime? birthday,
+    DateTime? dateOfBirth,
     String? gender,
     String? image,
     String? birthType,
     double? weight,
     double? height,
-    String? question,
+    List<int>? vaccinations,
   }) {
     return BabyModel(
-      id:id ?? this.id,
+      id: id ?? this.id,
       name: name ?? this.name,
       createdAt: createdAt ?? this.createdAt,
-      dateOfBirth: birthday ?? this.dateOfBirth,
+      dateOfBirth: dateOfBirth ?? this.dateOfBirth,
       gender: gender ?? this.gender,
       image: image ?? this.image,
       birthType: birthType ?? this.birthType,
       weight: weight ?? this.weight,
       height: height ?? this.height,
-      question: question ?? this.question,
+      vaccinations: vaccinations ?? this.vaccinations,
     );
   }
 }
