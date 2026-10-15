@@ -1,23 +1,25 @@
 import 'package:hive_ce/hive.dart';
+import 'package:rafeeqa/core/model/baby_model.dart';
 
-class HiveService<T> {
-  final Box<T> box;
+class HiveService {
+
+  final Box<BabyModel> box;
 
   HiveService({required this.box});
 
   // add
-  Future<void> addData(dynamic key, T data) async {
-    await box.put(key, data);
+  Future<void> saveData(BabyModel baby) async {
+    await box.put(baby.id, baby);
   }
 
   // get all
-  List<T> getData() => box.values.toList();
+  List<BabyModel> getData() => box.values.toList();
 
   // get one
-  T? getById(dynamic key) => box.get(key);
+  BabyModel? getById(dynamic key) => box.get(key);
 
   // update
-  Future<void> updateData(dynamic key, T data) async {
+  Future<void> updateData(dynamic key, BabyModel data) async {
     await box.put(key, data);
   }
 
