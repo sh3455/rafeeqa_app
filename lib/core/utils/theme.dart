@@ -5,7 +5,7 @@ import 'package:rafeeqa/core/utils/styles.dart';
 
 class AppTheme {
 
-  static const Color backgroundApp = Color(0XFFFEF7F3);
+  static const Color backgroundApp = Color(0XFFFEF2ED);
   static const Color primary = Color(0xFFFD5F93);
   static const Color secondary = Color(0xFF26B1AE);
 
@@ -26,7 +26,7 @@ class AppTheme {
     brightness: Brightness.light,
 
     primaryColor: primary,
-    scaffoldBackgroundColor: white,
+    scaffoldBackgroundColor: backgroundApp,
     canvasColor: white,
     cardColor: Colors.white,
     dividerColor: const Color(0xFFE5E7EB),
