@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rafeeqa/core/utils/theme.dart';
 import 'package:rafeeqa/core/widgets/custom_text.dart';
-import 'package:rafeeqa/features/setup/manger/setup_cubit.dart';
-import 'package:rafeeqa/features/setup/manger/setup_state.dart';
+import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
+import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
 
 class SetupBabySteps extends StatelessWidget {
   const SetupBabySteps({super.key});

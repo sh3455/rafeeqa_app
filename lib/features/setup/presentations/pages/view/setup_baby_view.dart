@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rafeeqa/features/setup/manger/setup_cubit.dart';
-import 'package:rafeeqa/features/setup/pages/widgets/setup_baby_body.dart';
+import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
+import 'package:rafeeqa/features/setup/presentations/pages/widgets/setup_baby_body.dart';
 
 class SetupBabyView extends StatefulWidget {
   const SetupBabyView({super.key});

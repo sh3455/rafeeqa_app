@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rafeeqa/features/setup/manger/setup_cubit.dart';
-import 'package:rafeeqa/features/setup/pages/widgets/setup_baby_steps.dart';
+import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
+import 'package:rafeeqa/features/setup/presentations/pages/widgets/setup_baby_steps.dart';
 
 class SetupBabyBody extends StatelessWidget {
   const SetupBabyBody({super.key});
