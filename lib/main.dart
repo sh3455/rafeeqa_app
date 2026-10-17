@@ -11,6 +11,7 @@ import 'package:rafeeqa/core/utils/theme.dart';
 import 'package:rafeeqa/di/server_locator.dart';
 import 'package:rafeeqa/features/settings/model/app_user_pref_model.dart';
 import 'package:rafeeqa/features/settings/presentaions/manager/settings_cubit.dart';
+import 'package:rafeeqa/features/setup/manger/setup_cubit.dart';
 import 'package:rafeeqa/features/setup/pages/view/setup_baby_view.dart';
 import 'package:rafeeqa/generated/l10n.dart';
 import 'package:path_provider/path_provider.dart';
@@ -37,7 +38,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => getIt<SettingsCubit>())],
+      providers: [
+        BlocProvider(create: (context) => getIt<SettingsCubit>()),
+        BlocProvider(create: (context)=> getIt<SetupCubit>())
+        ],
       child: BlocBuilder<SettingsCubit, AppUserPref>(
         builder: (context, state) {
           return ScreenUtilInit(

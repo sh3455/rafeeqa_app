@@ -26,6 +26,7 @@ dependencies:
   hive_ce: ^2.22.0
   hive_ce_flutter: ^2.3.4
   smart_stepper: ^0.0.7
+  bloc: ^9.2.1
 
   
 
