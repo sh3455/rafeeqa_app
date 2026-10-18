@@ -1,7 +1,7 @@
 {
   "@@locale": "en",
 
-   "english": "English",
+  "english": "English",
   "@english": {
     "description": "The English language name"
   },
@@ -17,12 +17,10 @@
   "@egypt": {
     "description": "Egypt country name"
   },
-
   "appName": "Rafeeqa",
   "@appName": {
     "description": "The name of the app"
   },
-
   "onboardingTitle1": "Understand your baby",
   "@onboardingTitle1": {
     "description": "Onboarding screen 1 - title"
@@ -31,7 +29,6 @@
   "@onboardingDescription1": {
     "description": "Onboarding screen 1 - description"
   },
-
   "onboardingTitle2": "Track every moment",
   "@onboardingTitle2": {
     "description": "Onboarding screen 2 - title"
@@ -40,7 +37,6 @@
   "@onboardingDescription2": {
     "description": "Onboarding screen 2 - description"
   },
-
   "onboardingTitle3": "Ask Rafeeqa",
   "@onboardingTitle3": {
     "description": "Onboarding screen 3 - title"
@@ -49,19 +45,64 @@
   "@onboardingDescription3": {
     "description": "Onboarding screen 3 - description"
   },
-
   "next": "Next",
   "@next": {
     "description": "Next button label"
   },
-
   "getStarted": "Get Started",
   "@getStarted": {
     "description": "Get Started button label (last onboarding screen)"
   },
-
   "skip": "Skip",
   "@skip": {
     "description": "Skip button label"
+  },
+  "setupTitle1": "Tell us about your baby",
+  "@setupTitle1": {
+    "description": "Setup screen 1 - title"
+  },
+  "setupDescription1": "Let's start with some basic information about your little one.",
+  "@setupDescription1": {
+    "description": "Setup screen 1 - description"
+  },
+  "setupTitle2": "How was your baby born?",
+  "@setupTitle2": {
+    "description": "Setup screen 2 - title"
+  },
+  "setupDescription2": "This helps us provide more accurate growth and health recommendations.",
+  "@setupDescription2": {
+    "description": "Setup screen 2 - description"
+  },
+  "setupTitle3": "Has your baby been vaccinated?",
+  "@setupTitle3": {
+    "description": "Setup screen 3 - title"
+  },
+  "setupDescription3": "Vaccination helps protect your baby from serious diseases.",
+  "@setupDescription3": {
+    "description": "Setup screen 3 - description"
+  },
+  "setupTitle4": "Select past vaccines",
+  "@setupTitle4": {
+    "description": "Setup screen 4 - title"
+  },
+  "setupDescription4": "Choose the vaccines your baby has already received (if any).",
+  "@setupDescription4": {
+    "description": "Setup screen 4 - description"
+  },
+  "setupTitle5": "Review selected vaccines",
+  "@setupTitle5": {
+    "description": "Setup screen 5 - title"
+  },
+  "setupDescription5": "Here's a summary of the vaccines you've selected.",
+  "@setupDescription5": {
+    "description": "Setup screen 5 - description"
+  },
+  "setupTitle6": "All set!",
+  "@setupTitle6": {
+    "description": "Setup screen 6 - title"
+  },
+  "setupDescription6": "Your baby's information has been saved.",
+  "@setupDescription6": {
+    "description": "Setup screen 6 - description"
   }
 }

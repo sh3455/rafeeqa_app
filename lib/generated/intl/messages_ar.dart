@@ -38,6 +38,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboardingTitle2":
             MessageLookupByLibrary.simpleMessage("تابعي كل لحظة"),
         "onboardingTitle3": MessageLookupByLibrary.simpleMessage("اسألي رفيقة"),
+        "setupDescription1": MessageLookupByLibrary.simpleMessage(
+            "لنبدأ ببعض المعلومات الأساسية عن صغيركِ."),
+        "setupDescription2": MessageLookupByLibrary.simpleMessage(
+            "يساعدنا ذلك في تقديم توصيات أكثر دقة للنمو والصحة."),
+        "setupDescription3": MessageLookupByLibrary.simpleMessage(
+            "التطعيمات تحمي طفلكِ من الأمراض الخطيرة."),
+        "setupDescription4": MessageLookupByLibrary.simpleMessage(
+            "اختاري التطعيمات التي تلقّاها طفلكِ من قبل إن وجدت."),
+        "setupDescription5": MessageLookupByLibrary.simpleMessage(
+            "هذا ملخص للتطعيمات التي اخترتيها، يمكنكِ التعديل إذا أردتِ."),
+        "setupDescription6":
+            MessageLookupByLibrary.simpleMessage("تم حفظ معلومات طفلكِ بنجاح."),
+        "setupTitle1": MessageLookupByLibrary.simpleMessage("أخبرينا عن طفلكِ"),
+        "setupTitle2": MessageLookupByLibrary.simpleMessage("كيف وُلد طفلكِ؟"),
+        "setupTitle3":
+            MessageLookupByLibrary.simpleMessage("هل تلقّى طفلكِ التطعيمات؟"),
+        "setupTitle4":
+            MessageLookupByLibrary.simpleMessage("اختاري التطعيمات السابقة"),
+        "setupTitle5":
+            MessageLookupByLibrary.simpleMessage("مراجعة التطعيمات المختارة"),
+        "setupTitle6": MessageLookupByLibrary.simpleMessage("كل شيء جاهز!"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
         "unitedStates": MessageLookupByLibrary.simpleMessage("الولايات المتحدة")
       };

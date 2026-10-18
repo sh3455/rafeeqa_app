@@ -189,6 +189,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Tell us about your baby`
+  String get setupTitle1 {
+    return Intl.message(
+      'Tell us about your baby',
+      name: 'setupTitle1',
+      desc: 'Setup screen 1 - title',
+      args: [],
+    );
+  }
+
+  /// `Let's start with some basic information about your little one.`
+  String get setupDescription1 {
+    return Intl.message(
+      'Let\'s start with some basic information about your little one.',
+      name: 'setupDescription1',
+      desc: 'Setup screen 1 - description',
+      args: [],
+    );
+  }
+
+  /// `How was your baby born?`
+  String get setupTitle2 {
+    return Intl.message(
+      'How was your baby born?',
+      name: 'setupTitle2',
+      desc: 'Setup screen 2 - title',
+      args: [],
+    );
+  }
+
+  /// `This helps us provide more accurate growth and health recommendations.`
+  String get setupDescription2 {
+    return Intl.message(
+      'This helps us provide more accurate growth and health recommendations.',
+      name: 'setupDescription2',
+      desc: 'Setup screen 2 - description',
+      args: [],
+    );
+  }
+
+  /// `Has your baby been vaccinated?`
+  String get setupTitle3 {
+    return Intl.message(
+      'Has your baby been vaccinated?',
+      name: 'setupTitle3',
+      desc: 'Setup screen 3 - title',
+      args: [],
+    );
+  }
+
+  /// `Vaccination helps protect your baby from serious diseases.`
+  String get setupDescription3 {
+    return Intl.message(
+      'Vaccination helps protect your baby from serious diseases.',
+      name: 'setupDescription3',
+      desc: 'Setup screen 3 - description',
+      args: [],
+    );
+  }
+
+  /// `Select past vaccines`
+  String get setupTitle4 {
+    return Intl.message(
+      'Select past vaccines',
+      name: 'setupTitle4',
+      desc: 'Setup screen 4 - title',
+      args: [],
+    );
+  }
+
+  /// `Choose the vaccines your baby has already received (if any).`
+  String get setupDescription4 {
+    return Intl.message(
+      'Choose the vaccines your baby has already received (if any).',
+      name: 'setupDescription4',
+      desc: 'Setup screen 4 - description',
+      args: [],
+    );
+  }
+
+  /// `Review selected vaccines`
+  String get setupTitle5 {
+    return Intl.message(
+      'Review selected vaccines',
+      name: 'setupTitle5',
+      desc: 'Setup screen 5 - title',
+      args: [],
+    );
+  }
+
+  /// `Here's a summary of the vaccines you've selected.`
+  String get setupDescription5 {
+    return Intl.message(
+      'Here\'s a summary of the vaccines you\'ve selected.',
+      name: 'setupDescription5',
+      desc: 'Setup screen 5 - description',
+      args: [],
+    );
+  }
+
+  /// `All set!`
+  String get setupTitle6 {
+    return Intl.message(
+      'All set!',
+      name: 'setupTitle6',
+      desc: 'Setup screen 6 - title',
+      args: [],
+    );
+  }
+
+  /// `Your baby's information has been saved.`
+  String get setupDescription6 {
+    return Intl.message(
+      'Your baby\'s information has been saved.',
+      name: 'setupDescription6',
+      desc: 'Setup screen 6 - description',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

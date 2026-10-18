@@ -39,6 +39,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboardingTitle2":
             MessageLookupByLibrary.simpleMessage("Track every moment"),
         "onboardingTitle3": MessageLookupByLibrary.simpleMessage("Ask Rafeeqa"),
+        "setupDescription1": MessageLookupByLibrary.simpleMessage(
+            "Let\'s start with some basic information about your little one."),
+        "setupDescription2": MessageLookupByLibrary.simpleMessage(
+            "This helps us provide more accurate growth and health recommendations."),
+        "setupDescription3": MessageLookupByLibrary.simpleMessage(
+            "Vaccination helps protect your baby from serious diseases."),
+        "setupDescription4": MessageLookupByLibrary.simpleMessage(
+            "Choose the vaccines your baby has already received (if any)."),
+        "setupDescription5": MessageLookupByLibrary.simpleMessage(
+            "Here\'s a summary of the vaccines you\'ve selected."),
+        "setupDescription6": MessageLookupByLibrary.simpleMessage(
+            "Your baby\'s information has been saved."),
+        "setupTitle1":
+            MessageLookupByLibrary.simpleMessage("Tell us about your baby"),
+        "setupTitle2":
+            MessageLookupByLibrary.simpleMessage("How was your baby born?"),
+        "setupTitle3": MessageLookupByLibrary.simpleMessage(
+            "Has your baby been vaccinated?"),
+        "setupTitle4":
+            MessageLookupByLibrary.simpleMessage("Select past vaccines"),
+        "setupTitle5":
+            MessageLookupByLibrary.simpleMessage("Review selected vaccines"),
+        "setupTitle6": MessageLookupByLibrary.simpleMessage("All set!"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "unitedStates": MessageLookupByLibrary.simpleMessage("United States")
       };

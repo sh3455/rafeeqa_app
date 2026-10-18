@@ -27,6 +27,7 @@ class OnboardingCard extends StatelessWidget {
         ]
       ),
     );
+  
   }
 }
 

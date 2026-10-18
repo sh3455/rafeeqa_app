@@ -1,7 +1,6 @@
 {
   "@@locale": "ar",
 
-
   "english": "الإنكليزية",
   "@english": {
     "description": "The English language name"
@@ -18,12 +17,10 @@
   "@egypt": {
     "description": "Egypt country name"
   },
-
   "appName": "رفيقة",
   "@appName": {
     "description": "The name of the app"
   },
-
   "onboardingTitle1": "افهمي طفلكِ",
   "@onboardingTitle1": {
     "description": "Onboarding screen 1 - title"
@@ -32,7 +29,6 @@
   "@onboardingDescription1": {
     "description": "Onboarding screen 1 - description"
   },
-
   "onboardingTitle2": "تابعي كل لحظة",
   "@onboardingTitle2": {
     "description": "Onboarding screen 2 - title"
@@ -41,7 +37,6 @@
   "@onboardingDescription2": {
     "description": "Onboarding screen 2 - description"
   },
-
   "onboardingTitle3": "اسألي رفيقة",
   "@onboardingTitle3": {
     "description": "Onboarding screen 3 - title"
@@ -50,19 +45,64 @@
   "@onboardingDescription3": {
     "description": "Onboarding screen 3 - description"
   },
-
   "next": "التالي",
   "@next": {
     "description": "Next button label"
   },
-
   "getStarted": "ابدأ الآن",
   "@getStarted": {
     "description": "Get Started button label (last onboarding screen)"
   },
-
   "skip": "تخطي",
   "@skip": {
     "description": "Skip button label"
+  },
+  "setupTitle1": "أخبرينا عن طفلكِ",
+  "@setupTitle1": {
+    "description": "Setup screen 1 - title"
+  },
+  "setupDescription1": "لنبدأ ببعض المعلومات الأساسية عن صغيركِ.",
+  "@setupDescription1": {
+    "description": "Setup screen 1 - description"
+  },
+  "setupTitle2": "كيف وُلد طفلكِ؟",
+  "@setupTitle2": {
+    "description": "Setup screen 2 - title"
+  },
+  "setupDescription2": "يساعدنا ذلك في تقديم توصيات أكثر دقة للنمو والصحة.",
+  "@setupDescription2": {
+    "description": "Setup screen 2 - description"
+  },
+  "setupTitle3": "هل تلقّى طفلكِ التطعيمات؟",
+  "@setupTitle3": {
+    "description": "Setup screen 3 - title"
+  },
+  "setupDescription3": "التطعيمات تحمي طفلكِ من الأمراض الخطيرة.",
+  "@setupDescription3": {
+    "description": "Setup screen 3 - description"
+  },
+  "setupTitle4": "اختاري التطعيمات السابقة",
+  "@setupTitle4": {
+    "description": "Setup screen 4 - title"
+  },
+  "setupDescription4": "اختاري التطعيمات التي تلقّاها طفلكِ من قبل إن وجدت.",
+  "@setupDescription4": {
+    "description": "Setup screen 4 - description"
+  },
+  "setupTitle5": "مراجعة التطعيمات المختارة",
+  "@setupTitle5": {
+    "description": "Setup screen 5 - title"
+  },
+  "setupDescription5": "هذا ملخص للتطعيمات التي اخترتيها، يمكنكِ التعديل إذا أردتِ.",
+  "@setupDescription5": {
+    "description": "Setup screen 5 - description"
+  },
+  "setupTitle6": "كل شيء جاهز!",
+  "@setupTitle6": {
+    "description": "Setup screen 6 - title"
+  },
+  "setupDescription6": "تم حفظ معلومات طفلكِ بنجاح.",
+  "@setupDescription6": {
+    "description": "Setup screen 6 - description"
   }
 }

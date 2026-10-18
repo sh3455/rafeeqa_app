@@ -12,4 +12,12 @@ class Assets {
   static const String onboarding2 = 'assets/images/onboarding2.png';
   static const String onboarding3 = 'assets/images/onboarding3.png';
 
+  //setup
+
+  static const String setUp1 = 'assets/images/setUp1.png';
+  static const String setUp2 = 'assets/images/setUp4.png';
+  static const String setUp3 = 'assets/images/setUp3.png';
+  static const String setUp4 = 'assets/images/setUp2.png';
+  static const String iconImage = 'assets/images/image_icon.png';
+
 }
