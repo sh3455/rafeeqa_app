@@ -30,7 +30,11 @@ void initState(){
   );
 }
 
-
+ @override
+  void dispose() {
+    _gentlePulseController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

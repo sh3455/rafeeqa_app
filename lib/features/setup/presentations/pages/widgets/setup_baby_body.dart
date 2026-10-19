@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rafeeqa/core/utils/nav_to.dart';
 import 'package:rafeeqa/core/utils/theme.dart' show AppTheme;
 import 'package:rafeeqa/core/widgets/custom_button.dart';
 import 'package:rafeeqa/features/setup/data/model/setup_model.dart';
@@ -75,6 +74,7 @@ class _CustomButton extends StatelessWidget {
       padding: EdgeInsets.all(18.r),
       child: CustomButton(
         onPressed: () {
+         // NavTo.pushReplacement(context: context, nextPage: SplashView());
           if (isLastPage){
 
           }else{

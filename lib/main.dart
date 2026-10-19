@@ -12,7 +12,7 @@ import 'package:rafeeqa/di/server_locator.dart';
 import 'package:rafeeqa/features/settings/model/app_user_pref_model.dart';
 import 'package:rafeeqa/features/settings/presentaions/manager/settings_cubit.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
-import 'package:rafeeqa/features/setup/presentations/pages/view/setup_baby_view.dart';
+import 'package:rafeeqa/features/splash/presentations/views/pages/splash_view.dart';
 import 'package:rafeeqa/generated/l10n.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:rafeeqa/hive_registrar.g.dart';
@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
                 theme: AppTheme.light,
                 themeMode: ThemeMode.light,
                 darkTheme: AppTheme.dark,
-                home: SetupBabyView(),
+                home: SplashView(),
               );
             },
           );

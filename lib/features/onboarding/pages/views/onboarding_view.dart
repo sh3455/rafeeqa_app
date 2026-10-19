@@ -2,10 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rafeeqa/core/utils/nav_to.dart';
 import 'package:rafeeqa/core/utils/theme.dart';
 import 'package:rafeeqa/core/widgets/custom_button.dart';
 import 'package:rafeeqa/features/onboarding/model/onboarding_model.dart';
 import 'package:rafeeqa/features/onboarding/pages/widgets/onboarding_body.dart';
+import 'package:rafeeqa/features/setup/presentations/pages/view/setup_baby_view.dart';
 
 import '../../../../core/widgets/custom_text.dart';
 import '../../../../generated/l10n.dart';
@@ -52,6 +54,7 @@ class _OnboardingViewState extends State<OnboardingView> {
               pageController: _controller,
               currentPages:currentPage,
               totalPages: pages.length,
+              
 
               )
           ],
@@ -79,14 +82,18 @@ class _CustomButton extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(18.r),
       child: CustomButton(
+        
         onPressed: () {
           if (isLastPage){
+            NavTo.pushReplacement(context: context, nextPage: SetupBabyView());
 
           }else{
             pageController.nextPage(
               duration: Duration(milliseconds: 300), 
               curve: Curves.easeInOut);
           }
+
+        
 
         },
          text: isLastPage ? s.getStarted :s.next,

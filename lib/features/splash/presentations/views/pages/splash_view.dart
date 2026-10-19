@@ -1,6 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:rafeeqa/core/utils/nav_to.dart';
+import 'package:rafeeqa/features/onboarding/pages/views/onboarding_view.dart';
 import 'package:rafeeqa/features/splash/presentations/views/widgets/splash_body.dart';
 
 import '../../../../../const/assets.dart';
@@ -21,8 +25,10 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
     // Add any initialization logic here if needed
    Future.delayed(const Duration(seconds: 3), () {
+      if (!mounted) return;
+      NavTo.pushReplacement(context: context, nextPage: OnboardingView());
+
       
-    if (!mounted) return;
     
     });
     
