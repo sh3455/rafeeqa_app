@@ -38,8 +38,8 @@ class _Image extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Image.asset(
       imagePath,
-      width: size.width * 0.8,
-      height: size.height * 0.3,
+      width: size.width * 0.6,
+      height: size.height * 0.2,
     );
   }
 }
