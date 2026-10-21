@@ -22,11 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addPhoto": MessageLookupByLibrary.simpleMessage("Add a photo"),
         "appName": MessageLookupByLibrary.simpleMessage("Rafeeqa"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+        "babyName": MessageLookupByLibrary.simpleMessage("Baby Name"),
+        "babyNameHint": MessageLookupByLibrary.simpleMessage("Yousef"),
+        "boy": MessageLookupByLibrary.simpleMessage("Boy"),
+        "changePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
+        "dateOfBirth": MessageLookupByLibrary.simpleMessage("Date of birth"),
+        "dateOfBirthHint": MessageLookupByLibrary.simpleMessage("Apr 15, 2026"),
         "egypt": MessageLookupByLibrary.simpleMessage("Egypt"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
+        "gender": MessageLookupByLibrary.simpleMessage("Gender"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "girl": MessageLookupByLibrary.simpleMessage("Girl"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
             "Learn what your baby needs, from feeding to sleep, and feel more confident every day."),
@@ -39,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboardingTitle2":
             MessageLookupByLibrary.simpleMessage("Track every moment"),
         "onboardingTitle3": MessageLookupByLibrary.simpleMessage("Ask Rafeeqa"),
+        "optional": MessageLookupByLibrary.simpleMessage("(optional)"),
         "setupDescription1": MessageLookupByLibrary.simpleMessage(
             "Let\'s start with some basic information about your little one."),
         "setupDescription2": MessageLookupByLibrary.simpleMessage(

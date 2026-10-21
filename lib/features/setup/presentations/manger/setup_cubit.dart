@@ -16,7 +16,7 @@ class SetupCubit extends Cubit<SetupState> {
 
   static const int totalSteps = 4;
   int currentSteps = 0;
-  String? selectedGender;
+  String? selectedGender = 'Boy';
   File? image;
   final service = ImagePickerService.instance;
   final PageController controller = PageController();
@@ -41,6 +41,7 @@ class SetupCubit extends Cubit<SetupState> {
 
   void reset() {
     currentSteps = 0;
+    selectedGender = 'Boy';
     if (controller.hasClients) controller.jumpToPage(0);
     emit(SetupInitialState());
   }

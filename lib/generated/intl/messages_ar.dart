@@ -22,11 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addPhoto": MessageLookupByLibrary.simpleMessage("أضيفي صورة"),
         "appName": MessageLookupByLibrary.simpleMessage("رفيقة"),
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+        "babyName": MessageLookupByLibrary.simpleMessage("اسم الطفل"),
+        "babyNameHint": MessageLookupByLibrary.simpleMessage("يوسف"),
+        "boy": MessageLookupByLibrary.simpleMessage("ولد"),
+        "changePhoto": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
+        "dateOfBirth": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
+        "dateOfBirthHint":
+            MessageLookupByLibrary.simpleMessage("15 أبريل 2026"),
         "egypt": MessageLookupByLibrary.simpleMessage("مصر"),
         "english": MessageLookupByLibrary.simpleMessage("الإنكليزية"),
+        "gender": MessageLookupByLibrary.simpleMessage("النوع"),
         "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
+        "girl": MessageLookupByLibrary.simpleMessage("بنت"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
             "تعرّفي على احتياجات طفلكِ، من الرضاعة إلى النوم، وشعري بثقة أكبر كل يوم."),
@@ -38,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboardingTitle2":
             MessageLookupByLibrary.simpleMessage("تابعي كل لحظة"),
         "onboardingTitle3": MessageLookupByLibrary.simpleMessage("اسألي رفيقة"),
+        "optional": MessageLookupByLibrary.simpleMessage("(اختياري)"),
         "setupDescription1": MessageLookupByLibrary.simpleMessage(
             "لنبدأ ببعض المعلومات الأساسية عن صغيركِ."),
         "setupDescription2": MessageLookupByLibrary.simpleMessage(

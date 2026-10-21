@@ -24,7 +24,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = Theme.of(context).hintColor;
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Column(
         children: [
          TextField(
@@ -38,7 +38,7 @@ class CustomTextField extends StatelessWidget {
             suffixIcon: suffixIcon,
             suffixText: suffixText,
             contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
-
+      
             
           ),
          )

@@ -104,5 +104,45 @@
   "setupDescription6": "تم حفظ معلومات طفلكِ بنجاح.",
   "@setupDescription6": {
     "description": "Setup screen 6 - description"
+  },
+    "babyName": "اسم الطفل",
+  "@babyName": {
+    "description": "Baby name field label"
+  },
+  "babyNameHint": "يوسف",
+  "@babyNameHint": {
+    "description": "Baby name field hint"
+  },
+  "dateOfBirth": "تاريخ الميلاد",
+  "@dateOfBirth": {
+    "description": "Date of birth field label"
+  },
+  "dateOfBirthHint": "15 أبريل 2026",
+  "@dateOfBirthHint": {
+    "description": "Date of birth field hint"
+  },
+  "gender": "النوع",
+  "@gender": {
+    "description": "Gender field label"
+  },
+  "boy": "ولد",
+  "@boy": {
+    "description": "Boy option"
+  },
+  "girl": "بنت",
+  "@girl": {
+    "description": "Girl option"
+  },
+  "addPhoto": "أضيفي صورة",
+  "@addPhoto": {
+    "description": "Baby photo field label"
+  },
+  "optional": "(اختياري)",
+  "@optional": {
+    "description": "Label for optional fields"
+  },
+  "changePhoto": "تغيير الصورة",
+  "@changePhoto": {
+    "description": "Change photo button label"
   }
 }

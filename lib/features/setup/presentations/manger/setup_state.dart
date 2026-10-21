@@ -9,7 +9,6 @@ class SetupChangeState extends SetupState{}
 class SetupGenderChangedState extends SetupState {
   final String gender;
   SetupGenderChangedState(this.gender);
-
   @override
   List<Object?> get props => [gender];
 }

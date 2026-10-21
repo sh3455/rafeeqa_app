@@ -23,43 +23,64 @@ class SetupBabyBody extends StatelessWidget {
         final data = setUpData(context);
         final isLastPage = cubit.currentSteps == SetupCubit.totalSteps - 1;
 
-        return Column(
-          children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              margin: EdgeInsets.all(12.w),
-              child: const SetupBabySteps(),
-            ),
-            Expanded(
-              child: PageView(
-                controller: cubit.controller,
-                physics: const NeverScrollableScrollPhysics(),
-                children: [
-                  BabyInfoStep(setupModel: data[0]),
-                  const Center(child: Text('Step 2')),
-                  const Center(child: Text('Step 3')),
-                  const Center(child: Text('Step 4')),
-                ],
+        final nextButton = Padding(
+          padding: EdgeInsets.all(18.r),
+          child: CustomButton(
+            onPressed: () {
+              if (isLastPage) {
+              } else {
+                cubit.nextStep();
+              }
+            },
+            text: isLastPage ? s.getStarted : s.next,
+            color: AppTheme.primary,
+            borderRadius: 20.r,
+          ),
+        );
+
+        return SafeArea(
+          child: Column(
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                margin: EdgeInsets.all(12.w),
+                child: const SetupBabySteps(),
               ),
-            ),
-            SizedBox(height: 10.h),
-            Padding(
-              padding: EdgeInsets.all(18.r),
-              child: CustomButton(
-                onPressed: () {
-                  if (isLastPage) {
-                  } else {
-                    cubit.nextStep();
-                  }
-                },
-                text: isLastPage ? s.getStarted : s.next,
-                color: AppTheme.primary,
-                borderRadius: 20.r,
+              Expanded(
+                child: PageView(
+                  controller: cubit.controller,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: [
+                    _StepPage(footer: nextButton, child: BabyInfoStep(setupModel: data[0])),
+                    _StepPage(footer: nextButton, child: const Center(child: Text('Step 2'))),
+                    _StepPage(footer: nextButton, child: const Center(child: Text('Step 3'))),
+                    _StepPage(footer: nextButton, child: const Center(child: Text('Step 4'))),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         );
       },
+    );
+  }
+}
+
+class _StepPage extends StatelessWidget {
+  const _StepPage({required this.child, required this.footer});
+
+  final Widget child;
+  final Widget footer;
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          child,
+          footer,
+        ],
+      ),
     );
   }
 }

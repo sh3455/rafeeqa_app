@@ -10,6 +10,7 @@ import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_card.dar
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/custom_text_field.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/field_label_text.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/option_card.dart';
+import 'package:rafeeqa/generated/l10n.dart';
 
 class BabyInfoStep extends StatelessWidget {
    const BabyInfoStep({super.key, required this.setupModel});
@@ -19,6 +20,8 @@ class BabyInfoStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cubit = SetupCubit.get(context);
+    final s = S.of(context);
+
     return  SingleChildScrollView(
   child: Column(
     children: [
@@ -29,44 +32,54 @@ class BabyInfoStep extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const FieldLabel(icon: Icons.people_alt_outlined, title: "Baby Name"),
-            const CustomTextField(hintText: "Yousef", readOnly: false,),
+            FieldLabel(icon: Icons.people_alt_outlined, title:s.babyName ),
+
+             CustomTextField(hintText: s.babyNameHint, readOnly: false,),
+
             SizedBox(height: 6.h),
-            const FieldLabel(icon: Icons.calendar_today_outlined, title: "Date of birth"),
+
+             FieldLabel(icon: Icons.calendar_today_outlined, title: s.dateOfBirth),
+
             CustomTextField(
-              hintText: "Apr 15, 2026",
+              hintText: s.dateOfBirthHint,
               suffixIcon: Icon(Icons.calendar_today_outlined, size: 22.sp),
               readOnly: true,
               controller: cubit.textEditingController,
               onTap: () => cubit.pickDate(context),
             ),
+
             SizedBox(height: 6.h),
-            const FieldLabel(icon: Icons.child_care, title: "Gender"),
+
+            FieldLabel(icon: Icons.child_care, title: s.gender),
             Row(
               children: [
                 OptionCard(
                   icon: Icons.male,
-                  title: "Boy",
+                  title: s.boy,
                   isSelected: cubit.selectedGender == "Boy",
                   onTap: () => cubit.selectGender("Boy"),
                 ),
                 SizedBox(width: 12.w),
                 OptionCard(
                   icon: Icons.female,
-                  title: "Girl",
+                  title: s.girl,
                   isSelected: cubit.selectedGender == "Girl",
                   onTap: () => cubit.selectGender("Girl"),
                 ),
               ],
             ),
+            
             SizedBox(height: 6.h),
-            const FieldLabel(
+
+             FieldLabel(
               icon: Icons.add_a_photo_outlined,
-              title: "Add a photo",
-              subtitle: "(optional)",
+              title: s.addPhoto,
+              subtitle: s.optional,
             ),
+
             SizedBox(height: 10.h),
-             _Photopicker(onTap:() => cubit.pickerImage(),),
+             
+            _Photopicker(onTap:() => cubit.pickerImage(),),
           ],
         ),
       ),

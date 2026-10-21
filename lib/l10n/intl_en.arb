@@ -104,5 +104,45 @@
   "setupDescription6": "Your baby's information has been saved.",
   "@setupDescription6": {
     "description": "Setup screen 6 - description"
+  },
+    "babyName": "Baby Name",
+  "@babyName": {
+    "description": "Baby name field label"
+  },
+  "babyNameHint": "Yousef",
+  "@babyNameHint": {
+    "description": "Baby name field hint"
+  },
+  "dateOfBirth": "Date of birth",
+  "@dateOfBirth": {
+    "description": "Date of birth field label"
+  },
+  "dateOfBirthHint": "Apr 15, 2026",
+  "@dateOfBirthHint": {
+    "description": "Date of birth field hint"
+  },
+  "gender": "Gender",
+  "@gender": {
+    "description": "Gender field label"
+  },
+  "boy": "Boy",
+  "@boy": {
+    "description": "Boy option"
+  },
+  "girl": "Girl",
+  "@girl": {
+    "description": "Girl option"
+  },
+  "addPhoto": "Add a photo",
+  "@addPhoto": {
+    "description": "Baby photo field label"
+  },
+  "optional": "(optional)",
+  "@optional": {
+    "description": "Label for optional fields"
+  },
+  "changePhoto": "Change photo",
+  "@changePhoto": {
+    "description": "Change photo button label"
   }
 }

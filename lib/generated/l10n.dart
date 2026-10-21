@@ -309,6 +309,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Baby Name`
+  String get babyName {
+    return Intl.message(
+      'Baby Name',
+      name: 'babyName',
+      desc: 'Baby name field label',
+      args: [],
+    );
+  }
+
+  /// `Yousef`
+  String get babyNameHint {
+    return Intl.message(
+      'Yousef',
+      name: 'babyNameHint',
+      desc: 'Baby name field hint',
+      args: [],
+    );
+  }
+
+  /// `Date of birth`
+  String get dateOfBirth {
+    return Intl.message(
+      'Date of birth',
+      name: 'dateOfBirth',
+      desc: 'Date of birth field label',
+      args: [],
+    );
+  }
+
+  /// `Apr 15, 2026`
+  String get dateOfBirthHint {
+    return Intl.message(
+      'Apr 15, 2026',
+      name: 'dateOfBirthHint',
+      desc: 'Date of birth field hint',
+      args: [],
+    );
+  }
+
+  /// `Gender`
+  String get gender {
+    return Intl.message(
+      'Gender',
+      name: 'gender',
+      desc: 'Gender field label',
+      args: [],
+    );
+  }
+
+  /// `Boy`
+  String get boy {
+    return Intl.message(
+      'Boy',
+      name: 'boy',
+      desc: 'Boy option',
+      args: [],
+    );
+  }
+
+  /// `Girl`
+  String get girl {
+    return Intl.message(
+      'Girl',
+      name: 'girl',
+      desc: 'Girl option',
+      args: [],
+    );
+  }
+
+  /// `Add a photo`
+  String get addPhoto {
+    return Intl.message(
+      'Add a photo',
+      name: 'addPhoto',
+      desc: 'Baby photo field label',
+      args: [],
+    );
+  }
+
+  /// `(optional)`
+  String get optional {
+    return Intl.message(
+      '(optional)',
+      name: 'optional',
+      desc: 'Label for optional fields',
+      args: [],
+    );
+  }
+
+  /// `Change photo`
+  String get changePhoto {
+    return Intl.message(
+      'Change photo',
+      name: 'changePhoto',
+      desc: 'Change photo button label',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
