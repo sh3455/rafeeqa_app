@@ -22,3 +22,11 @@ class SetupSelectTypeOfBirthState extends SetupState {
   @override
   List<Object?> get props => [typeOfBirth];
 }
+
+class SetupVaccineOptionChangedState extends SetupState {
+  final int index;
+   SetupVaccineOptionChangedState(this.index);
+
+  @override
+  List<Object?> get props => [index];
+}

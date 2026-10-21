@@ -9,6 +9,7 @@ import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_info_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/birth_details_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/setup_baby_steps.dart';
+import 'package:rafeeqa/features/setup/presentations/pages/widgets/vaccination_step.dart';
 import 'package:rafeeqa/generated/l10n.dart';
 
 class SetupBabyBody extends StatelessWidget {
@@ -54,7 +55,7 @@ class SetupBabyBody extends StatelessWidget {
                   children: [
                     _StepPage(footer: nextButton, child: BabyInfoStep(setupModel: data[0])),
                     _StepPage(footer: nextButton, child: BirthDetailsStep(setupModel: data[1]) ),
-                    _StepPage(footer: nextButton, child: const Center(child: Text('Step 3'))),
+                    _StepPage(footer: nextButton, child: VaccinationStep(setupModel: data[2],)),
                     _StepPage(footer: nextButton, child: const Center(child: Text('Step 4'))),
                   ],
                 ),
