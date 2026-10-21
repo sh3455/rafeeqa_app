@@ -172,5 +172,30 @@
   "birthHeightHint": "50 cm",
   "@birthHeightHint": {
     "description": "Birth height field hint"
+  },
+   "vaccinatedAll": "Yes, all up to date",
+  "@vaccinatedAll": {
+    "description": "Vaccination option: all vaccines done - title"
+  },
+  "vaccinatedAllDesc": "Great! Keep it up.",
+  "@vaccinatedAllDesc": {
+    "description": "Vaccination option: all vaccines done - subtitle"
+  },
+  "vaccinatedSome": "Some of them, I'll choose",
+  "@vaccinatedSome": {
+    "description": "Vaccination option: some vaccines done - title"
+  },
+  "vaccinatedSomeDesc": "I'll select the vaccines later.",
+  "@vaccinatedSomeDesc": {
+    "description": "Vaccination option: some vaccines done - subtitle"
+  },
+  "vaccinatedNotSure": "Not sure, I'll check later",
+  "@vaccinatedNotSure": {
+    "description": "Vaccination option: not sure - title"
+  },
+  "vaccinatedNotSureDesc": "I prefer to review my records.",
+  "@vaccinatedNotSureDesc": {
+    "description": "Vaccination option: not sure - subtitle"
   }
+
 }

@@ -78,6 +78,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "setupTitle6": MessageLookupByLibrary.simpleMessage("كل شيء جاهز!"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
         "typeOfBirth": MessageLookupByLibrary.simpleMessage("نوع الولادة"),
-        "unitedStates": MessageLookupByLibrary.simpleMessage("الولايات المتحدة")
+        "unitedStates":
+            MessageLookupByLibrary.simpleMessage("الولايات المتحدة"),
+        "vaccinatedAll":
+            MessageLookupByLibrary.simpleMessage("نعم، كل التطعيمات مكتملة"),
+        "vaccinatedAllDesc":
+            MessageLookupByLibrary.simpleMessage("رائع! استمري على ذلك."),
+        "vaccinatedNotSure":
+            MessageLookupByLibrary.simpleMessage("لست متأكدة، سأراجع لاحقاً"),
+        "vaccinatedNotSureDesc":
+            MessageLookupByLibrary.simpleMessage("أفضّل مراجعة سجلاتي أولاً."),
+        "vaccinatedSome":
+            MessageLookupByLibrary.simpleMessage("بعضها، سأختارها بنفسي"),
+        "vaccinatedSomeDesc":
+            MessageLookupByLibrary.simpleMessage("سأحدد التطعيمات لاحقاً.")
       };
 }

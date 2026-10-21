@@ -479,6 +479,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Yes, all up to date`
+  String get vaccinatedAll {
+    return Intl.message(
+      'Yes, all up to date',
+      name: 'vaccinatedAll',
+      desc: 'Vaccination option: all vaccines done - title',
+      args: [],
+    );
+  }
+
+  /// `Great! Keep it up.`
+  String get vaccinatedAllDesc {
+    return Intl.message(
+      'Great! Keep it up.',
+      name: 'vaccinatedAllDesc',
+      desc: 'Vaccination option: all vaccines done - subtitle',
+      args: [],
+    );
+  }
+
+  /// `Some of them, I'll choose`
+  String get vaccinatedSome {
+    return Intl.message(
+      'Some of them, I\'ll choose',
+      name: 'vaccinatedSome',
+      desc: 'Vaccination option: some vaccines done - title',
+      args: [],
+    );
+  }
+
+  /// `I'll select the vaccines later.`
+  String get vaccinatedSomeDesc {
+    return Intl.message(
+      'I\'ll select the vaccines later.',
+      name: 'vaccinatedSomeDesc',
+      desc: 'Vaccination option: some vaccines done - subtitle',
+      args: [],
+    );
+  }
+
+  /// `Not sure, I'll check later`
+  String get vaccinatedNotSure {
+    return Intl.message(
+      'Not sure, I\'ll check later',
+      name: 'vaccinatedNotSure',
+      desc: 'Vaccination option: not sure - title',
+      args: [],
+    );
+  }
+
+  /// `I prefer to review my records.`
+  String get vaccinatedNotSureDesc {
+    return Intl.message(
+      'I prefer to review my records.',
+      name: 'vaccinatedNotSureDesc',
+      desc: 'Vaccination option: not sure - subtitle',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

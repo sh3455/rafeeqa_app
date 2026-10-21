@@ -80,6 +80,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "setupTitle6": MessageLookupByLibrary.simpleMessage("All set!"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "typeOfBirth": MessageLookupByLibrary.simpleMessage("Type of birth"),
-        "unitedStates": MessageLookupByLibrary.simpleMessage("United States")
+        "unitedStates": MessageLookupByLibrary.simpleMessage("United States"),
+        "vaccinatedAll":
+            MessageLookupByLibrary.simpleMessage("Yes, all up to date"),
+        "vaccinatedAllDesc":
+            MessageLookupByLibrary.simpleMessage("Great! Keep it up."),
+        "vaccinatedNotSure":
+            MessageLookupByLibrary.simpleMessage("Not sure, I\'ll check later"),
+        "vaccinatedNotSureDesc": MessageLookupByLibrary.simpleMessage(
+            "I prefer to review my records."),
+        "vaccinatedSome":
+            MessageLookupByLibrary.simpleMessage("Some of them, I\'ll choose"),
+        "vaccinatedSomeDesc": MessageLookupByLibrary.simpleMessage(
+            "I\'ll select the vaccines later.")
       };
 }

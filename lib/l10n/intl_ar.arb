@@ -172,5 +172,30 @@
   "birthHeightHint": "50 سم",
   "@birthHeightHint": {
     "description": "Birth height field hint"
+  },
+    "vaccinatedAll": "نعم، كل التطعيمات مكتملة",
+  "@vaccinatedAll": {
+    "description": "Vaccination option: all vaccines done - title"
+  },
+  "vaccinatedAllDesc": "رائع! استمري على ذلك.",
+  "@vaccinatedAllDesc": {
+    "description": "Vaccination option: all vaccines done - subtitle"
+  },
+  "vaccinatedSome": "بعضها، سأختارها بنفسي",
+  "@vaccinatedSome": {
+    "description": "Vaccination option: some vaccines done - title"
+  },
+  "vaccinatedSomeDesc": "سأحدد التطعيمات لاحقاً.",
+  "@vaccinatedSomeDesc": {
+    "description": "Vaccination option: some vaccines done - subtitle"
+  },
+  "vaccinatedNotSure": "لست متأكدة، سأراجع لاحقاً",
+  "@vaccinatedNotSure": {
+    "description": "Vaccination option: not sure - title"
+  },
+  "vaccinatedNotSureDesc": "أفضّل مراجعة سجلاتي أولاً.",
+  "@vaccinatedNotSureDesc": {
+    "description": "Vaccination option: not sure - subtitle"
   }
+
 }

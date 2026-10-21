@@ -5,20 +5,25 @@ import 'package:rafeeqa/core/widgets/custom_text.dart';
 import 'package:rafeeqa/features/setup/data/model/setup_model.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_card.dart';
+import 'package:rafeeqa/generated/l10n.dart';
 
 class VaccinationStep extends StatelessWidget {
    const VaccinationStep({super.key, required this.setupModel});
   final SetupModel setupModel;
 
- final List<(String, String)> options = const [
-  ("Yes, all up to date", "Great! Keep it up."),
-  ("Some of them, I'll choose", "I'll select the vaccines later."),
-  ("Not sure, I'll check later", "I prefer to review my records."),
-];
+
 
   @override
   Widget build(BuildContext context) {
     var cubit = SetupCubit.get(context);
+    final s = S.of(context);
+
+    final options = [
+    (s.vaccinatedAll, s.vaccinatedAllDesc),
+    (s.vaccinatedSome, s.vaccinatedSomeDesc),
+    (s.vaccinatedNotSure, s.vaccinatedNotSureDesc),
+  ];
+
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
