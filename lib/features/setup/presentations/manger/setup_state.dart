@@ -14,3 +14,11 @@ class SetupGenderChangedState extends SetupState {
 }
 
 class SetupImageChangedState extends SetupState {}
+
+class SetupSelectTypeOfBirthState extends SetupState {
+  final String typeOfBirth;
+   SetupSelectTypeOfBirthState(this.typeOfBirth);
+
+  @override
+  List<Object?> get props => [typeOfBirth];
+}

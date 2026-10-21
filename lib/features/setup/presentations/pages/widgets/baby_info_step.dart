@@ -34,7 +34,7 @@ class BabyInfoStep extends StatelessWidget {
           children: [
             FieldLabel(icon: Icons.people_alt_outlined, title:s.babyName ),
 
-             CustomTextField(hintText: s.babyNameHint, readOnly: false,),
+            CustomTextField(hintText: s.babyNameHint, readOnly: false,),
 
             SizedBox(height: 6.h),
 

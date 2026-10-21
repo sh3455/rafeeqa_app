@@ -17,6 +17,7 @@ class SetupCubit extends Cubit<SetupState> {
   static const int totalSteps = 4;
   int currentSteps = 0;
   String? selectedGender = 'Boy';
+  String? typeOfBirth = 'Natural birth';
   File? image;
   final service = ImagePickerService.instance;
   final PageController controller = PageController();
@@ -79,4 +80,10 @@ Future <void> pickerImage() async{
  }
 
 }
+
+void selectTypeOfBirth(String type) {
+  typeOfBirth = type;
+  emit(SetupSelectTypeOfBirthState(type));
+}
+
 }
