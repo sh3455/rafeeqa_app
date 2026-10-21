@@ -6,6 +6,7 @@ import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_card.dar
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/custom_text_field.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/field_label_text.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/option_card.dart';
+import 'package:rafeeqa/generated/l10n.dart';
 
 class BirthDetailsStep extends StatelessWidget {
   const BirthDetailsStep({super.key, required this.setupModel});
@@ -14,6 +15,8 @@ class BirthDetailsStep extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var cubit = SetupCubit.get(context);
+    final s = S.of(context);
+
     return Column(
       children: [
         BabyCard(setupModel: setupModel),
@@ -25,21 +28,21 @@ class BirthDetailsStep extends StatelessWidget {
             children: [
               FieldLabel(
                 icon: Icons.health_and_safety_outlined,
-                title: "Type of birth",
+                title: s.typeOfBirth,
               ),
               SizedBox(height: 8.h),
               Row(
                 children: [
                   OptionCard(
                     icon: Icons.pregnant_woman,
-                    title: "Natural birth",
+                    title: s.naturalBirth,
                     isSelected: cubit.typeOfBirth == "Natural birth",
                     onTap: () => cubit.selectTypeOfBirth("Natural birth"),
                   ),
                   SizedBox(width: 12.w),
                   OptionCard(
                     icon: Icons.child_care,
-                    title: 'C-section',
+                    title: s.cSection,
                     isSelected: cubit.typeOfBirth == "C-section",
                     onTap: () => cubit.selectTypeOfBirth("C-section"), 
                   ),
@@ -48,17 +51,17 @@ class BirthDetailsStep extends StatelessWidget {
               SizedBox(height: 8.h),
               FieldLabel(
                 icon: Icons.monitor_weight_outlined,
-                title: "Birth weight",
+                title: s.birthWeight,
               ),
-              const CustomTextField(
-                hintText: "3.2 kg",
+               CustomTextField(
+                hintText: s.birthWeightHint,
                 readOnly: false,
                 suffixIcon: Icon(Icons.monitor_weight_outlined),
               ),
               SizedBox(height: 8.h),
-              FieldLabel(icon: Icons.height, title: "Birth height"),
-              const CustomTextField(
-                hintText: "50 cm",
+              FieldLabel(icon: Icons.height, title: s.birthHeight),
+               CustomTextField(
+                hintText: s.birthHeightHint,
                 readOnly: false,
                 suffixIcon: Icon(Icons.height),
               ),

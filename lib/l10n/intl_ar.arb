@@ -144,5 +144,33 @@
   "changePhoto": "تغيير الصورة",
   "@changePhoto": {
     "description": "Change photo button label"
+  },
+  "typeOfBirth": "نوع الولادة",
+  "@typeOfBirth": {
+    "description": "Type of birth field label"
+  },
+  "naturalBirth": "ولادة طبيعية",
+  "@naturalBirth": {
+    "description": "Natural birth option"
+  },
+  "cSection": "ولادة قيصرية",
+  "@cSection": {
+    "description": "C-section birth option"
+  },
+  "birthWeight": "وزن الميلاد",
+  "@birthWeight": {
+    "description": "Birth weight field label"
+  },
+  "birthWeightHint": "3.2 كجم",
+  "@birthWeightHint": {
+    "description": "Birth weight field hint"
+  },
+  "birthHeight": "طول الميلاد",
+  "@birthHeight": {
+    "description": "Birth height field label"
+  },
+  "birthHeightHint": "50 سم",
+  "@birthHeightHint": {
+    "description": "Birth height field hint"
   }
 }

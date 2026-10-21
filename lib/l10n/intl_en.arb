@@ -144,5 +144,33 @@
   "changePhoto": "Change photo",
   "@changePhoto": {
     "description": "Change photo button label"
+  },
+    "typeOfBirth": "Type of birth",
+  "@typeOfBirth": {
+    "description": "Type of birth field label"
+  },
+  "naturalBirth": "Natural birth",
+  "@naturalBirth": {
+    "description": "Natural birth option"
+  },
+  "cSection": "C-section",
+  "@cSection": {
+    "description": "C-section birth option"
+  },
+  "birthWeight": "Birth weight",
+  "@birthWeight": {
+    "description": "Birth weight field label"
+  },
+  "birthWeightHint": "3.2 kg",
+  "@birthWeightHint": {
+    "description": "Birth weight field hint"
+  },
+  "birthHeight": "Birth height",
+  "@birthHeight": {
+    "description": "Birth height field label"
+  },
+  "birthHeightHint": "50 cm",
+  "@birthHeightHint": {
+    "description": "Birth height field hint"
   }
 }

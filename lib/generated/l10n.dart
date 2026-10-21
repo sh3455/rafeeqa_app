@@ -409,6 +409,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Type of birth`
+  String get typeOfBirth {
+    return Intl.message(
+      'Type of birth',
+      name: 'typeOfBirth',
+      desc: 'Type of birth field label',
+      args: [],
+    );
+  }
+
+  /// `Natural birth`
+  String get naturalBirth {
+    return Intl.message(
+      'Natural birth',
+      name: 'naturalBirth',
+      desc: 'Natural birth option',
+      args: [],
+    );
+  }
+
+  /// `C-section`
+  String get cSection {
+    return Intl.message(
+      'C-section',
+      name: 'cSection',
+      desc: 'C-section birth option',
+      args: [],
+    );
+  }
+
+  /// `Birth weight`
+  String get birthWeight {
+    return Intl.message(
+      'Birth weight',
+      name: 'birthWeight',
+      desc: 'Birth weight field label',
+      args: [],
+    );
+  }
+
+  /// `3.2 kg`
+  String get birthWeightHint {
+    return Intl.message(
+      '3.2 kg',
+      name: 'birthWeightHint',
+      desc: 'Birth weight field hint',
+      args: [],
+    );
+  }
+
+  /// `Birth height`
+  String get birthHeight {
+    return Intl.message(
+      'Birth height',
+      name: 'birthHeight',
+      desc: 'Birth height field label',
+      args: [],
+    );
+  }
+
+  /// `50 cm`
+  String get birthHeightHint {
+    return Intl.message(
+      '50 cm',
+      name: 'birthHeightHint',
+      desc: 'Birth height field hint',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

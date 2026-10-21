@@ -27,7 +27,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "babyName": MessageLookupByLibrary.simpleMessage("اسم الطفل"),
         "babyNameHint": MessageLookupByLibrary.simpleMessage("يوسف"),
+        "birthHeight": MessageLookupByLibrary.simpleMessage("طول الميلاد"),
+        "birthHeightHint": MessageLookupByLibrary.simpleMessage("50 سم"),
+        "birthWeight": MessageLookupByLibrary.simpleMessage("وزن الميلاد"),
+        "birthWeightHint": MessageLookupByLibrary.simpleMessage("3.2 كجم"),
         "boy": MessageLookupByLibrary.simpleMessage("ولد"),
+        "cSection": MessageLookupByLibrary.simpleMessage("ولادة قيصرية"),
         "changePhoto": MessageLookupByLibrary.simpleMessage("تغيير الصورة"),
         "dateOfBirth": MessageLookupByLibrary.simpleMessage("تاريخ الميلاد"),
         "dateOfBirthHint":
@@ -37,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "gender": MessageLookupByLibrary.simpleMessage("النوع"),
         "getStarted": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
         "girl": MessageLookupByLibrary.simpleMessage("بنت"),
+        "naturalBirth": MessageLookupByLibrary.simpleMessage("ولادة طبيعية"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
             "تعرّفي على احتياجات طفلكِ، من الرضاعة إلى النوم، وشعري بثقة أكبر كل يوم."),
@@ -71,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("مراجعة التطعيمات المختارة"),
         "setupTitle6": MessageLookupByLibrary.simpleMessage("كل شيء جاهز!"),
         "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+        "typeOfBirth": MessageLookupByLibrary.simpleMessage("نوع الولادة"),
         "unitedStates": MessageLookupByLibrary.simpleMessage("الولايات المتحدة")
       };
 }

@@ -27,7 +27,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "babyName": MessageLookupByLibrary.simpleMessage("Baby Name"),
         "babyNameHint": MessageLookupByLibrary.simpleMessage("Yousef"),
+        "birthHeight": MessageLookupByLibrary.simpleMessage("Birth height"),
+        "birthHeightHint": MessageLookupByLibrary.simpleMessage("50 cm"),
+        "birthWeight": MessageLookupByLibrary.simpleMessage("Birth weight"),
+        "birthWeightHint": MessageLookupByLibrary.simpleMessage("3.2 kg"),
         "boy": MessageLookupByLibrary.simpleMessage("Boy"),
+        "cSection": MessageLookupByLibrary.simpleMessage("C-section"),
         "changePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
         "dateOfBirth": MessageLookupByLibrary.simpleMessage("Date of birth"),
         "dateOfBirthHint": MessageLookupByLibrary.simpleMessage("Apr 15, 2026"),
@@ -36,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "gender": MessageLookupByLibrary.simpleMessage("Gender"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
         "girl": MessageLookupByLibrary.simpleMessage("Girl"),
+        "naturalBirth": MessageLookupByLibrary.simpleMessage("Natural birth"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
             "Learn what your baby needs, from feeding to sleep, and feel more confident every day."),
@@ -73,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Review selected vaccines"),
         "setupTitle6": MessageLookupByLibrary.simpleMessage("All set!"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "typeOfBirth": MessageLookupByLibrary.simpleMessage("Type of birth"),
         "unitedStates": MessageLookupByLibrary.simpleMessage("United States")
       };
 }
