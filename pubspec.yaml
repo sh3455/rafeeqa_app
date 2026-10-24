@@ -27,6 +27,7 @@ dependencies:
   hive_ce_flutter: ^2.3.4
   bloc: ^9.2.1
   image_picker: ^1.2.4
+  dartz: ^0.10.1
 
   
 
