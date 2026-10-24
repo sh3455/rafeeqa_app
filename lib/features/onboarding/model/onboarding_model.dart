@@ -6,9 +6,9 @@ import '../../../generated/l10n.dart';
 class OnboardingModel {
   int id;
   String image;
-  String title; 
+  String title;
   String description;
-  
+
   OnboardingModel({
     required this.id,
     required this.image,
@@ -17,7 +17,7 @@ class OnboardingModel {
   });
 }
 
-List<OnboardingModel> onboardingData (BuildContext context){
+List<OnboardingModel> onboardingData(BuildContext context) {
   var s = S.of(context);
   return [
     OnboardingModel(

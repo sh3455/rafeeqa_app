@@ -9,13 +9,11 @@ import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
 class SetupBabySteps extends StatelessWidget {
   const SetupBabySteps({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     var cubit = SetupCubit.get(context);
     return BlocConsumer<SetupCubit, SetupState>(
-      listener: (context, state) {
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         return SafeArea(
           child: Padding(

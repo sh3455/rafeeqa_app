@@ -11,26 +11,24 @@ class SplashBody extends StatefulWidget {
   State<SplashBody> createState() => _SplashBodyState();
 }
 
-class _SplashBodyState extends State<SplashBody> with SingleTickerProviderStateMixin {
-late AnimationController _gentlePulseController;
-late Animation<double> _gentlePulseAnimation;
+class _SplashBodyState extends State<SplashBody>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _gentlePulseController;
+  late Animation<double> _gentlePulseAnimation;
 
-void initState(){
+  void initState() {
     super.initState();
-  _gentlePulseController = AnimationController(
-    vsync: this,
-    duration: const Duration(milliseconds: 1000),
-  )..repeat(reverse: true);
+    _gentlePulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1000),
+    )..repeat(reverse: true);
 
-  _gentlePulseAnimation = Tween<double>(begin: 1.0, end: 1.03).animate(
-    CurvedAnimation(
-      parent: _gentlePulseController,
-      curve: Curves.easeInOut,
-    ),
-  );
-}
+    _gentlePulseAnimation = Tween<double>(begin: 1.0, end: 1.03).animate(
+      CurvedAnimation(parent: _gentlePulseController, curve: Curves.easeInOut),
+    );
+  }
 
- @override
+  @override
   void dispose() {
     _gentlePulseController.dispose();
     super.dispose();
@@ -49,9 +47,7 @@ void initState(){
       child: Column(
         children: [
           SizedBox(height: 120.h),
-          Center(
-            child: Image.asset(Assets.splashNative),
-            ),
+          Center(child: Image.asset(Assets.splashNative)),
         ],
       ),
     );

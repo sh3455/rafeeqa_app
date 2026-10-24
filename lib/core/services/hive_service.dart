@@ -2,7 +2,6 @@ import 'package:hive_ce/hive.dart';
 import 'package:rafeeqa/core/model/baby_model.dart';
 
 class HiveService {
-
   final Box<BabyModel> box;
 
   HiveService({required this.box});

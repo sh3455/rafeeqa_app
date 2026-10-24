@@ -8,10 +8,8 @@ import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_card.dar
 import 'package:rafeeqa/generated/l10n.dart';
 
 class VaccinationStep extends StatelessWidget {
-   const VaccinationStep({super.key, required this.setupModel});
+  const VaccinationStep({super.key, required this.setupModel});
   final SetupModel setupModel;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -19,39 +17,37 @@ class VaccinationStep extends StatelessWidget {
     final s = S.of(context);
 
     final options = [
-    (s.vaccinatedAll, s.vaccinatedAllDesc),
-    (s.vaccinatedSome, s.vaccinatedSomeDesc),
-    (s.vaccinatedNotSure, s.vaccinatedNotSureDesc),
-  ];
+      (s.vaccinatedAll, s.vaccinatedAllDesc),
+      (s.vaccinatedSome, s.vaccinatedSomeDesc),
+      (s.vaccinatedNotSure, s.vaccinatedNotSureDesc),
+    ];
 
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
-          BabyCard(setupModel: setupModel)  ,
-        
-          SizedBox(height:20.h,),
-      
+          BabyCard(setupModel: setupModel),
+
+          SizedBox(height: 20.h),
+
           Column(
             children: List.generate(options.length, (i) {
-          return Padding(
-            padding: EdgeInsets.only(bottom: 12.h),
-            child: VaccineOptionCard(
-              title: options[i].$1,
-              subtitle: options[i].$2,
-              isSelected: cubit.selectedVaccineOption == i,
-              onTap: () => cubit.selectVaccineOption(i),
-            ),
-          );
-        }),
-          )
+              return Padding(
+                padding: EdgeInsets.only(bottom: 12.h),
+                child: VaccineOptionCard(
+                  title: options[i].$1,
+                  subtitle: options[i].$2,
+                  isSelected: cubit.selectedVaccineOption == i,
+                  onTap: () => cubit.selectVaccineOption(i),
+                ),
+              );
+            }),
+          ),
         ],
       ),
     );
   }
 }
-
-
 
 class VaccineOptionCard extends StatelessWidget {
   const VaccineOptionCard({
@@ -79,7 +75,7 @@ class VaccineOptionCard extends StatelessWidget {
         width: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         decoration: BoxDecoration(
-          color:isSelected? color.withValues(alpha: 0.10) : AppTheme.white,
+          color: isSelected ? color.withValues(alpha: 0.10) : AppTheme.white,
           borderRadius: BorderRadius.circular(18.r),
           border: Border.all(
             color: color.withValues(alpha: isSelected ? 0.6 : 0.4),
@@ -108,11 +104,7 @@ class VaccineOptionCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CustomText(
-                    text: title,
-                    size: 16.sp,
-                    type: Type.overMedium,
-                  ),
+                  CustomText(text: title, size: 16.sp, type: Type.overMedium),
                   SizedBox(height: 4.h),
                   CustomText(
                     text: subtitle,

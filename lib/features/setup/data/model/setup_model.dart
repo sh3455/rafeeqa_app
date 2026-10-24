@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:rafeeqa/const/assets.dart';
 import 'package:rafeeqa/generated/l10n.dart';
@@ -8,11 +7,7 @@ class SetupModel {
   String title;
   String description;
 
-  SetupModel({
-    this.image,
-    required this.title,
-    required this.description,
-  });
+  SetupModel({this.image, required this.title, required this.description});
 }
 
 List<SetupModel> setUpData(BuildContext context) {
@@ -33,18 +28,12 @@ List<SetupModel> setUpData(BuildContext context) {
       title: s.setupTitle3,
       description: s.setupDescription3,
     ),
-    SetupModel(
-      title: s.setupTitle4,
-      description: s.setupDescription4,
-    ),
-    SetupModel(
-      title: s.setupTitle5,
-      description: s.setupDescription5,
-    ),
+    SetupModel(title: s.setupTitle4, description: s.setupDescription4),
+    SetupModel(title: s.setupTitle5, description: s.setupDescription5),
     SetupModel(
       image: Assets.setUp4,
       title: s.setupDescription6,
-      description:s.setupDescription6,
+      description: s.setupDescription6,
     ),
   ];
 }

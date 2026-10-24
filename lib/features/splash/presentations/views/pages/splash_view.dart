@@ -14,9 +14,6 @@ class SplashView extends StatefulWidget {
 
   @override
   State<SplashView> createState() => _SplashViewState();
-
-  
-  
 }
 
 class _SplashViewState extends State<SplashView> {
@@ -24,30 +21,26 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     // Add any initialization logic here if needed
-   Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       if (!mounted) return;
       NavTo.pushReplacement(context: context, nextPage: OnboardingView());
-
-      
-    
     });
-    
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Container(
+      body: Container(
         width: double.infinity,
         height: double.infinity,
-       decoration: const BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(Assets.splashBackground),
             fit: BoxFit.fill,
           ),
         ),
-        child: SplashBody()
+        child: SplashBody(),
       ),
-      
     );
   }
 }

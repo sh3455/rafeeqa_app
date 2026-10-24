@@ -6,8 +6,6 @@ class SetupBabyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SetupBabyBody(),
-    );
+    return Scaffold(body: SetupBabyBody());
   }
 }

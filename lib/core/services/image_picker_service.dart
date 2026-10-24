@@ -12,7 +12,7 @@ class ImagePickerService {
     return File(image.path);
   }
 
-    Future<File?> pickImageFromCamera() async {
+  Future<File?> pickImageFromCamera() async {
     final XFile? image = await _picker.pickImage(source: ImageSource.camera);
     if (image == null) return null;
     return File(image.path);

@@ -1,8 +1,6 @@
-
 import 'package:hive_ce/hive.dart';
 import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 part 'baby_model.g.dart';
-
 
 @HiveType(typeId: 1)
 class BabyModel {
@@ -25,7 +23,7 @@ class BabyModel {
   @HiveField(8)
   final double height;
   @HiveField(9)
-  final List<int> vaccinations; 
+  final List<int> vaccinations;
 
   const BabyModel({
     required this.id,

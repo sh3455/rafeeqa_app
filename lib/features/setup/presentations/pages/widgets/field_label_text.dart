@@ -9,22 +9,27 @@ class FieldLabel extends StatelessWidget {
     required this.title,
     this.subtitle,
   });
- 
+
   final IconData icon;
   final String title;
   final String? subtitle;
- 
+
   @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).hintColor;
- 
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
         children: [
           Icon(icon, size: 24.sp, color: color),
           SizedBox(width: 10.w),
-          CustomText(text: title, size: 16.sp, type: Type.overMedium, color: color),
+          CustomText(
+            text: title,
+            size: 16.sp,
+            type: Type.overMedium,
+            color: color,
+          ),
           if (subtitle != null) ...[
             SizedBox(width: 4.w),
             CustomText(
@@ -40,14 +45,3 @@ class FieldLabel extends StatelessWidget {
     );
   }
 }
- 
-
-
-
-
-
-
-
-
-
-

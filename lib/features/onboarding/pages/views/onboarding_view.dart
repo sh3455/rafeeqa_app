@@ -23,7 +23,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   int currentPage = 0;
   final PageController _controller = PageController();
 
-   @override
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();
@@ -35,71 +35,66 @@ class _OnboardingViewState extends State<OnboardingView> {
 
     return Scaffold(
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 16.sp),
+        padding: EdgeInsets.symmetric(horizontal: 16.sp),
         child: Column(
           spacing: 10.h,
           children: [
-            _Skip(pageController: _controller,totalPage: pages.length, ),
+            _Skip(pageController: _controller, totalPage: pages.length),
             Expanded(
               child: OnboardingBody(
-              pageController: _controller,
-              onPageChanged: (index) {
-                setState(() {
-                  currentPage = index;
-                  
-                });
-              },
-              )),
+                pageController: _controller,
+                onPageChanged: (index) {
+                  setState(() {
+                    currentPage = index;
+                  });
+                },
+              ),
+            ),
             _CustomButton(
               pageController: _controller,
-              currentPages:currentPage,
+              currentPages: currentPage,
               totalPages: pages.length,
-              
-
-              )
+            ),
           ],
         ),
-      )
+      ),
     );
   }
 }
 
 class _CustomButton extends StatelessWidget {
   const _CustomButton({
-    required this.pageController, 
-  required this.currentPages, 
-  required this.totalPages});
+    required this.pageController,
+    required this.currentPages,
+    required this.totalPages,
+  });
 
- final PageController pageController;
- final int currentPages ;
- final int totalPages;
+  final PageController pageController;
+  final int currentPages;
+  final int totalPages;
 
   @override
   Widget build(BuildContext context) {
     var s = S.of(context);
-    final bool isLastPage = currentPages == totalPages-1;
+    final bool isLastPage = currentPages == totalPages - 1;
 
     return Padding(
       padding: EdgeInsets.all(18.r),
       child: CustomButton(
-        
         onPressed: () {
-          if (isLastPage){
+          if (isLastPage) {
             NavTo.pushReplacement(context: context, nextPage: SetupBabyView());
-
-          }else{
+          } else {
             pageController.nextPage(
-              duration: Duration(milliseconds: 300), 
-              curve: Curves.easeInOut);
+              duration: Duration(milliseconds: 300),
+              curve: Curves.easeInOut,
+            );
           }
-
-        
-
         },
-         text: isLastPage ? s.getStarted :s.next,
-         color: AppTheme.primary,
-         borderRadius:20.r ,
-         ),
+        text: isLastPage ? s.getStarted : s.next,
+        color: AppTheme.primary,
+        borderRadius: 20.r,
+      ),
     );
   }
 }
@@ -108,8 +103,8 @@ class _CustomButton extends StatelessWidget {
 class _Skip extends StatelessWidget {
   const _Skip({required this.pageController, required this.totalPage});
 
- final PageController pageController;
- final int totalPage;
+  final PageController pageController;
+  final int totalPage;
 
   @override
   Widget build(BuildContext context) {
@@ -119,24 +114,18 @@ class _Skip extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           GestureDetector(
-            onTap: (){
-
+            onTap: () {
               pageController.jumpToPage(totalPage - 1);
-
             },
             child: CustomText(
               text: "skip",
-               size: 18.sp,
-               type: Type.medium,
-               opacity: FontOpacity.medium
-            )
+              size: 18.sp,
+              type: Type.medium,
+              opacity: FontOpacity.medium,
+            ),
           ),
         ],
       ),
     );
-    
   }
 }
-
-
-

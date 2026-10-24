@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rafeeqa/core/widgets/custom_text.dart';
 
-
 class OptionCard extends StatelessWidget {
   const OptionCard({
     super.key,
@@ -26,33 +25,34 @@ class OptionCard extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-        height: 64.h,
-        decoration: BoxDecoration(
-          color: isSelected ? primary.withValues(alpha: 0.08) : theme.cardColor,
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: isSelected ? primary.withValues(alpha: 0.5) : theme.dividerColor,
+          height: 64.h,
+          decoration: BoxDecoration(
+            color: isSelected
+                ? primary.withValues(alpha: 0.08)
+                : theme.cardColor,
+            borderRadius: BorderRadius.circular(16.r),
+            border: Border.all(
+              color: isSelected
+                  ? primary.withValues(alpha: 0.5)
+                  : theme.dividerColor,
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _IconCircle(icon: icon, color: primary),
+              SizedBox(width: 10.w),
+              CustomText(
+                text: title,
+                size: 16.sp,
+                type: Type.overMedium,
+                color: theme.hintColor,
+              ),
+            ],
           ),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _IconCircle(icon: icon, color: primary),
-            SizedBox(width: 10.w),
-            CustomText(
-              text: title,
-              size: 16.sp,
-              type: Type.overMedium,
-              color: theme.hintColor,
-            ),
-          ],
-        ),
-      ),
       ),
     );
-  
-      
-    
   }
 }
 

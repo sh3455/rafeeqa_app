@@ -11,8 +11,9 @@ void setupLocator() {
   // Settings
   getIt.registerLazySingleton<SettingsCubit>(() => SettingsCubit());
 
-  getIt.registerLazySingleton(() => HiveService(box: Hive.box<BabyModel>("babies")),);
+  getIt.registerLazySingleton(
+    () => HiveService(box: Hive.box<BabyModel>("babies")),
+  );
 
-  getIt.registerLazySingleton<SetupCubit>(() => SetupCubit(),);
-
+  getIt.registerLazySingleton<SetupCubit>(() => SetupCubit());
 }

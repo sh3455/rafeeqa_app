@@ -4,7 +4,7 @@ class NavTo {
   static Future<T?> push<T>({
     required BuildContext context,
     required Widget nextPage,
-  }) { 
+  }) {
     FocusScope.of(context).unfocus();
     return Navigator.push<T>(
       context,

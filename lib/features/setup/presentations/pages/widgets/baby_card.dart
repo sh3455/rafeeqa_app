@@ -13,17 +13,12 @@ class BabyCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.sp),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children:[
-          //  Spacer(flex: 3,),
-            _Image(imagePath: setupModel.image!),
-         //   Spacer(flex: 3,),
-            _Text(setupModel: setupModel),
-         //   Spacer(flex:1),
-
-        ]
+        children: [
+          if (setupModel.image != null) _Image(imagePath: setupModel.image!),
+          _Text(setupModel: setupModel),
+        ],
       ),
     );
-  
   }
 }
 
@@ -31,7 +26,7 @@ class BabyCard extends StatelessWidget {
 class _Image extends StatelessWidget {
   const _Image({required this.imagePath});
 
-  final String imagePath ;
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -44,9 +39,8 @@ class _Image extends StatelessWidget {
   }
 }
 
-
 class _Text extends StatelessWidget {
-  const _Text({ required this.setupModel});
+  const _Text({required this.setupModel});
 
   final SetupModel setupModel;
 
@@ -55,15 +49,15 @@ class _Text extends StatelessWidget {
     return Column(
       children: [
         CustomText(
-       // color: Theme.of(context).colorScheme.onSurface,
+          // color: Theme.of(context).colorScheme.onSurface,
           text: setupModel.title,
           size: 20.sp,
           textAlign: TextAlign.center,
           type: Type.header,
         ),
-        SizedBox(height: 10.h,),
+        SizedBox(height: 10.h),
         CustomText(
-        // color: Theme.of(context).colorScheme.onSurface.withValues(alpha: .6),
+          // color: Theme.of(context).colorScheme.onSurface.withValues(alpha: .6),
           text: setupModel.description,
           size: 16.sp,
           type: Type.overMedium,
@@ -73,7 +67,5 @@ class _Text extends StatelessWidget {
         ),
       ],
     );
-
   }
 }
-

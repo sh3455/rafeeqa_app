@@ -21,14 +21,15 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = MyBlocObserver();
   HydratedBloc.storage = await HydratedStorage.build(
-  storageDirectory: HydratedStorageDirectory(
-    (await getApplicationDocumentsDirectory()).path,
-  ), );
-   await Hive.initFlutter();
+    storageDirectory: HydratedStorageDirectory(
+      (await getApplicationDocumentsDirectory()).path,
+    ),
+  );
+  await Hive.initFlutter();
   Hive.registerAdapters();
   await Hive.openBox<BabyModel>('babies');
   await Hive.openBox<VaccinationModel>('vaccinations');
-     setupLocator();
+  setupLocator();
   runApp(const MyApp());
 }
 
@@ -40,8 +41,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => getIt<SettingsCubit>()),
-        BlocProvider(create: (context)=> getIt<SetupCubit>())
-        ],
+        BlocProvider(create: (context) => getIt<SetupCubit>()),
+      ],
       child: BlocBuilder<SettingsCubit, AppUserPref>(
         builder: (context, state) {
           return ScreenUtilInit(

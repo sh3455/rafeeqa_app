@@ -3,33 +3,26 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 import '../../model/app_user_pref_model.dart';
 
-class SettingsCubit extends HydratedCubit<AppUserPref>{
+class SettingsCubit extends HydratedCubit<AppUserPref> {
   SettingsCubit() : super(AppUserPref.standard());
 
+  void changeLanguage(String lang) {
+    emit(state.copyWith(lang: lang));
+  }
 
+  void changeTheme(ThemeMode theme) {
+    emit(state.copyWith(theme: theme));
+  }
 
-void changeLanguage(String lang){
+  void setFristTime(bool isFirstTime) {
+    emit(state.copyWith(isFirstTime: isFirstTime));
+  }
 
-  emit(state.copyWith(lang:lang));
-}
+  void setNotificationsEnabled(bool enabled) {
+    emit(state.copyWith(notificationsEnabled: enabled));
+  }
 
-void changeTheme(ThemeMode theme){
-
-  emit(state.copyWith(theme: theme));
-}
-
-void setFristTime(bool isFirstTime){
-
-  emit(state.copyWith(isFirstTime: isFirstTime));
-}
-
-void setNotificationsEnabled(bool enabled){
-
-  emit(state.copyWith(notificationsEnabled: enabled));
-}
-
-
-@override
+  @override
   AppUserPref? fromJson(Map<String, dynamic> json) {
     return AppUserPref.fromJson(json);
   }
@@ -38,13 +31,4 @@ void setNotificationsEnabled(bool enabled){
   Map<String, dynamic>? toJson(AppUserPref state) {
     return state.toJson();
   }
-
-
-
-
-
-
-
-
-
 }

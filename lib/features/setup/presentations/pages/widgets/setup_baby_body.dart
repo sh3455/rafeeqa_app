@@ -8,6 +8,7 @@ import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_info_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/birth_details_step.dart';
+import 'package:rafeeqa/features/setup/presentations/pages/widgets/past_vaccines_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/setup_baby_steps.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/vaccination_step.dart';
 import 'package:rafeeqa/generated/l10n.dart';
@@ -53,10 +54,22 @@ class SetupBabyBody extends StatelessWidget {
                   controller: cubit.controller,
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
-                    _StepPage(footer: nextButton, child: BabyInfoStep(setupModel: data[0])),
-                    _StepPage(footer: nextButton, child: BirthDetailsStep(setupModel: data[1]) ),
-                    _StepPage(footer: nextButton, child: VaccinationStep(setupModel: data[2],)),
-                    _StepPage(footer: nextButton, child: const Center(child: Text('Step 4'))),
+                    _StepPage(
+                      footer: nextButton,
+                      child: BabyInfoStep(setupModel: data[0]),
+                    ),
+                    _StepPage(
+                      footer: nextButton,
+                      child: BirthDetailsStep(setupModel: data[1]),
+                    ),
+                    _StepPage(
+                      footer: nextButton,
+                      child: VaccinationStep(setupModel: data[2]),
+                    ),
+                    _StepPage(
+                      footer: nextButton,
+                      child: PastVaccinesStep(setupModel: data[3]),
+                    ),
                   ],
                 ),
               ),
@@ -76,13 +89,6 @@ class _StepPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          child,
-          footer,
-        ],
-      ),
-    );
+    return SingleChildScrollView(child: Column(children: [child, footer]));
   }
 }

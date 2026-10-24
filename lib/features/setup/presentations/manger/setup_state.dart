@@ -2,9 +2,9 @@
 
 abstract class SetupState {}
 
-class SetupInitialState extends SetupState{}
+class SetupInitialState extends SetupState {}
 
-class SetupChangeState extends SetupState{}
+class SetupChangeState extends SetupState {}
 
 class SetupGenderChangedState extends SetupState {
   final String gender;
@@ -17,7 +17,7 @@ class SetupImageChangedState extends SetupState {}
 
 class SetupSelectTypeOfBirthState extends SetupState {
   final String typeOfBirth;
-   SetupSelectTypeOfBirthState(this.typeOfBirth);
+  SetupSelectTypeOfBirthState(this.typeOfBirth);
 
   @override
   List<Object?> get props => [typeOfBirth];
@@ -25,7 +25,7 @@ class SetupSelectTypeOfBirthState extends SetupState {
 
 class SetupVaccineOptionChangedState extends SetupState {
   final int index;
-   SetupVaccineOptionChangedState(this.index);
+  SetupVaccineOptionChangedState(this.index);
 
   @override
   List<Object?> get props => [index];

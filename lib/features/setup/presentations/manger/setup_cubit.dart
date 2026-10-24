@@ -55,43 +55,38 @@ class SetupCubit extends Cubit<SetupState> {
     return super.close();
   }
 
-Future<void> pickDate(BuildContext context) async{
-  final date = await showDatePicker(
-    context: context,
-    firstDate: DateTime(1960),
-    lastDate: DateTime.now(),
-    initialDate: DateTime.now()
+  Future<void> pickDate(BuildContext context) async {
+    final date = await showDatePicker(
+      context: context,
+      firstDate: DateTime(1960),
+      lastDate: DateTime.now(),
+      initialDate: DateTime.now(),
     );
-    if (date != null){
-      textEditingController.text = DateFormat('MMM d, y').format(date); 
+    if (date != null) {
+      textEditingController.text = DateFormat('MMM d, y').format(date);
     }
- 
-}
+  }
 
-void selectGender(String gender){
-  selectedGender = gender;
-  emit(SetupGenderChangedState(gender));
-}
+  void selectGender(String gender) {
+    selectedGender = gender;
+    emit(SetupGenderChangedState(gender));
+  }
 
-Future <void> pickerImage() async{
- final imagePick = await service.pickImageFromGallery();
- if (imagePick != null){
-    image = imagePick;
-     emit(SetupImageChangedState());
- }
+  Future<void> pickerImage() async {
+    final imagePick = await service.pickImageFromGallery();
+    if (imagePick != null) {
+      image = imagePick;
+      emit(SetupImageChangedState());
+    }
+  }
 
-}
+  void selectTypeOfBirth(String type) {
+    typeOfBirth = type;
+    emit(SetupSelectTypeOfBirthState(type));
+  }
 
-void selectTypeOfBirth(String type) {
-  typeOfBirth = type;
-  emit(SetupSelectTypeOfBirthState(type));
-}
-
-
-void selectVaccineOption(int index){
-  selectedVaccineOption = index;
-  emit(SetupVaccineOptionChangedState(index));
-  
-}
-
+  void selectVaccineOption(int index) {
+    selectedVaccineOption = index;
+    emit(SetupVaccineOptionChangedState(index));
+  }
 }

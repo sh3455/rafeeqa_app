@@ -44,7 +44,7 @@ class BirthDetailsStep extends StatelessWidget {
                     icon: Icons.child_care,
                     title: s.cSection,
                     isSelected: cubit.typeOfBirth == "C-section",
-                    onTap: () => cubit.selectTypeOfBirth("C-section"), 
+                    onTap: () => cubit.selectTypeOfBirth("C-section"),
                   ),
                 ],
               ),
@@ -53,14 +53,14 @@ class BirthDetailsStep extends StatelessWidget {
                 icon: Icons.monitor_weight_outlined,
                 title: s.birthWeight,
               ),
-               CustomTextField(
+              CustomTextField(
                 hintText: s.birthWeightHint,
                 readOnly: false,
                 suffixIcon: Icon(Icons.monitor_weight_outlined),
               ),
               SizedBox(height: 8.h),
               FieldLabel(icon: Icons.height, title: s.birthHeight),
-               CustomTextField(
+              CustomTextField(
                 hintText: s.birthHeightHint,
                 readOnly: false,
                 suffixIcon: Icon(Icons.height),

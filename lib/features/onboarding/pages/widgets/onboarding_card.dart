@@ -17,25 +17,22 @@ class OnboardingCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.sp),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children:[
-            Spacer(flex: 3,),
-            _image(imagePath: model.image),
-            Spacer(flex: 3,),
-            _Text(onboradingModel: model),
-            Spacer(flex:1),
-
-        ]
+        children: [
+          Spacer(flex: 3),
+          _image(imagePath: model.image),
+          Spacer(flex: 3),
+          _Text(onboradingModel: model),
+          Spacer(flex: 1),
+        ],
       ),
     );
-  
   }
 }
-
 
 class _image extends StatelessWidget {
   const _image({required this.imagePath});
 
-  final String imagePath ;
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +45,8 @@ class _image extends StatelessWidget {
   }
 }
 
-
 class _Text extends StatelessWidget {
-  const _Text({ required this.onboradingModel});
+  const _Text({required this.onboradingModel});
 
   final OnboardingModel onboradingModel;
 
@@ -65,9 +61,9 @@ class _Text extends StatelessWidget {
           textAlign: TextAlign.center,
           type: Type.header,
         ),
-        SizedBox(height: 10.h,),
+        SizedBox(height: 10.h),
         CustomText(
-         // color: AppTheme.darkSurface,
+          // color: AppTheme.darkSurface,
           text: onboradingModel.description,
           size: 16.sp,
           type: Type.overMedium,
@@ -77,7 +73,5 @@ class _Text extends StatelessWidget {
         ),
       ],
     );
-
   }
 }
-

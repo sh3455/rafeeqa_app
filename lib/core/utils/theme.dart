@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:rafeeqa/core/utils/styles.dart';
 
 class AppTheme {
-
   static const Color backgroundApp = Color(0XFFFEF2ED);
   static const Color primary = Color(0xFFFD5F93);
   static const Color secondary = Color(0xFF26B1AE);
@@ -24,8 +23,7 @@ class AppTheme {
   static const Color lightBorder = Color(0xFFF6D9DF);
   static const Color darkBorder = Color(0xFF223650);
 
-
-   // ================= Light Theme =================
+  // ================= Light Theme =================
 
   static ThemeData light = ThemeData(
     useMaterial3: true,
@@ -243,5 +241,4 @@ class AppTheme {
       circularTrackColor: darkBorder,
     ),
   );
-
 }
