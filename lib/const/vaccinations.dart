@@ -7,24 +7,21 @@ const List<VaccinationModel> vaccinationsEn = [
     name: "Hepatitis B (first 24 hours)",
     age: 0,
     routeOfAdministration: "Injection",
-    reason:
-        "Protects against viral hepatitis B.",
+    reason: "Protects against viral hepatitis B.",
   ),
   VaccinationModel(
     id: 2,
     name: "BCG (Tuberculosis)",
     age: 0,
     routeOfAdministration: "Intradermal injection",
-    reason:
-        "Protects against severe forms of tuberculosis in children.",
+    reason: "Protects against severe forms of tuberculosis in children.",
   ),
   VaccinationModel(
     id: 3,
     name: "Sabin zero (OPV 0)",
     age: 0,
     routeOfAdministration: "Oral drops",
-    reason:
-        "Protects against polio.",
+    reason: "Protects against polio.",
   ),
   // ===== 2 months =====
   VaccinationModel(
@@ -40,16 +37,14 @@ const List<VaccinationModel> vaccinationsEn = [
     name: "Sabin (OPV)",
     age: 2,
     routeOfAdministration: "Oral drops",
-    reason:
-        "Protects against polio.",
+    reason: "Protects against polio.",
   ),
   VaccinationModel(
     id: 6,
     name: "Salk (IPV) (1st dose)",
     age: 2,
     routeOfAdministration: "Injection",
-    reason:
-        "Protects against polio.",
+    reason: "Protects against polio.",
   ),
   // ===== 4 months =====
   VaccinationModel(
@@ -107,8 +102,7 @@ const List<VaccinationModel> vaccinationsEn = [
     name: "Sabin (OPV)",
     age: 9,
     routeOfAdministration: "Oral drops",
-    reason:
-        "Boosts protection against polio.",
+    reason: "Boosts protection against polio.",
   ),
   // ===== 12 months =====
   VaccinationModel(
@@ -116,16 +110,14 @@ const List<VaccinationModel> vaccinationsEn = [
     name: "Sabin (OPV)",
     age: 12,
     routeOfAdministration: "Oral drops",
-    reason:
-        "Protects against polio.",
+    reason: "Protects against polio.",
   ),
   VaccinationModel(
     id: 15,
     name: "MMR (1st dose)",
     age: 12,
     routeOfAdministration: "Injection",
-    reason:
-        "Protects against measles, mumps and rubella (German measles).",
+    reason: "Protects against measles, mumps and rubella (German measles).",
   ),
   // ===== 18 months =====
   VaccinationModel(
@@ -133,8 +125,7 @@ const List<VaccinationModel> vaccinationsEn = [
     name: "Sabin (OPV) (booster)",
     age: 18,
     routeOfAdministration: "Oral drops",
-    reason:
-        "Booster dose to strengthen protection against polio.",
+    reason: "Booster dose to strengthen protection against polio.",
   ),
   VaccinationModel(
     id: 17,
@@ -161,24 +152,21 @@ const List<VaccinationModel> vaccinationsAr = [
     name: "التهاب الكبد B (أول 24 ساعة)",
     age: 0,
     routeOfAdministration: "حقنة",
-    reason:
-        "الوقاية من التهاب الكبد الفيروسي B.",
+    reason: "الوقاية من التهاب الكبد الفيروسي B.",
   ),
   VaccinationModel(
     id: 2,
     name: "BCG (الدرن)",
     age: 0,
     routeOfAdministration: "حقنة داخل الجلد",
-    reason:
-        "الوقاية من أشكال الدرن الخطيرة لدى الأطفال.",
+    reason: "الوقاية من أشكال الدرن الخطيرة لدى الأطفال.",
   ),
   VaccinationModel(
     id: 3,
     name: "سابين صفر",
     age: 0,
     routeOfAdministration: "نقط بالفم",
-    reason:
-        "الوقاية من شلل الأطفال.",
+    reason: "الوقاية من شلل الأطفال.",
   ),
   // ===== 2 months =====
   VaccinationModel(
@@ -194,16 +182,14 @@ const List<VaccinationModel> vaccinationsAr = [
     name: "سابين",
     age: 2,
     routeOfAdministration: "نقط بالفم",
-    reason:
-        "الوقاية من شلل الأطفال.",
+    reason: "الوقاية من شلل الأطفال.",
   ),
   VaccinationModel(
     id: 6,
     name: "سولك (الجرعة الأولى)",
     age: 2,
     routeOfAdministration: "حقنة",
-    reason:
-        "الوقاية من شلل الأطفال.",
+    reason: "الوقاية من شلل الأطفال.",
   ),
   // ===== 4 months =====
   VaccinationModel(
@@ -219,16 +205,14 @@ const List<VaccinationModel> vaccinationsAr = [
     name: "سابين",
     age: 4,
     routeOfAdministration: "نقط بالفم",
-    reason:
-        "استكمال الجرعات الأساسية وتقوية المناعة ضد شلل الأطفال.",
+    reason: "استكمال الجرعات الأساسية وتقوية المناعة ضد شلل الأطفال.",
   ),
   VaccinationModel(
     id: 9,
     name: "سولك (الجرعة الثانية)",
     age: 4,
     routeOfAdministration: "حقنة",
-    reason:
-        "استكمال الجرعات الأساسية وتقوية المناعة ضد شلل الأطفال.",
+    reason: "استكمال الجرعات الأساسية وتقوية المناعة ضد شلل الأطفال.",
   ),
   // ===== 6 months =====
   VaccinationModel(
@@ -244,16 +228,14 @@ const List<VaccinationModel> vaccinationsAr = [
     name: "سابين",
     age: 6,
     routeOfAdministration: "نقط بالفم",
-    reason:
-        "استكمال الجرعات الأساسية وتقوية المناعة ضد شلل الأطفال.",
+    reason: "استكمال الجرعات الأساسية وتقوية المناعة ضد شلل الأطفال.",
   ),
   VaccinationModel(
     id: 12,
     name: "سولك (الجرعة الثالثة)",
     age: 6,
     routeOfAdministration: "حقنة",
-    reason:
-        "استكمال الجرعات الأساسية وتقوية المناعة ضد شلل الأطفال.",
+    reason: "استكمال الجرعات الأساسية وتقوية المناعة ضد شلل الأطفال.",
   ),
   // ===== 9 months =====
   VaccinationModel(
@@ -261,8 +243,7 @@ const List<VaccinationModel> vaccinationsAr = [
     name: "سابين",
     age: 9,
     routeOfAdministration: "نقط بالفم",
-    reason:
-        "تعزيز الحماية ضد شلل الأطفال.",
+    reason: "تعزيز الحماية ضد شلل الأطفال.",
   ),
   // ===== 12 months =====
   VaccinationModel(
@@ -270,16 +251,14 @@ const List<VaccinationModel> vaccinationsAr = [
     name: "سابين",
     age: 12,
     routeOfAdministration: "نقط بالفم",
-    reason:
-        "الوقاية من شلل الأطفال.",
+    reason: "الوقاية من شلل الأطفال.",
   ),
   VaccinationModel(
     id: 15,
     name: "MMR (الجرعة الأولى)",
     age: 12,
     routeOfAdministration: "حقنة",
-    reason:
-        "الوقاية من الحصبة والنكاف والحصبة الألماني.",
+    reason: "الوقاية من الحصبة والنكاف والحصبة الألماني.",
   ),
   // ===== 18 months =====
   VaccinationModel(
@@ -287,16 +266,14 @@ const List<VaccinationModel> vaccinationsAr = [
     name: "سابين (جرعة تنشيطية)",
     age: 18,
     routeOfAdministration: "نقط بالفم",
-    reason:
-        "جرعة تنشيطية لتعزيز الحماية ضد شلل الأطفال.",
+    reason: "جرعة تنشيطية لتعزيز الحماية ضد شلل الأطفال.",
   ),
   VaccinationModel(
     id: 17,
     name: "MMR (جرعة تنشيطية)",
     age: 18,
     routeOfAdministration: "حقنة",
-    reason:
-        "جرعة تنشيطية لتعزيز الحماية ضد الحصبة والنكاف والحصبة الألماني.",
+    reason: "جرعة تنشيطية لتعزيز الحماية ضد الحصبة والنكاف والحصبة الألماني.",
   ),
   VaccinationModel(
     id: 18,
