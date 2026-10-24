@@ -22,16 +22,13 @@ class VaccinationModelAdapter extends TypeAdapter<VaccinationModel> {
       age: (fields[2] as num).toDouble(),
       routeOfAdministration: fields[3] as String,
       reason: fields[4] as String,
-      nameAr: fields[5] as String,
-      routeOfAdministrationAr: fields[6] as String,
-      reasonAr: fields[7] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, VaccinationModel obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -41,13 +38,7 @@ class VaccinationModelAdapter extends TypeAdapter<VaccinationModel> {
       ..writeByte(3)
       ..write(obj.routeOfAdministration)
       ..writeByte(4)
-      ..write(obj.reason)
-      ..writeByte(5)
-      ..write(obj.nameAr)
-      ..writeByte(6)
-      ..write(obj.routeOfAdministrationAr)
-      ..writeByte(7)
-      ..write(obj.reasonAr);
+      ..write(obj.reason);
   }
 
   @override
