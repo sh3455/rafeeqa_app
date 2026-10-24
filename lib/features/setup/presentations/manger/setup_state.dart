@@ -1,5 +1,7 @@
 // ignore_for_file: override_on_non_overriding_member
 
+import 'package:rafeeqa/core/model/vaccination_model.dart';
+
 abstract class SetupState {}
 
 class SetupInitialState extends SetupState {}
@@ -29,4 +31,18 @@ class SetupVaccineOptionChangedState extends SetupState {
 
   @override
   List<Object?> get props => [index];
+}
+
+class SetupVaccinationsLoadingState extends SetupState {}
+
+class SetupVaccinationsSuccessState extends SetupState {
+  final List<VaccinationModel> vaccinations;
+
+  SetupVaccinationsSuccessState({required this.vaccinations});
+}
+
+class SetupVaccinationsFailureState extends SetupState {
+  final String message;
+
+  SetupVaccinationsFailureState({required this.message});
 }

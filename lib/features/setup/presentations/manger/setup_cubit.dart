@@ -1,14 +1,16 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:rafeeqa/core/services/image_picker_service.dart';
+import 'package:rafeeqa/di/server_locator.dart';
+import 'package:rafeeqa/features/setup/data/repo/vaccination_repo.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
 
 class SetupCubit extends Cubit<SetupState> {
+  final vaccinationRepo = getIt<VaccinationRepo>();
   SetupCubit() : super(SetupInitialState());
 
   static SetupCubit get(BuildContext context) =>
@@ -88,5 +90,17 @@ class SetupCubit extends Cubit<SetupState> {
   void selectVaccineOption(int index) {
     selectedVaccineOption = index;
     emit(SetupVaccineOptionChangedState(index));
+  }
+
+  Future<void> getVaccinations() async {
+    emit(SetupVaccinationsLoadingState());
+
+    final result = await vaccinationRepo.getVaccinationData();
+    result.fold(
+      (failure) =>
+          emit(SetupVaccinationsFailureState(message: failure.message)),
+      (vaccinations) =>
+          emit(SetupVaccinationsSuccessState(vaccinations: vaccinations)),
+    );
   }
 }
