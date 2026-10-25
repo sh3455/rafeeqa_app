@@ -45,3 +45,11 @@ class SetupVaccinationsFailureState extends SetupState {
 
   SetupVaccinationsFailureState({required this.message});
 }
+
+class SetupVaccineToggledState extends SetupState {
+  final List<int> selectedIds;
+  SetupVaccineToggledState(this.selectedIds);
+
+  @override
+  List<Object?> get props => [selectedIds];
+}

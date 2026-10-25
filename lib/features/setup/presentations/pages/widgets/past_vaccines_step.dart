@@ -63,7 +63,7 @@ class PastVaccinesStep extends StatelessWidget {
                         for (final v in group.value)
                           VaccinesCard(
                             title: v.name,
-                             subtitle: v.reason,
+                            subtitle: v.reason,
                             isSelected: cubit.selectedVaccineIds.contains(v.id),
                             onTap: () => cubit.toggleVaccine(v.id),
                           ),

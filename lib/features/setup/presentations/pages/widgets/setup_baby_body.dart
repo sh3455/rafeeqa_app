@@ -9,6 +9,7 @@ import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_info_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/birth_details_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/past_vaccines_step.dart';
+import 'package:rafeeqa/features/setup/presentations/pages/widgets/review_vaccines_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/setup_baby_steps.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/vaccination_step.dart';
 import 'package:rafeeqa/generated/l10n.dart';
@@ -24,7 +25,7 @@ class SetupBabyBody extends StatelessWidget {
     return BlocBuilder<SetupCubit, SetupState>(
       builder: (context, state) {
         final data = setUpData(context);
-        final isLastPage = cubit.currentSteps == SetupCubit.totalSteps - 1;
+        final isLastPage = cubit.currentSteps == SetupCubit.totalPages - 1;
 
         final nextButton = Padding(
           padding: EdgeInsets.all(18.r),
@@ -44,11 +45,20 @@ class SetupBabyBody extends StatelessWidget {
         return SafeArea(
           child: Column(
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                margin: EdgeInsets.all(12.w),
-                child: const SetupBabySteps(),
-              ),
+              if (cubit.currentSteps == 4)
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: IconButton(
+                    onPressed: cubit.previousStep,
+                    icon: const Icon(Icons.arrow_back_ios_new_rounded),
+                  ),
+                ),
+              if (cubit.showStepper)
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  margin: EdgeInsets.all(12.w),
+                  child: const SetupBabySteps(),
+                ),
               Expanded(
                 child: PageView(
                   controller: cubit.controller,
@@ -69,6 +79,10 @@ class SetupBabyBody extends StatelessWidget {
                     _StepPage(
                       footer: nextButton,
                       child: PastVaccinesStep(setupModel: data[3]),
+                    ),
+                    _StepPage(
+                      footer: nextButton,
+                      child: ReviewVaccinesStep(setupModel: data[4]),
                     ),
                   ],
                 ),

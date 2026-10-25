@@ -22,8 +22,10 @@ class SetupCubit extends Cubit<SetupState> {
   static SetupCubit get(BuildContext context) =>
       BlocProvider.of<SetupCubit>(context);
 
-  static const int totalSteps = 4;
+  static const int totalSteps = 5;
+  static const int totalPages = 6;
   int currentSteps = 0;
+  static const int reviewPage = 4;
   String? selectedGender = 'Boy';
   String? typeOfBirth = 'Natural birth';
   int? selectedVaccineOption;
@@ -36,6 +38,8 @@ class SetupCubit extends Cubit<SetupState> {
 
   void changeStep(int step) {
     if (step < 0 || step >= totalSteps || step == currentSteps) return;
+    if (step == reviewPage) enterReview();
+
     currentSteps = step;
     if (controller.hasClients) {
       controller.animateToPage(
@@ -100,6 +104,8 @@ class SetupCubit extends Cubit<SetupState> {
     emit(SetupVaccineOptionChangedState(index));
   }
 
+  bool get showStepper => currentSteps < reviewPage;
+
   Future<void> getVaccinations() async {
     emit(SetupVaccinationsLoadingState());
     final result = await vaccinationRepo.getVaccinationData();
@@ -113,42 +119,53 @@ class SetupCubit extends Cubit<SetupState> {
     );
   }
 
- bool get isAllVaccinesSelected =>
-    vaccination.isNotEmpty &&
-    vaccination.length == selectedVaccineIds.length;
+  bool get isAllVaccinesSelected =>
+      vaccination.isNotEmpty && vaccination.length == selectedVaccineIds.length;
 
   void toggleVaccine(int id) {
-  if (selectedVaccineIds.contains(id)) {
-    selectedVaccineIds.remove(id);
-  } else {
-    selectedVaccineIds.add(id);
+    if (selectedVaccineIds.contains(id)) {
+      selectedVaccineIds.remove(id);
+    } else {
+      selectedVaccineIds.add(id);
+    }
+    emit(SetupVaccineToggledState(List.of(selectedVaccineIds)));
   }
-  emit(SetupChangeState());
-}
 
-void toggleSelectAllVaccines() {
-  if (isAllVaccinesSelected) {
-    selectedVaccineIds.clear();
-  } else {
-    for (final v in vaccination) {
-      selectedVaccineIds.add(v.id);
+  void toggleSelectAllVaccines() {
+    if (isAllVaccinesSelected) {
+      selectedVaccineIds.clear();
+    } else {
+      selectedVaccineIds.addAll(vaccination.map((v) => v.id));
+    }
+    emit(SetupVaccineToggledState(List.of(selectedVaccineIds)));
+  }
+
+  String getVaccinationAgeTitle(double age) {
+    if (age == 0) {
+      return "At birth";
+    } else {
+      if (age == 1) {
+        return "${age.toInt()} month";
+      } else {
+        return "${age.toInt()} months";
+      }
     }
   }
-  emit(SetupChangeState());
-}
 
-String  getVaccinationAgeTitle(double age){
-  if (age == 0){
-    return "At birth";
-  }
-  else{
-    if(age == 1){
-      return "${age.toInt()} month";
-    }
-    else{
-      return "${age.toInt()} months";
-    }
-  }
-}
+  List<VaccinationModel> reviewList = [];
 
+  void enterReview() {
+    reviewList = vaccination
+        .where((v) => selectedVaccineIds.contains(v.id))
+        .toList();
+  }
+
+  Map<double, List<VaccinationModel>> get reviewGrouped {
+    final map = <double, List<VaccinationModel>>{};
+    for (final v in reviewList) {
+      map.putIfAbsent(v.age, () => []).add(v);
+    }
+    final keys = map.keys.toList()..sort();
+    return {for (final k in keys) k: map[k]!};
+  }
 }
