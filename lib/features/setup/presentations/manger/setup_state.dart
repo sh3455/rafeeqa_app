@@ -37,7 +37,6 @@ class SetupVaccinationsLoadingState extends SetupState {}
 
 class SetupVaccinationsSuccessState extends SetupState {
   final List<VaccinationModel> vaccinations;
-
   SetupVaccinationsSuccessState({required this.vaccinations});
 }
 

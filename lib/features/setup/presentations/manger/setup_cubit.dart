@@ -1,9 +1,11 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: strict_top_level_inference, non_constant_identifier_names
 
+import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:rafeeqa/core/model/vaccination_model.dart';
 import 'package:rafeeqa/core/services/image_picker_service.dart';
 import 'package:rafeeqa/di/server_locator.dart';
 import 'package:rafeeqa/features/setup/data/repo/vaccination_repo.dart';
@@ -11,7 +13,11 @@ import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
 
 class SetupCubit extends Cubit<SetupState> {
   final vaccinationRepo = getIt<VaccinationRepo>();
-  SetupCubit() : super(SetupInitialState());
+
+  SetupCubit() : super(SetupInitialState()) {
+    // reload the vaccines list when the app language changes
+    getVaccinations();
+  }
 
   static SetupCubit get(BuildContext context) =>
       BlocProvider.of<SetupCubit>(context);
@@ -21,6 +27,8 @@ class SetupCubit extends Cubit<SetupState> {
   String? selectedGender = 'Boy';
   String? typeOfBirth = 'Natural birth';
   int? selectedVaccineOption;
+  List<VaccinationModel> vaccination = [];
+  final Set<int> selectedVaccineIds = {};
   File? image;
   final service = ImagePickerService.instance;
   final PageController controller = PageController();
@@ -94,13 +102,53 @@ class SetupCubit extends Cubit<SetupState> {
 
   Future<void> getVaccinations() async {
     emit(SetupVaccinationsLoadingState());
-
     final result = await vaccinationRepo.getVaccinationData();
     result.fold(
       (failure) =>
           emit(SetupVaccinationsFailureState(message: failure.message)),
-      (vaccinations) =>
-          emit(SetupVaccinationsSuccessState(vaccinations: vaccinations)),
+      (vaccinations) {
+        vaccination = vaccinations;
+        emit(SetupVaccinationsSuccessState(vaccinations: vaccination));
+      },
     );
   }
+
+ bool get isAllVaccinesSelected =>
+    vaccination.isNotEmpty &&
+    vaccination.length == selectedVaccineIds.length;
+
+  void toggleVaccine(int id) {
+  if (selectedVaccineIds.contains(id)) {
+    selectedVaccineIds.remove(id);
+  } else {
+    selectedVaccineIds.add(id);
+  }
+  emit(SetupChangeState());
+}
+
+void toggleSelectAllVaccines() {
+  if (isAllVaccinesSelected) {
+    selectedVaccineIds.clear();
+  } else {
+    for (final v in vaccination) {
+      selectedVaccineIds.add(v.id);
+    }
+  }
+  emit(SetupChangeState());
+}
+
+String  getVaccinationAgeTitle(double age){
+  if (age == 0){
+    return "At birth";
+  }
+  else{
+    if(age == 1){
+      return "${age.toInt()} month";
+    }
+    else{
+      return "${age.toInt()} months";
+    }
+  }
+}
+
 }
