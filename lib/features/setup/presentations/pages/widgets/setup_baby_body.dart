@@ -6,6 +6,7 @@ import 'package:rafeeqa/core/widgets/custom_button.dart';
 import 'package:rafeeqa/features/setup/data/model/setup_model.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
+import 'package:rafeeqa/features/setup/presentations/pages/widgets/all_set_steps.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_info_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/birth_details_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/past_vaccines_step.dart';
@@ -25,13 +26,14 @@ class SetupBabyBody extends StatelessWidget {
     return BlocBuilder<SetupCubit, SetupState>(
       builder: (context, state) {
         final data = setUpData(context);
-        final isLastPage = cubit.currentSteps == SetupCubit.totalPages - 1;
+        final isLastPage = cubit.currentSteps == SetupCubit.totalSteps - 1;
 
         final nextButton = Padding(
           padding: EdgeInsets.all(18.r),
           child: CustomButton(
             onPressed: () {
               if (isLastPage) {
+                cubit.saveBaby();
               } else {
                 cubit.nextStep();
               }
@@ -45,7 +47,7 @@ class SetupBabyBody extends StatelessWidget {
         return SafeArea(
           child: Column(
             children: [
-              if (cubit.currentSteps == 4)
+              if (cubit.currentSteps >= 4)
                 Align(
                   alignment: AlignmentDirectional.centerStart,
                   child: IconButton(
@@ -83,6 +85,10 @@ class SetupBabyBody extends StatelessWidget {
                     _StepPage(
                       footer: nextButton,
                       child: ReviewVaccinesStep(setupModel: data[4]),
+                    ),
+                    _StepPage(
+                      footer: nextButton,
+                      child: AllSetSteps(setupModel: data[5]),
                     ),
                   ],
                 ),

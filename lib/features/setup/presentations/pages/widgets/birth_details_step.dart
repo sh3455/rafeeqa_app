@@ -56,6 +56,7 @@ class BirthDetailsStep extends StatelessWidget {
               CustomTextField(
                 hintText: s.birthWeightHint,
                 readOnly: false,
+                controller: cubit.weightController,
                 suffixIcon: Icon(Icons.monitor_weight_outlined),
               ),
               SizedBox(height: 8.h),
@@ -63,6 +64,7 @@ class BirthDetailsStep extends StatelessWidget {
               CustomTextField(
                 hintText: s.birthHeightHint,
                 readOnly: false,
+                controller: cubit.heightController,
                 suffixIcon: Icon(Icons.height),
               ),
             ],

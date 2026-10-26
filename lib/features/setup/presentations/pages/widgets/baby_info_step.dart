@@ -34,7 +34,11 @@ class BabyInfoStep extends StatelessWidget {
               children: [
                 FieldLabel(icon: Icons.people_alt_outlined, title: s.babyName),
 
-                CustomTextField(hintText: s.babyNameHint, readOnly: false),
+                CustomTextField(
+                  hintText: s.babyNameHint,
+                  readOnly: false,
+                  controller: cubit.nameController,
+                ),
 
                 SizedBox(height: 6.h),
 
@@ -47,7 +51,7 @@ class BabyInfoStep extends StatelessWidget {
                   hintText: s.dateOfBirthHint,
                   suffixIcon: Icon(Icons.calendar_today_outlined, size: 22.sp),
                   readOnly: true,
-                  controller: cubit.textEditingController,
+                  controller: cubit.birthController,
                   onTap: () => cubit.pickDate(context),
                 ),
 

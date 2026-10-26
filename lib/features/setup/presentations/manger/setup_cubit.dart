@@ -5,7 +5,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:rafeeqa/core/model/baby_model.dart';
 import 'package:rafeeqa/core/model/vaccination_model.dart';
+import 'package:rafeeqa/core/services/hive_service.dart';
 import 'package:rafeeqa/core/services/image_picker_service.dart';
 import 'package:rafeeqa/di/server_locator.dart';
 import 'package:rafeeqa/features/setup/data/repo/vaccination_repo.dart';
@@ -13,6 +15,7 @@ import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
 
 class SetupCubit extends Cubit<SetupState> {
   final vaccinationRepo = getIt<VaccinationRepo>();
+  final hiveService = getIt<HiveService>();
 
   SetupCubit() : super(SetupInitialState()) {
     // reload the vaccines list when the app language changes
@@ -22,19 +25,23 @@ class SetupCubit extends Cubit<SetupState> {
   static SetupCubit get(BuildContext context) =>
       BlocProvider.of<SetupCubit>(context);
 
-  static const int totalSteps = 5;
-  static const int totalPages = 6;
+  static const int totalSteps = 6;
+  static const int totalPages = 7;
   int currentSteps = 0;
   static const int reviewPage = 4;
   String? selectedGender = 'Boy';
   String? typeOfBirth = 'Natural birth';
   int? selectedVaccineOption;
+  DateTime? selectedBirthDate;
   List<VaccinationModel> vaccination = [];
   final Set<int> selectedVaccineIds = {};
   File? image;
   final service = ImagePickerService.instance;
   final PageController controller = PageController();
-  final TextEditingController textEditingController = TextEditingController();
+  final TextEditingController birthController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController weightController = TextEditingController();
+  final TextEditingController heightController = TextEditingController();
 
   void changeStep(int step) {
     if (step < 0 || step >= totalSteps || step == currentSteps) return;
@@ -65,7 +72,10 @@ class SetupCubit extends Cubit<SetupState> {
   @override
   Future<void> close() {
     controller.dispose();
-    textEditingController.dispose();
+    birthController.dispose();
+    nameController.dispose();
+    weightController.dispose();
+    heightController.dispose();
     return super.close();
   }
 
@@ -77,7 +87,8 @@ class SetupCubit extends Cubit<SetupState> {
       initialDate: DateTime.now(),
     );
     if (date != null) {
-      textEditingController.text = DateFormat('MMM d, y').format(date);
+      selectedBirthDate = date;
+      birthController.text = DateFormat('MMM d, y').format(date);
     }
   }
 
@@ -167,5 +178,59 @@ class SetupCubit extends Cubit<SetupState> {
     }
     final keys = map.keys.toList()..sort();
     return {for (final k in keys) k: map[k]!};
+  }
+
+  BabyModel? createBaby() {
+    final birthDate = selectedBirthDate;
+    final weight = double.tryParse(weightController.text);
+    final height = double.tryParse(heightController.text);
+
+    if (birthDate == null ||
+        selectedGender == null ||
+        typeOfBirth == null ||
+        nameController.text.trim().isEmpty ||
+        weight == null ||
+        height == null) {
+      return null;
+    }
+
+    return BabyModel.newBaby(
+      name: nameController.text.trim(),
+      dateOfBirth: birthDate,
+      gender: selectedGender!,
+      birthType: typeOfBirth!,
+      weight: weight,
+      height: height,
+      image: image?.path,
+    );
+  }
+
+  bool get isBoy => selectedGender == 'Boy';
+
+  String get babyAgeText {
+    final b = selectedBirthDate;
+    if (b == null) return '-';
+    final now = DateTime.now();
+    int months = (now.year - b.year) * 12 + now.month - b.month;
+    int days = now.day - b.day;
+    if (days < 0) {
+      months--;
+      days += DateTime(now.year, now.month, 0).day;
+    }
+    return '$months months, $days days';
+  }
+
+  String get vaccinesProgressText =>
+      '${selectedVaccineIds.length} of ${vaccination.length} completed';
+
+  Future<bool> saveBaby() async {
+    final baby = createBaby();
+    if (baby == null) return false;
+    try {
+      await hiveService.saveData(baby);
+      return true;
+    } catch (_) {
+      return false;
+    }
   }
 }
