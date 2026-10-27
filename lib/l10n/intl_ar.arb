@@ -196,6 +196,26 @@
   "vaccinatedNotSureDesc": "أفضّل مراجعة سجلاتي أولاً.",
   "@vaccinatedNotSureDesc": {
     "description": "Vaccination option: not sure - subtitle"
+  },
+    "addAnotherBaby": "أضيفي طفلًا آخر",
+  "@addAnotherBaby": {
+    "description": "Add another baby button label"
+  },
+  "twinDialogTitle": "هل هذا الطفل توأم؟",
+  "@twinDialogTitle": {
+    "description": "Twin dialog - title"
+  },
+  "twinDialogDescription": "إذا كان هذا الطفل توأمًا، سنساعدكِ في إعداد الملفين الشخصيين.",
+  "@twinDialogDescription": {
+    "description": "Twin dialog - description"
+  },
+  "yesTwin": "نعم، توأم",
+  "@yesTwin": {
+    "description": "Twin dialog - confirm button"
+  },
+  "noDifferentBirthDate": "لا، تاريخ ميلاد مختلف",
+  "@noDifferentBirthDate": {
+    "description": "Twin dialog - decline button"
   }
 
 }

@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addAnotherBaby": MessageLookupByLibrary.simpleMessage("Add another baby"),
     "addPhoto": MessageLookupByLibrary.simpleMessage("Add a photo"),
     "appName": MessageLookupByLibrary.simpleMessage("Rafeeqa"),
     "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
@@ -43,6 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "girl": MessageLookupByLibrary.simpleMessage("Girl"),
     "naturalBirth": MessageLookupByLibrary.simpleMessage("Natural birth"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "noDifferentBirthDate": MessageLookupByLibrary.simpleMessage(
+      "No, different birth date",
+    ),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "Learn what your baby needs, from feeding to sleep, and feel more confident every day.",
     ),
@@ -93,6 +97,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "setupTitle6": MessageLookupByLibrary.simpleMessage("All set!"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "twinDialogDescription": MessageLookupByLibrary.simpleMessage(
+      "If this baby is a twin, we\'ll help you set up both profiles.",
+    ),
+    "twinDialogTitle": MessageLookupByLibrary.simpleMessage(
+      "Is this baby a twin?",
+    ),
     "typeOfBirth": MessageLookupByLibrary.simpleMessage("Type of birth"),
     "unitedStates": MessageLookupByLibrary.simpleMessage("United States"),
     "vaccinatedAll": MessageLookupByLibrary.simpleMessage(
@@ -113,5 +123,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "vaccinatedSomeDesc": MessageLookupByLibrary.simpleMessage(
       "I\'ll select the vaccines later.",
     ),
+    "yesTwin": MessageLookupByLibrary.simpleMessage("Yes, twin"),
   };
 }

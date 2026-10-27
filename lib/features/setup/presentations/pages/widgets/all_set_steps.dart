@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rafeeqa/const/assets.dart';
+import 'package:rafeeqa/core/utils/nav_to.dart';
+import 'package:rafeeqa/core/utils/theme.dart';
+import 'package:rafeeqa/core/widgets/custom_button.dart';
 import 'package:rafeeqa/core/widgets/custom_text.dart';
 import 'package:rafeeqa/features/setup/data/model/setup_model.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
+import 'package:rafeeqa/features/setup/presentations/pages/widgets/allset_twin_dialog.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_card.dart';
+import 'package:rafeeqa/generated/l10n.dart';
 
 class AllSetSteps extends StatelessWidget {
   const AllSetSteps({super.key, required this.setupModel});
@@ -12,7 +17,9 @@ class AllSetSteps extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubit = SetupCubit.get(context);
+    final cubit = SetupCubit.get(context);
+    final s = S.of(context);
+
     return Column(
       children: [
         BabyCard(setupModel: setupModel),
@@ -25,7 +32,32 @@ class AllSetSteps extends StatelessWidget {
           progressText: cubit.vaccinesProgressText,
           image: cubit.image != null ? FileImage(cubit.image!) : null,
         ),
-       
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: CustomButton(
+            icon: Icons.add,
+            text: s.addAnotherBaby,
+            enableBorderColor: true,
+            color: AppTheme.primary,
+            borderRadius: 15.r,
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => AllSetTwinDialog(
+                  onYes: () {
+                    NavTo.pop(context);
+                    // هنضيف منطق التوأم هنا بعدين
+                  },
+                  onNo: () {
+                    NavTo.pop(context);
+
+                    // هنضيف منطق الطفل المختلف هنا بعدين
+                  },
+                ),
+              );
+            },
+          ),
+        ),
       ],
     );
   }
@@ -55,138 +87,107 @@ class BabySummaryCard extends StatelessWidget {
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.all(16.r),
       width: double.infinity,
-      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: theme.cardColor,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(
           color: theme.colorScheme.primary.withValues(alpha: 0.15),
         ),
-        boxShadow: [
-          BoxShadow(
-            color: theme.colorScheme.primary.withValues(alpha: 0.08),
-            blurRadius: 16,
-            offset: const Offset(0, 6),
+      ),
+      child: Column(
+        children: [
+          _buildHeader(theme),
+          SizedBox(height: 14.h),
+          _InfoRow(
+            icon: Icons.calendar_month_outlined,
+            label: "Age",
+            value: age,
+            color: theme.colorScheme.primary,
+          ),
+          SizedBox(height: 10.h),
+          _InfoRow(
+            icon: Icons.vaccines_outlined,
+            label: "Vaccines",
+            value: progressText,
+            color: theme.colorScheme.secondary,
           ),
         ],
       ),
-      child: Padding(
-        padding: EdgeInsets.all(16.r),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                _BabyAvatar(image: image),
-                SizedBox(width: 14.w),
-                Expanded(
-                  child: _BabyHeader(name: name, gender: gender, isBoy: isBoy),
-                ),
-              ],
-            ),
-            SizedBox(height: 14.h),
-            _InfoRow(
-              icon: Icons.calendar_month_outlined,
-              label: "Age",
-              value: age,
-            ),
-            SizedBox(height: 10.h),
-            _InfoRow(
-              icon: Icons.vaccines_outlined,
-              label: "Vaccines",
-              value: progressText,
-              color: theme.colorScheme.secondary,
-            ),
-          ],
-        ),
-      ),
     );
   }
-}
 
-class _BabyAvatar extends StatelessWidget {
-  const _BabyAvatar({this.image});
-
-  final ImageProvider? image;
-
-  @override
-  Widget build(BuildContext context) {
-    final primary = Theme.of(context).colorScheme.primary;
-
-    return Container(
-      padding: EdgeInsets.all(3.r),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(color: primary.withValues(alpha: 0.4), width: 2),
-        boxShadow: [
-          BoxShadow(color: primary.withValues(alpha: 0.15), blurRadius: 10),
-        ],
-      ),
-      child: CircleAvatar(
-        radius: 34.r,
-        backgroundColor: primary.withValues(alpha: 0.1),
-        backgroundImage: image ?? const AssetImage(Assets.iconImage),
-      ),
-    );
-  }
-}
-
-class _BabyHeader extends StatelessWidget {
-  const _BabyHeader({
-    required this.name,
-    required this.gender,
-    required this.isBoy,
-  });
-
-  final String name;
-  final String gender;
-  final bool isBoy;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final genderColor = isBoy
-        ? theme.colorScheme.secondary
-        : theme.colorScheme.primary;
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
+  Widget _buildHeader(ThemeData theme) {
+    return Row(
       children: [
-        CustomText(
-          text: name,
-          size: 20.sp,
-          type: Type.header,
-          color: theme.hintColor,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
-        ),
-        SizedBox(height: 6.h),
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+          padding: EdgeInsets.all(3.r),
           decoration: BoxDecoration(
-            color: genderColor.withValues(alpha: 0.12),
-            borderRadius: BorderRadius.circular(20.r),
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: AppTheme.primary.withValues(alpha: 0.4),
+              width: 2,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: AppTheme.primary.withValues(alpha: 0.15),
+                blurRadius: 10,
+              ),
+            ],
           ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
+          child: CircleAvatar(
+            radius: 34.r,
+            backgroundColor: AppTheme.primary.withValues(alpha: 0.1),
+            backgroundImage: image ?? const AssetImage(Assets.iconImage),
+          ),
+        ),
+        SizedBox(width: 14.w),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(
-                isBoy ? Icons.male_rounded : Icons.female_rounded,
-                size: 16.r,
-                color: genderColor,
-              ),
-              SizedBox(width: 4.w),
               CustomText(
-                text: gender,
-                size: 12.sp,
-                type: Type.overMedium,
-                color: genderColor,
+                text: name,
+                size: 20.sp,
+                type: Type.header,
+                color: theme.hintColor,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
+              SizedBox(height: 6.h),
+              _buildGenderTag(theme),
             ],
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildGenderTag(ThemeData theme) {
+    final color = isBoy
+        ? theme.colorScheme.secondary
+        : theme.colorScheme.primary;
+
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(20.r),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(isBoy ? Icons.male : Icons.female, size: 16.r, color: color),
+          SizedBox(width: 4.w),
+          CustomText(
+            text: gender,
+            size: 12.sp,
+            type: Type.overMedium,
+            color: color,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -196,35 +197,27 @@ class _InfoRow extends StatelessWidget {
     required this.icon,
     required this.label,
     required this.value,
-    this.color,
+    required this.color,
   });
 
   final IconData icon;
   final String label;
   final String value;
-  final Color? color;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final accent = color ?? theme.colorScheme.primary;
+    final textColor = Theme.of(context).hintColor;
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
       decoration: BoxDecoration(
-        color: accent.withValues(alpha: 0.07),
+        color: color.withValues(alpha: 0.07),
         borderRadius: BorderRadius.circular(14.r),
       ),
       child: Row(
         children: [
-          Container(
-            padding: EdgeInsets.all(6.r),
-            decoration: BoxDecoration(
-              color: accent.withValues(alpha: 0.15),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(icon, size: 16.r, color: accent),
-          ),
+          Icon(icon, size: 20.r, color: color),
           SizedBox(width: 10.w),
           Expanded(
             child: Column(
@@ -234,14 +227,14 @@ class _InfoRow extends StatelessWidget {
                   text: label,
                   size: 11.sp,
                   type: Type.overSmall,
-                  color: theme.hintColor,
+                  color: textColor,
                   opacity: FontOpacity.medium,
                 ),
                 CustomText(
                   text: value,
                   size: 14.sp,
                   type: Type.overMedium,
-                  color: theme.hintColor,
+                  color: textColor,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),

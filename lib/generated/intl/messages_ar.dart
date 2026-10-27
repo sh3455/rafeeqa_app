@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "addAnotherBaby": MessageLookupByLibrary.simpleMessage("أضيفي طفلًا آخر"),
     "addPhoto": MessageLookupByLibrary.simpleMessage("أضيفي صورة"),
     "appName": MessageLookupByLibrary.simpleMessage("رفيقة"),
     "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
@@ -43,6 +44,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "girl": MessageLookupByLibrary.simpleMessage("بنت"),
     "naturalBirth": MessageLookupByLibrary.simpleMessage("ولادة طبيعية"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
+    "noDifferentBirthDate": MessageLookupByLibrary.simpleMessage(
+      "لا، تاريخ ميلاد مختلف",
+    ),
     "onboardingDescription1": MessageLookupByLibrary.simpleMessage(
       "تعرّفي على احتياجات طفلكِ، من الرضاعة إلى النوم، وشعري بثقة أكبر كل يوم.",
     ),
@@ -87,6 +91,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "setupTitle6": MessageLookupByLibrary.simpleMessage("كل شيء جاهز!"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "twinDialogDescription": MessageLookupByLibrary.simpleMessage(
+      "إذا كان هذا الطفل توأمًا، سنساعدكِ في إعداد الملفين الشخصيين.",
+    ),
+    "twinDialogTitle": MessageLookupByLibrary.simpleMessage(
+      "هل هذا الطفل توأم؟",
+    ),
     "typeOfBirth": MessageLookupByLibrary.simpleMessage("نوع الولادة"),
     "unitedStates": MessageLookupByLibrary.simpleMessage("الولايات المتحدة"),
     "vaccinatedAll": MessageLookupByLibrary.simpleMessage(
@@ -107,5 +117,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "vaccinatedSomeDesc": MessageLookupByLibrary.simpleMessage(
       "سأحدد التطعيمات لاحقاً.",
     ),
+    "yesTwin": MessageLookupByLibrary.simpleMessage("نعم، توأم"),
   };
 }

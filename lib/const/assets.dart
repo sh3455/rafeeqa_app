@@ -17,4 +17,5 @@ class Assets {
   static const String setUp3 = 'assets/images/setUp3.png';
   static const String setUp4 = 'assets/images/setUp2.png';
   static const String iconImage = 'assets/images/image_icon.png';
+  static const String showDialogImage = "assets/images/twins.png";
 }

@@ -533,6 +533,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Add another baby`
+  String get addAnotherBaby {
+    return Intl.message(
+      'Add another baby',
+      name: 'addAnotherBaby',
+      desc: 'Add another baby button label',
+      args: [],
+    );
+  }
+
+  /// `Is this baby a twin?`
+  String get twinDialogTitle {
+    return Intl.message(
+      'Is this baby a twin?',
+      name: 'twinDialogTitle',
+      desc: 'Twin dialog - title',
+      args: [],
+    );
+  }
+
+  /// `If this baby is a twin, we'll help you set up both profiles.`
+  String get twinDialogDescription {
+    return Intl.message(
+      'If this baby is a twin, we\'ll help you set up both profiles.',
+      name: 'twinDialogDescription',
+      desc: 'Twin dialog - description',
+      args: [],
+    );
+  }
+
+  /// `Yes, twin`
+  String get yesTwin {
+    return Intl.message(
+      'Yes, twin',
+      name: 'yesTwin',
+      desc: 'Twin dialog - confirm button',
+      args: [],
+    );
+  }
+
+  /// `No, different birth date`
+  String get noDifferentBirthDate {
+    return Intl.message(
+      'No, different birth date',
+      name: 'noDifferentBirthDate',
+      desc: 'Twin dialog - decline button',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

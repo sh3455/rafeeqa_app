@@ -196,6 +196,26 @@
   "vaccinatedNotSureDesc": "I prefer to review my records.",
   "@vaccinatedNotSureDesc": {
     "description": "Vaccination option: not sure - subtitle"
+  },
+    "addAnotherBaby": "Add another baby",
+  "@addAnotherBaby": {
+    "description": "Add another baby button label"
+  },
+  "twinDialogTitle": "Is this baby a twin?",
+  "@twinDialogTitle": {
+    "description": "Twin dialog - title"
+  },
+  "twinDialogDescription": "If this baby is a twin, we'll help you set up both profiles.",
+  "@twinDialogDescription": {
+    "description": "Twin dialog - description"
+  },
+  "yesTwin": "Yes, twin",
+  "@yesTwin": {
+    "description": "Twin dialog - confirm button"
+  },
+  "noDifferentBirthDate": "No, different birth date",
+  "@noDifferentBirthDate": {
+    "description": "Twin dialog - decline button"
   }
 
 }
