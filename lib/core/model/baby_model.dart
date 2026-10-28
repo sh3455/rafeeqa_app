@@ -45,7 +45,8 @@ class BabyModel {
     String? image,
     required String birthType,
     required double weight,
-    required double height, required List<int> vaccinations,
+    required double height,
+    required List<int> vaccinations,
   }) {
     return BabyModel(
       id: DateTime.now().millisecondsSinceEpoch,
@@ -57,7 +58,7 @@ class BabyModel {
       birthType: birthType,
       weight: weight,
       height: height,
-      vaccinations: const [],
+      vaccinations: List<int>.of(vaccinations), // ✅ التعديل هنا
     );
   }
 

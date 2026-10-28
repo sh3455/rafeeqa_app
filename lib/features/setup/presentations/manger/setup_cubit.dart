@@ -28,6 +28,9 @@ class SetupCubit extends Cubit<SetupState> {
   static const int totalPages = 7;
   int currentSteps = 0;
   static const int reviewPage = 4;
+  static const int vaccinationPage = 2;
+  static const int pastVaccinesPage = 3;
+  static const int allSetPage = 5;
   String? selectedGender = 'Boy';
   String? typeOfBirth = 'Natural birth';
   int? selectedVaccineOption;
@@ -61,7 +64,28 @@ class SetupCubit extends Cubit<SetupState> {
     emit(SetupChangeState());
   }
 
-  void nextStep() => changeStep(currentSteps + 1);
+  void nextStep() {
+    if (currentSteps == vaccinationPage) {
+      _goFromVaccinationAnswer();
+      return;
+    }
+    changeStep(currentSteps + 1);
+  }
+
+  void _goFromVaccinationAnswer() {
+    switch (selectedVaccineOption) {
+      case 0:
+        selectedVaccineIds.addAll(vaccination.map((v) => v.id));
+        changeStep(reviewPage);
+      case 1:
+        changeStep(pastVaccinesPage);
+      case 2:
+        selectedVaccineIds.clear();
+        changeStep(allSetPage);
+      default:
+        debugPrint('no vaccine option selected');
+    }
+  }
 
   void previousStep() => changeStep(currentSteps - 1);
 
@@ -227,33 +251,30 @@ class SetupCubit extends Cubit<SetupState> {
   /// Cards shown on the "All set" screen: saved babies, then the current one.
   List<BabyModel> get allBabies {
     final current = createBaby();
-    return [
-      ...savedBabies,
-      if (!_currentBabySaved && current != null) current,
-    ];
+    return [...savedBabies, if (!_currentBabySaved && current != null) current];
   }
 
   /// Saves the current baby once and keeps it in [savedBabies].
-Future<bool> saveCurrentBaby() async {
-  if (_currentBabySaved) return true;
-  final baby = createBaby();
-  if (baby == null) {
-    debugPrint(
-      'createBaby null -> name:${nameController.text} date:$selectedBirthDate '
-      'w:${weightController.text} h:${heightController.text}',
-    );
-    return false;
+  Future<bool> saveCurrentBaby() async {
+    if (_currentBabySaved) return true;
+    final baby = createBaby();
+    if (baby == null) {
+      debugPrint(
+        'createBaby null -> name:${nameController.text} date:$selectedBirthDate '
+        'w:${weightController.text} h:${heightController.text}',
+      );
+      return false;
+    }
+    try {
+      await hiveService.saveData(baby);
+    } catch (e) {
+      debugPrint('save error: $e');
+      return false;
+    }
+    savedBabies.add(baby);
+    _currentBabySaved = true;
+    return true;
   }
-  try {
-    await hiveService.saveData(baby);
-  } catch (e) {
-    debugPrint('save error: $e');
-    return false;
-  }
-  savedBabies.add(baby);
-  _currentBabySaved = true;
-  return true;
-}
 
   /// Different birth date: everything starts empty.
   void startNewBaby() {
