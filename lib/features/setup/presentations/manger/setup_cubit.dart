@@ -18,7 +18,6 @@ class SetupCubit extends Cubit<SetupState> {
   final hiveService = getIt<HiveService>();
 
   SetupCubit() : super(SetupInitialState()) {
-    // reload the vaccines list when the app language changes
     getVaccinations();
   }
 
@@ -43,6 +42,10 @@ class SetupCubit extends Cubit<SetupState> {
   final TextEditingController weightController = TextEditingController();
   final TextEditingController heightController = TextEditingController();
 
+  // Babies already saved in this setup session (their cards stay on screen).
+  final List<BabyModel> savedBabies = [];
+  bool _currentBabySaved = false;
+
   void changeStep(int step) {
     if (step < 0 || step >= totalSteps || step == currentSteps) return;
     if (step == reviewPage) enterReview();
@@ -65,6 +68,8 @@ class SetupCubit extends Cubit<SetupState> {
   void reset() {
     currentSteps = 0;
     selectedGender = 'Boy';
+    savedBabies.clear();
+    _currentBabySaved = false;
     if (controller.hasClients) controller.jumpToPage(0);
     emit(SetupInitialState());
   }
@@ -202,17 +207,16 @@ class SetupCubit extends Cubit<SetupState> {
       weight: weight,
       height: height,
       image: image?.path,
+      vaccinations: selectedVaccineIds.toList(),
     );
   }
 
   bool get isBoy => selectedGender == 'Boy';
 
-  String get babyAgeText {
-    final b = selectedBirthDate;
-    if (b == null) return '-';
+  String ageText(DateTime birth) {
     final now = DateTime.now();
-    int months = (now.year - b.year) * 12 + now.month - b.month;
-    int days = now.day - b.day;
+    int months = (now.year - birth.year) * 12 + now.month - birth.month;
+    int days = now.day - birth.day;
     if (days < 0) {
       months--;
       days += DateTime(now.year, now.month, 0).day;
@@ -220,17 +224,69 @@ class SetupCubit extends Cubit<SetupState> {
     return '$months months, $days days';
   }
 
-  String get vaccinesProgressText =>
-      '${selectedVaccineIds.length} of ${vaccination.length} completed';
-
-  Future<bool> saveBaby() async {
-    final baby = createBaby();
-    if (baby == null) return false;
-    try {
-      await hiveService.saveData(baby);
-      return true;
-    } catch (_) {
-      return false;
-    }
+  /// Cards shown on the "All set" screen: saved babies, then the current one.
+  List<BabyModel> get allBabies {
+    final current = createBaby();
+    return [
+      ...savedBabies,
+      if (!_currentBabySaved && current != null) current,
+    ];
   }
+
+  /// Saves the current baby once and keeps it in [savedBabies].
+Future<bool> saveCurrentBaby() async {
+  if (_currentBabySaved) return true;
+  final baby = createBaby();
+  if (baby == null) {
+    debugPrint(
+      'createBaby null -> name:${nameController.text} date:$selectedBirthDate '
+      'w:${weightController.text} h:${heightController.text}',
+    );
+    return false;
+  }
+  try {
+    await hiveService.saveData(baby);
+  } catch (e) {
+    debugPrint('save error: $e');
+    return false;
+  }
+  savedBabies.add(baby);
+  _currentBabySaved = true;
+  return true;
+}
+
+  /// Different birth date: everything starts empty.
+  void startNewBaby() {
+    nameController.clear();
+    selectedBirthDate = null;
+    selectedGender = 'Boy';
+    image = null;
+    selectedVaccineIds.clear();
+    reviewList.clear();
+    weightController.clear();
+    heightController.clear();
+    birthController.clear();
+    typeOfBirth = 'Natural birth';
+    selectedVaccineOption = null;
+    _goToFirstStep();
+  }
+
+  /// Twin: keeps birth date, birth type and vaccines from the first baby.
+  void startTwin() {
+    nameController.clear();
+    selectedGender = 'Boy';
+    image = null;
+    weightController.clear();
+    heightController.clear();
+    _goToFirstStep();
+  }
+
+  void _goToFirstStep() {
+    _currentBabySaved = false;
+    currentSteps = 0;
+    if (controller.hasClients) controller.jumpToPage(0);
+    emit(SetupChangeState());
+  }
+
+  void saveBaby() {}
 }

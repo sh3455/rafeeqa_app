@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rafeeqa/const/assets.dart';
@@ -24,41 +26,44 @@ class AllSetSteps extends StatelessWidget {
       children: [
         BabyCard(setupModel: setupModel),
         SizedBox(height: 12.h),
-        BabySummaryCard(
-          name: cubit.nameController.text.trim(),
-          age: cubit.babyAgeText,
-          gender: cubit.selectedGender ?? '',
-          isBoy: cubit.isBoy,
-          progressText: cubit.vaccinesProgressText,
-          image: cubit.image != null ? FileImage(cubit.image!) : null,
-        ),
+        for (final baby in cubit.allBabies)
+          BabySummaryCard(
+            name: baby.name,
+            age: cubit.ageText(baby.dateOfBirth),
+            gender: baby.gender,
+            isBoy: baby.gender == 'Boy',
+            progressText:
+                '${baby.vaccinations.length} of ${cubit.vaccination.length} completed',
+            image: baby.image != null ? FileImage(File(baby.image!)) : null,
+          ),
         Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.r),
           child: CustomButton(
             icon: Icons.add,
             text: s.addAnotherBaby,
             enableBorderColor: true,
             color: AppTheme.primary,
             borderRadius: 15.r,
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder: (context) => AllSetTwinDialog(
-                  onYes: () {
-                    NavTo.pop(context);
-                    // هنضيف منطق التوأم هنا بعدين
-                  },
-                  onNo: () {
-                    NavTo.pop(context);
-
-                    // هنضيف منطق الطفل المختلف هنا بعدين
-                  },
-                ),
-              );
-            },
+            onPressed: () => _showTwinDialog(context, cubit),
           ),
         ),
       ],
+    );
+  }
+
+  void _showTwinDialog(BuildContext context, SetupCubit cubit) {
+    showDialog(
+      context: context,
+      builder: (dialogContext) => AllSetTwinDialog(
+        onYes: () async {
+          NavTo.pop(dialogContext);
+          if (await cubit.saveCurrentBaby()) cubit.startTwin();
+        },
+        onNo: () async {
+          NavTo.pop(dialogContext);
+          if (await cubit.saveCurrentBaby()) cubit.startNewBaby();
+        },
+      ),
     );
   }
 }

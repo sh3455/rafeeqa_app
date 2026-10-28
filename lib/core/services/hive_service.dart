@@ -8,14 +8,14 @@ class HiveService {
 
   // add
   Future<void> saveData(BabyModel baby) async {
-    await box.put(baby.id, baby);
-  }
+  await box.put(baby.id.toString(), baby);
+}
 
   // get all
   List<BabyModel> getData() => box.values.toList();
 
   // get one
-  BabyModel? getById(dynamic key) => box.get(key);
+     BabyModel? getById(int id) => box.get(id.toString());
 
   // update
   Future<void> updateData(dynamic key, BabyModel data) async {
