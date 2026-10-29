@@ -4,7 +4,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:rafeeqa/core/utils/nav_to.dart';
-import 'package:rafeeqa/features/onboarding/pages/views/onboarding_view.dart';
+import 'package:rafeeqa/di/server_locator.dart';
+import 'package:rafeeqa/features/settings/presentaions/manager/settings_cubit.dart';
+import 'package:rafeeqa/features/setup/presentations/pages/view/setup_baby_view.dart';
 import 'package:rafeeqa/features/splash/presentations/views/widgets/splash_body.dart';
 
 import '../../../../../const/assets.dart';
@@ -21,9 +23,16 @@ class _SplashViewState extends State<SplashView> {
   void initState() {
     super.initState();
     // Add any initialization logic here if needed
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 1), () {
       if (!mounted) return;
-      NavTo.pushReplacement(context: context, nextPage: OnboardingView());
+      if (getIt<SettingsCubit>().state.isFirstTime) {
+        NavTo.pushReplacement(
+          context: context,
+          nextPage: const SetupBabyView(),
+        );
+      } else {
+        // Navigate to home screen
+      }
     });
   }
 

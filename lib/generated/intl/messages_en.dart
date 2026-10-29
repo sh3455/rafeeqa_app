@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "addAnotherBaby": MessageLookupByLibrary.simpleMessage("Add another baby"),
     "addPhoto": MessageLookupByLibrary.simpleMessage("Add a photo"),
+    "age": MessageLookupByLibrary.simpleMessage("Age"),
     "appName": MessageLookupByLibrary.simpleMessage("Rafeeqa"),
     "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "babyName": MessageLookupByLibrary.simpleMessage("Baby Name"),
@@ -123,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "vaccinatedSomeDesc": MessageLookupByLibrary.simpleMessage(
       "I\'ll select the vaccines later.",
     ),
+    "vaccines": MessageLookupByLibrary.simpleMessage("Vaccines"),
     "yesTwin": MessageLookupByLibrary.simpleMessage("Yes, twin"),
   };
 }

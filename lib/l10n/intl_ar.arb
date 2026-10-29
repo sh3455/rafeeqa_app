@@ -216,6 +216,14 @@
   "noDifferentBirthDate": "لا، تاريخ ميلاد مختلف",
   "@noDifferentBirthDate": {
     "description": "Twin dialog - decline button"
+  },
+    "age": "العمر",
+  "@age": {
+    "description": "Baby age label"
+  },
+  "vaccines": "التطعيمات",
+  "@vaccines": {
+    "description": "Vaccines label"
   }
 
 }

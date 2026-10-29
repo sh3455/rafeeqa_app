@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:rafeeqa/core/utils/nav_to.dart';
 import 'package:rafeeqa/core/utils/theme.dart';
 import 'package:rafeeqa/core/widgets/custom_button.dart';
 import 'package:rafeeqa/features/setup/data/model/setup_model.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
+import 'package:rafeeqa/features/setup/presentations/pages/view/setup_baby_view.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/all_set_steps.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_info_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/birth_details_step.dart';
@@ -21,28 +23,10 @@ class SetupBabyBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = SetupCubit.get(context);
-    final s = S.of(context);
 
     return BlocBuilder<SetupCubit, SetupState>(
       builder: (context, state) {
         final data = setUpData(context);
-        final isLastPage = cubit.currentSteps == SetupCubit.totalSteps - 1;
-
-        final nextButton = Padding(
-          padding: EdgeInsets.all(18.r),
-          child: CustomButton(
-            onPressed: () {
-              if (isLastPage) {
-                cubit.saveBaby();
-              } else {
-                cubit.nextStep();
-              }
-            },
-            text: isLastPage ? s.getStarted : s.next,
-            color: AppTheme.primary,
-            borderRadius: 20.r,
-          ),
-        );
 
         return SafeArea(
           child: Column(
@@ -67,27 +51,27 @@ class SetupBabyBody extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
                     _StepPage(
-                      footer: nextButton,
+                      footer: const _NextButton(),
                       child: BabyInfoStep(setupModel: data[0]),
                     ),
                     _StepPage(
-                      footer: nextButton,
+                      footer: const _NextButton(),
                       child: BirthDetailsStep(setupModel: data[1]),
                     ),
                     _StepPage(
-                      footer: nextButton,
+                      footer: const _NextButton(),
                       child: VaccinationStep(setupModel: data[2]),
                     ),
                     _StepPage(
-                      footer: nextButton,
+                      footer: const _NextButton(),
                       child: PastVaccinesStep(setupModel: data[3]),
                     ),
                     _StepPage(
-                      footer: nextButton,
+                      footer: const _NextButton(),
                       child: ReviewVaccinesStep(setupModel: data[4]),
                     ),
                     _StepPage(
-                      footer: nextButton,
+                      footer: const _NextButton(),
                       child: AllSetSteps(setupModel: data[5]),
                     ),
                   ],
@@ -110,5 +94,43 @@ class _StepPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(child: Column(children: [child, footer]));
+  }
+}
+
+class _NextButton extends StatelessWidget {
+  const _NextButton();
+
+  @override
+  Widget build(BuildContext context) {
+    final cubit = context.read<SetupCubit>();
+    final s = S.of(context);
+
+    return BlocBuilder<SetupCubit, SetupState>(
+      builder: (context, state) {
+        final isLastPage = cubit.currentSteps == SetupCubit.totalSteps - 1;
+
+        return Padding(
+          padding: EdgeInsets.all(18.r),
+          child: CustomButton(
+            onPressed: () {
+              if (isLastPage) {
+                NavTo.pushReplacement(
+                  context: context,
+                  nextPage: const SetupBabyView(),
+                );
+              } else {
+                cubit.controller.nextPage(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.bounceInOut,
+                );
+              }
+            },
+            text: isLastPage ? s.getStarted : s.next,
+            color: AppTheme.primary,
+            borderRadius: 20.r,
+          ),
+        );
+      },
+    );
   }
 }

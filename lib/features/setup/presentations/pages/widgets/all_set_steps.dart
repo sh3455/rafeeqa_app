@@ -89,6 +89,7 @@ class BabySummaryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final s = S.of(context);
 
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
@@ -107,14 +108,14 @@ class BabySummaryCard extends StatelessWidget {
           SizedBox(height: 14.h),
           _InfoRow(
             icon: Icons.calendar_month_outlined,
-            label: "Age",
+            label: s.age,
             value: age,
             color: theme.colorScheme.primary,
           ),
           SizedBox(height: 10.h),
           _InfoRow(
             icon: Icons.vaccines_outlined,
-            label: "Vaccines",
+            label: s.vaccines,
             value: progressText,
             color: theme.colorScheme.secondary,
           ),

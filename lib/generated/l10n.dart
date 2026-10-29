@@ -583,6 +583,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Age`
+  String get age {
+    return Intl.message('Age', name: 'age', desc: 'Baby age label', args: []);
+  }
+
+  /// `Vaccines`
+  String get vaccines {
+    return Intl.message(
+      'Vaccines',
+      name: 'vaccines',
+      desc: 'Vaccines label',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

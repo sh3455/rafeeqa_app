@@ -216,6 +216,14 @@
   "noDifferentBirthDate": "No, different birth date",
   "@noDifferentBirthDate": {
     "description": "Twin dialog - decline button"
+  },
+    "age": "Age",
+  "@age": {
+    "description": "Baby age label"
+  },
+  "vaccines": "Vaccines",
+  "@vaccines": {
+    "description": "Vaccines label"
   }
 
 }
