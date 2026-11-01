@@ -104,6 +104,7 @@ class _Photopicker extends StatelessWidget {
   Widget build(BuildContext context) {
     var cubit = SetupCubit.get(context);
     var theme = Theme.of(context);
+    final s = S.of(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
@@ -142,7 +143,7 @@ class _Photopicker extends StatelessWidget {
                     ),
                     SizedBox(width: 10.w),
                     CustomText(
-                      text: 'Change photo',
+                      text: s.changePhoto,
                       size: 14.sp,
                       type: Type.overMedium,
                       color: theme.hintColor,

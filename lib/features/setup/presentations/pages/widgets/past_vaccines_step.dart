@@ -9,6 +9,7 @@ import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_card.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/vaccines_card.dart';
+import 'package:rafeeqa/generated/l10n.dart';
 
 class PastVaccinesStep extends StatelessWidget {
   const PastVaccinesStep({super.key, required this.setupModel});
@@ -58,7 +59,7 @@ class PastVaccinesStep extends StatelessWidget {
                   SizedBox(height: 12.h),
                   for (final group in groupedVaccinations.entries) ...[
                     VaccineGroup(
-                      title: cubit.getVaccinationAgeTitle(group.key),
+                      title:  cubit.getVaccinationAgeTitle(S.of(context), group.key),
                       children: [
                         for (final v in group.value)
                           VaccinesCard(
@@ -90,6 +91,7 @@ class _SelectAllTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final s = S.of(context);
 
     return GestureDetector(
       onTap: onTap,
@@ -107,7 +109,7 @@ class _SelectAllTile extends StatelessWidget {
           children: [
             Expanded(
               child: CustomText(
-                text: "Select all",
+                text: s.selectAll,
                 size: 16.sp,
                 type: Type.overMedium,
                 color: theme.hintColor,

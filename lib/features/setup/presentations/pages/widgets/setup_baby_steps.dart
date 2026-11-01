@@ -11,50 +11,83 @@ class SetupBabySteps extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cubit = SetupCubit.get(context);
-    return BlocConsumer<SetupCubit, SetupState>(
-      listener: (context, state) {},
+    final cubit = SetupCubit.get(context);
+
+    return BlocBuilder<SetupCubit, SetupState>(
       builder: (context, state) {
-        return SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 16.h),
-            child: Row(
-              children: List.generate(SetupCubit.totalSteps * 2 - 1, (index) {
-                if (index % 2 == 0) {
-                  int stepIndex = index ~/ 2;
-                  bool isActive = stepIndex <= cubit.currentSteps;
-                  return GestureDetector(
-                    onTap: () => cubit.changeStep(stepIndex),
-                    child: Container(
-                      width: 40.w,
-                      height: 40.h,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: isActive ? AppTheme.primary : Colors.grey,
-                      ),
-                      child: Center(
-                        child: CustomText(
-                          text: "${stepIndex + 1}",
-                          size: 16,
-                          color: AppTheme.white,
-                        ),
-                      ),
-                    ),
-                  );
-                } else {
-                  bool isActive = (index ~/ 2) <= cubit.currentSteps - 1;
-                  return Expanded(
-                    child: Container(
-                      height: 2.h,
-                      color: isActive ? AppTheme.primary : Colors.grey,
-                    ),
-                  );
-                }
-              }),
-            ),
+        return Padding(
+          padding: EdgeInsets.symmetric(vertical: 16.h),
+          child: Row(
+            children: List.generate(SetupCubit.totalSteps * 2 - 1, (index) {
+              if (index.isEven) {
+                final stepIndex = index ~/ 2;
+                return _StepCircle(
+                  number: stepIndex + 1,
+                  isActive: stepIndex <= cubit.currentSteps,
+                  isCurrent: stepIndex == cubit.currentSteps,
+                  onTap: () => cubit.changeStep(stepIndex),
+                );
+              }
+              return _StepLine(isActive: (index ~/ 2) < cubit.currentSteps);
+            }),
           ),
         );
       },
+    );
+  }
+}
+
+class _StepCircle extends StatelessWidget {
+  const _StepCircle({
+    required this.number,
+    required this.isActive,
+    required this.isCurrent,
+    required this.onTap,
+  });
+
+  final int number;
+  final bool isActive;
+  final bool isCurrent;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 40.w,
+        height: 40.h,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: isActive ? AppTheme.primary : Colors.grey,
+          border: isCurrent
+              ? Border.all(color: AppTheme.primary, width: 3)
+              : null,
+        ),
+        child: Center(
+          child: CustomText(
+            text: "$number",
+            size: 16,
+            color: AppTheme.white,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _StepLine extends StatelessWidget {
+  const _StepLine({required this.isActive});
+
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        height: 2.h,
+        color: isActive ? AppTheme.primary : Colors.grey,
+      ),
     );
   }
 }

@@ -7,6 +7,7 @@ import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_card.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/vaccine_group.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/vaccines_card.dart';
+import 'package:rafeeqa/generated/l10n.dart';
 
 class ReviewVaccinesStep extends StatelessWidget {
   const ReviewVaccinesStep({super.key, required this.setupModel});
@@ -30,7 +31,7 @@ class ReviewVaccinesStep extends StatelessWidget {
                 children: [
                   for (final g in groups.entries) ...[
                     VaccineGroup(
-                      title: cubit.getVaccinationAgeTitle(g.key),
+                      title: cubit.getVaccinationAgeTitle(S.of(context), g.key),
                       children: [
                         for (final v in g.value)
                           VaccinesCard(

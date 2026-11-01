@@ -224,6 +224,18 @@
   "vaccines": "التطعيمات",
   "@vaccines": {
     "description": "Vaccines label"
-  }
+  },
+  "atBirth": "عند الولادة",
+"@atBirth": { "description": "Vaccination group title: at birth" },
+"ageMonths": "{count, plural, =1{شهر} =2{شهران} few{{count} أشهر} other{{count} شهرًا}}",
+"@ageMonths": {
+  "description": "Vaccination group title: age in months",
+  "placeholders": { "count": { "type": "int" } }
+},
+"selectAll": "تحديد الكل",
+"@selectAll": {
+  "description": "Select all vaccines label"
+}
+
 
 }

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:rafeeqa/core/utils/nav_to.dart';
 import 'package:rafeeqa/core/utils/theme.dart';
 import 'package:rafeeqa/core/widgets/custom_button.dart';
+import 'package:rafeeqa/features/settings/presentaions/manager/settings_cubit.dart';
 import 'package:rafeeqa/features/setup/data/model/setup_model.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_cubit.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
-import 'package:rafeeqa/features/setup/presentations/pages/view/setup_baby_view.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/all_set_steps.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/baby_info_step.dart';
 import 'package:rafeeqa/features/setup/presentations/pages/widgets/birth_details_step.dart';
@@ -96,7 +95,6 @@ class _StepPage extends StatelessWidget {
     return SingleChildScrollView(child: Column(children: [child, footer]));
   }
 }
-
 class _NextButton extends StatelessWidget {
   const _NextButton();
 
@@ -114,15 +112,10 @@ class _NextButton extends StatelessWidget {
           child: CustomButton(
             onPressed: () {
               if (isLastPage) {
-                NavTo.pushReplacement(
-                  context: context,
-                  nextPage: const SetupBabyView(),
-                );
+                context.read<SettingsCubit>().setFristTime(false);
+               
               } else {
-                cubit.controller.nextPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.bounceInOut,
-                );
+                cubit.nextStep();
               }
             },
             text: isLastPage ? s.getStarted : s.next,
@@ -134,3 +127,4 @@ class _NextButton extends StatelessWidget {
     );
   }
 }
+

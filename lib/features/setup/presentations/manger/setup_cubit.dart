@@ -10,8 +10,10 @@ import 'package:rafeeqa/core/model/vaccination_model.dart';
 import 'package:rafeeqa/core/services/hive_service.dart';
 import 'package:rafeeqa/core/services/image_picker_service.dart';
 import 'package:rafeeqa/di/server_locator.dart';
+import 'package:rafeeqa/features/settings/presentaions/manager/settings_cubit.dart';
 import 'package:rafeeqa/features/setup/data/repo/vaccination_repo.dart';
 import 'package:rafeeqa/features/setup/presentations/manger/setup_state.dart';
+import 'package:rafeeqa/generated/l10n.dart';
 
 class SetupCubit extends Cubit<SetupState> {
   final vaccinationRepo = getIt<VaccinationRepo>();
@@ -50,19 +52,20 @@ class SetupCubit extends Cubit<SetupState> {
   bool _currentBabySaved = false;
 
   void changeStep(int step) {
-    if (step < 0 || step >= totalSteps || step == currentSteps) return;
-    if (step == reviewPage) enterReview();
+  if (step < 0 || step >= totalSteps || step == currentSteps) return;
+  if (step == reviewPage) enterReview();
+  if (step == allSetPage) saveCurrentBaby();
 
-    currentSteps = step;
-    if (controller.hasClients) {
-      controller.animateToPage(
-        step,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    }
-    emit(SetupChangeState());
+  currentSteps = step;
+  if (controller.hasClients) {
+    controller.animateToPage(
+      step,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
   }
+  emit(SetupChangeState());
+}
 
   void nextStep() {
     if (currentSteps == vaccinationPage) {
@@ -126,13 +129,21 @@ class SetupCubit extends Cubit<SetupState> {
     emit(SetupGenderChangedState(gender));
   }
 
-  Future<void> pickerImage() async {
+ bool _isPickingImage = false;
+
+Future<void> pickerImage() async {
+  if (_isPickingImage) return;
+  _isPickingImage = true;
+  try {
     final imagePick = await service.pickImageFromGallery();
     if (imagePick != null) {
       image = imagePick;
       emit(SetupImageChangedState());
     }
+  } finally {
+    _isPickingImage = false;
   }
+}
 
   void selectTypeOfBirth(String type) {
     typeOfBirth = type;
@@ -145,20 +156,20 @@ class SetupCubit extends Cubit<SetupState> {
   }
 
   bool get showStepper => currentSteps < reviewPage;
+Future<void> getVaccinations({String? langCode}) async {
+  final lang = langCode ?? getIt<SettingsCubit>().state.lang;
 
-  Future<void> getVaccinations() async {
-    emit(SetupVaccinationsLoadingState());
-    final result = await vaccinationRepo.getVaccinationData();
-    result.fold(
-      (failure) =>
-          emit(SetupVaccinationsFailureState(message: failure.message)),
-      (vaccinations) {
-        vaccination = vaccinations;
-        emit(SetupVaccinationsSuccessState(vaccinations: vaccination));
-      },
-    );
-  }
-
+  emit(SetupVaccinationsLoadingState());
+  final result = await vaccinationRepo.getVaccinationData(lang);
+  result.fold(
+    (failure) => emit(SetupVaccinationsFailureState(message: failure.message)),
+    (vaccinations) {
+      vaccination = vaccinations;
+      if (reviewList.isNotEmpty) enterReview();
+      emit(SetupVaccinationsSuccessState(vaccinations: vaccination));
+    },
+  );
+}
   bool get isAllVaccinesSelected =>
       vaccination.isNotEmpty && vaccination.length == selectedVaccineIds.length;
 
@@ -180,17 +191,10 @@ class SetupCubit extends Cubit<SetupState> {
     emit(SetupVaccineToggledState(List.of(selectedVaccineIds)));
   }
 
-  String getVaccinationAgeTitle(double age) {
-    if (age == 0) {
-      return "At birth";
-    } else {
-      if (age == 1) {
-        return "${age.toInt()} month";
-      } else {
-        return "${age.toInt()} months";
-      }
-    }
-  }
+  String getVaccinationAgeTitle(S s, double age) {
+    
+  return age == 0 ? s.atBirth : s.ageMonths(age.toInt());
+}
 
   List<VaccinationModel> reviewList = [];
 

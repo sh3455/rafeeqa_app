@@ -18,10 +18,8 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(
-      _current != null,
-      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
-    );
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
@@ -43,10 +41,8 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(
-      instance != null,
-      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
-    );
+    assert(instance != null,
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -366,12 +362,22 @@ class S {
 
   /// `Boy`
   String get boy {
-    return Intl.message('Boy', name: 'boy', desc: 'Boy option', args: []);
+    return Intl.message(
+      'Boy',
+      name: 'boy',
+      desc: 'Boy option',
+      args: [],
+    );
   }
 
   /// `Girl`
   String get girl {
-    return Intl.message('Girl', name: 'girl', desc: 'Girl option', args: []);
+    return Intl.message(
+      'Girl',
+      name: 'girl',
+      desc: 'Girl option',
+      args: [],
+    );
   }
 
   /// `Add a photo`
@@ -586,7 +592,12 @@ class S {
 
   /// `Age`
   String get age {
-    return Intl.message('Age', name: 'age', desc: 'Baby age label', args: []);
+    return Intl.message(
+      'Age',
+      name: 'age',
+      desc: 'Baby age label',
+      args: [],
+    );
   }
 
   /// `Vaccines`
@@ -595,6 +606,38 @@ class S {
       'Vaccines',
       name: 'vaccines',
       desc: 'Vaccines label',
+      args: [],
+    );
+  }
+
+  /// `At birth`
+  String get atBirth {
+    return Intl.message(
+      'At birth',
+      name: 'atBirth',
+      desc: 'Vaccination group title: at birth',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =1{1 month} other{{count} months}}`
+  String ageMonths(int count) {
+    return Intl.plural(
+      count,
+      one: '1 month',
+      other: '$count months',
+      name: 'ageMonths',
+      desc: 'Vaccination group title: age in months',
+      args: [count],
+    );
+  }
+
+  /// `Select all`
+  String get selectAll {
+    return Intl.message(
+      'Select all',
+      name: 'selectAll',
+      desc: 'Select all vaccines label',
       args: [],
     );
   }

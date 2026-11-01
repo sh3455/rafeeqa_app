@@ -224,6 +224,17 @@
   "vaccines": "Vaccines",
   "@vaccines": {
     "description": "Vaccines label"
-  }
+  },
+  "atBirth": "At birth",
+"@atBirth": { "description": "Vaccination group title: at birth" },
+"ageMonths": "{count, plural, =1{1 month} other{{count} months}}",
+"@ageMonths": {
+  "description": "Vaccination group title: age in months",
+  "placeholders": { "count": { "type": "int" } }
+},
+"selectAll": "Select all",
+"@selectAll": {
+  "description": "Select all vaccines label"
+}
 
 }

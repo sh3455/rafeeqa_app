@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:rafeeqa/const/vaccinations.dart';
 import 'package:rafeeqa/core/errors/failure.dart';
 import 'package:rafeeqa/core/errors/hive_failure.dart';
 import 'package:rafeeqa/core/model/vaccination_model.dart';
@@ -10,12 +11,15 @@ class VaccinationRepoImpl extends VaccinationRepo {
   VaccinationRepoImpl(this.vaccinationDataSource);
 
   @override
-  Future<Either<Failure, List<VaccinationModel>>> getVaccinationData() async {
-    try {
-      final vaccination = await vaccinationDataSource.getVaccinationData();
-      return Right(vaccination);
+  Future<Either<Failure, List<VaccinationModel>>> getVaccinationData(
+    String langCode,
+  ) async {
+   try {
+    final list = langCode == 'ar' ? vaccinationsAr : vaccinationsEn;
+    return Right(list);
     } catch (e) {
       return Left(LocalSetUpFailure.unknown());
     }
   }
+
 }
