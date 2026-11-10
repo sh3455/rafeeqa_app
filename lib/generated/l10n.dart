@@ -189,6 +189,458 @@ class S {
       args: [],
     );
   }
+
+  /// `Tell us about your baby`
+  String get setupTitle1 {
+    return Intl.message(
+      'Tell us about your baby',
+      name: 'setupTitle1',
+      desc: 'Setup screen 1 - title',
+      args: [],
+    );
+  }
+
+  /// `Let's start with some basic information about your little one.`
+  String get setupDescription1 {
+    return Intl.message(
+      'Let\'s start with some basic information about your little one.',
+      name: 'setupDescription1',
+      desc: 'Setup screen 1 - description',
+      args: [],
+    );
+  }
+
+  /// `How was your baby born?`
+  String get setupTitle2 {
+    return Intl.message(
+      'How was your baby born?',
+      name: 'setupTitle2',
+      desc: 'Setup screen 2 - title',
+      args: [],
+    );
+  }
+
+  /// `This helps us provide more accurate growth and health recommendations.`
+  String get setupDescription2 {
+    return Intl.message(
+      'This helps us provide more accurate growth and health recommendations.',
+      name: 'setupDescription2',
+      desc: 'Setup screen 2 - description',
+      args: [],
+    );
+  }
+
+  /// `Has your baby been vaccinated?`
+  String get setupTitle3 {
+    return Intl.message(
+      'Has your baby been vaccinated?',
+      name: 'setupTitle3',
+      desc: 'Setup screen 3 - title',
+      args: [],
+    );
+  }
+
+  /// `Vaccination helps protect your baby from serious diseases.`
+  String get setupDescription3 {
+    return Intl.message(
+      'Vaccination helps protect your baby from serious diseases.',
+      name: 'setupDescription3',
+      desc: 'Setup screen 3 - description',
+      args: [],
+    );
+  }
+
+  /// `Select past vaccines`
+  String get setupTitle4 {
+    return Intl.message(
+      'Select past vaccines',
+      name: 'setupTitle4',
+      desc: 'Setup screen 4 - title',
+      args: [],
+    );
+  }
+
+  /// `Choose the vaccines your baby has already received (if any).`
+  String get setupDescription4 {
+    return Intl.message(
+      'Choose the vaccines your baby has already received (if any).',
+      name: 'setupDescription4',
+      desc: 'Setup screen 4 - description',
+      args: [],
+    );
+  }
+
+  /// `Review selected vaccines`
+  String get setupTitle5 {
+    return Intl.message(
+      'Review selected vaccines',
+      name: 'setupTitle5',
+      desc: 'Setup screen 5 - title',
+      args: [],
+    );
+  }
+
+  /// `Here's a summary of the vaccines you've selected.`
+  String get setupDescription5 {
+    return Intl.message(
+      'Here\'s a summary of the vaccines you\'ve selected.',
+      name: 'setupDescription5',
+      desc: 'Setup screen 5 - description',
+      args: [],
+    );
+  }
+
+  /// `All set!`
+  String get setupTitle6 {
+    return Intl.message(
+      'All set!',
+      name: 'setupTitle6',
+      desc: 'Setup screen 6 - title',
+      args: [],
+    );
+  }
+
+  /// `Your baby's information has been saved.`
+  String get setupDescription6 {
+    return Intl.message(
+      'Your baby\'s information has been saved.',
+      name: 'setupDescription6',
+      desc: 'Setup screen 6 - description',
+      args: [],
+    );
+  }
+
+  /// `Baby Name`
+  String get babyName {
+    return Intl.message(
+      'Baby Name',
+      name: 'babyName',
+      desc: 'Baby name field label',
+      args: [],
+    );
+  }
+
+  /// `Yousef`
+  String get babyNameHint {
+    return Intl.message(
+      'Yousef',
+      name: 'babyNameHint',
+      desc: 'Baby name field hint',
+      args: [],
+    );
+  }
+
+  /// `Date of birth`
+  String get dateOfBirth {
+    return Intl.message(
+      'Date of birth',
+      name: 'dateOfBirth',
+      desc: 'Date of birth field label',
+      args: [],
+    );
+  }
+
+  /// `Apr 15, 2026`
+  String get dateOfBirthHint {
+    return Intl.message(
+      'Apr 15, 2026',
+      name: 'dateOfBirthHint',
+      desc: 'Date of birth field hint',
+      args: [],
+    );
+  }
+
+  /// `Gender`
+  String get gender {
+    return Intl.message(
+      'Gender',
+      name: 'gender',
+      desc: 'Gender field label',
+      args: [],
+    );
+  }
+
+  /// `Boy`
+  String get boy {
+    return Intl.message(
+      'Boy',
+      name: 'boy',
+      desc: 'Boy option',
+      args: [],
+    );
+  }
+
+  /// `Girl`
+  String get girl {
+    return Intl.message(
+      'Girl',
+      name: 'girl',
+      desc: 'Girl option',
+      args: [],
+    );
+  }
+
+  /// `Add a photo`
+  String get addPhoto {
+    return Intl.message(
+      'Add a photo',
+      name: 'addPhoto',
+      desc: 'Baby photo field label',
+      args: [],
+    );
+  }
+
+  /// `(optional)`
+  String get optional {
+    return Intl.message(
+      '(optional)',
+      name: 'optional',
+      desc: 'Label for optional fields',
+      args: [],
+    );
+  }
+
+  /// `Change photo`
+  String get changePhoto {
+    return Intl.message(
+      'Change photo',
+      name: 'changePhoto',
+      desc: 'Change photo button label',
+      args: [],
+    );
+  }
+
+  /// `Type of birth`
+  String get typeOfBirth {
+    return Intl.message(
+      'Type of birth',
+      name: 'typeOfBirth',
+      desc: 'Type of birth field label',
+      args: [],
+    );
+  }
+
+  /// `Natural birth`
+  String get naturalBirth {
+    return Intl.message(
+      'Natural birth',
+      name: 'naturalBirth',
+      desc: 'Natural birth option',
+      args: [],
+    );
+  }
+
+  /// `C-section`
+  String get cSection {
+    return Intl.message(
+      'C-section',
+      name: 'cSection',
+      desc: 'C-section birth option',
+      args: [],
+    );
+  }
+
+  /// `Birth weight`
+  String get birthWeight {
+    return Intl.message(
+      'Birth weight',
+      name: 'birthWeight',
+      desc: 'Birth weight field label',
+      args: [],
+    );
+  }
+
+  /// `3.2 kg`
+  String get birthWeightHint {
+    return Intl.message(
+      '3.2 kg',
+      name: 'birthWeightHint',
+      desc: 'Birth weight field hint',
+      args: [],
+    );
+  }
+
+  /// `Birth height`
+  String get birthHeight {
+    return Intl.message(
+      'Birth height',
+      name: 'birthHeight',
+      desc: 'Birth height field label',
+      args: [],
+    );
+  }
+
+  /// `50 cm`
+  String get birthHeightHint {
+    return Intl.message(
+      '50 cm',
+      name: 'birthHeightHint',
+      desc: 'Birth height field hint',
+      args: [],
+    );
+  }
+
+  /// `Yes, all up to date`
+  String get vaccinatedAll {
+    return Intl.message(
+      'Yes, all up to date',
+      name: 'vaccinatedAll',
+      desc: 'Vaccination option: all vaccines done - title',
+      args: [],
+    );
+  }
+
+  /// `Great! Keep it up.`
+  String get vaccinatedAllDesc {
+    return Intl.message(
+      'Great! Keep it up.',
+      name: 'vaccinatedAllDesc',
+      desc: 'Vaccination option: all vaccines done - subtitle',
+      args: [],
+    );
+  }
+
+  /// `Some of them, I'll choose`
+  String get vaccinatedSome {
+    return Intl.message(
+      'Some of them, I\'ll choose',
+      name: 'vaccinatedSome',
+      desc: 'Vaccination option: some vaccines done - title',
+      args: [],
+    );
+  }
+
+  /// `I'll select the vaccines later.`
+  String get vaccinatedSomeDesc {
+    return Intl.message(
+      'I\'ll select the vaccines later.',
+      name: 'vaccinatedSomeDesc',
+      desc: 'Vaccination option: some vaccines done - subtitle',
+      args: [],
+    );
+  }
+
+  /// `Not sure, I'll check later`
+  String get vaccinatedNotSure {
+    return Intl.message(
+      'Not sure, I\'ll check later',
+      name: 'vaccinatedNotSure',
+      desc: 'Vaccination option: not sure - title',
+      args: [],
+    );
+  }
+
+  /// `I prefer to review my records.`
+  String get vaccinatedNotSureDesc {
+    return Intl.message(
+      'I prefer to review my records.',
+      name: 'vaccinatedNotSureDesc',
+      desc: 'Vaccination option: not sure - subtitle',
+      args: [],
+    );
+  }
+
+  /// `Add another baby`
+  String get addAnotherBaby {
+    return Intl.message(
+      'Add another baby',
+      name: 'addAnotherBaby',
+      desc: 'Add another baby button label',
+      args: [],
+    );
+  }
+
+  /// `Is this baby a twin?`
+  String get twinDialogTitle {
+    return Intl.message(
+      'Is this baby a twin?',
+      name: 'twinDialogTitle',
+      desc: 'Twin dialog - title',
+      args: [],
+    );
+  }
+
+  /// `If this baby is a twin, we'll help you set up both profiles.`
+  String get twinDialogDescription {
+    return Intl.message(
+      'If this baby is a twin, we\'ll help you set up both profiles.',
+      name: 'twinDialogDescription',
+      desc: 'Twin dialog - description',
+      args: [],
+    );
+  }
+
+  /// `Yes, twin`
+  String get yesTwin {
+    return Intl.message(
+      'Yes, twin',
+      name: 'yesTwin',
+      desc: 'Twin dialog - confirm button',
+      args: [],
+    );
+  }
+
+  /// `No, different birth date`
+  String get noDifferentBirthDate {
+    return Intl.message(
+      'No, different birth date',
+      name: 'noDifferentBirthDate',
+      desc: 'Twin dialog - decline button',
+      args: [],
+    );
+  }
+
+  /// `Age`
+  String get age {
+    return Intl.message(
+      'Age',
+      name: 'age',
+      desc: 'Baby age label',
+      args: [],
+    );
+  }
+
+  /// `Vaccines`
+  String get vaccines {
+    return Intl.message(
+      'Vaccines',
+      name: 'vaccines',
+      desc: 'Vaccines label',
+      args: [],
+    );
+  }
+
+  /// `At birth`
+  String get atBirth {
+    return Intl.message(
+      'At birth',
+      name: 'atBirth',
+      desc: 'Vaccination group title: at birth',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =1{1 month} other{{count} months}}`
+  String ageMonths(int count) {
+    return Intl.plural(
+      count,
+      one: '1 month',
+      other: '$count months',
+      name: 'ageMonths',
+      desc: 'Vaccination group title: age in months',
+      args: [count],
+    );
+  }
+
+  /// `Select all`
+  String get selectAll {
+    return Intl.message(
+      'Select all',
+      name: 'selectAll',
+      desc: 'Select all vaccines label',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

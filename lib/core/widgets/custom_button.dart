@@ -2,7 +2,6 @@ import 'custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class CustomButton extends StatelessWidget {
   final bool isLoading;
   final double? width;

@@ -1,7 +1,7 @@
 {
   "@@locale": "en",
 
-   "english": "English",
+  "english": "English",
   "@english": {
     "description": "The English language name"
   },
@@ -17,12 +17,10 @@
   "@egypt": {
     "description": "Egypt country name"
   },
-
   "appName": "Rafeeqa",
   "@appName": {
     "description": "The name of the app"
   },
-
   "onboardingTitle1": "Understand your baby",
   "@onboardingTitle1": {
     "description": "Onboarding screen 1 - title"
@@ -31,7 +29,6 @@
   "@onboardingDescription1": {
     "description": "Onboarding screen 1 - description"
   },
-
   "onboardingTitle2": "Track every moment",
   "@onboardingTitle2": {
     "description": "Onboarding screen 2 - title"
@@ -40,7 +37,6 @@
   "@onboardingDescription2": {
     "description": "Onboarding screen 2 - description"
   },
-
   "onboardingTitle3": "Ask Rafeeqa",
   "@onboardingTitle3": {
     "description": "Onboarding screen 3 - title"
@@ -49,19 +45,196 @@
   "@onboardingDescription3": {
     "description": "Onboarding screen 3 - description"
   },
-
   "next": "Next",
   "@next": {
     "description": "Next button label"
   },
-
   "getStarted": "Get Started",
   "@getStarted": {
     "description": "Get Started button label (last onboarding screen)"
   },
-
   "skip": "Skip",
   "@skip": {
     "description": "Skip button label"
-  }
+  },
+  "setupTitle1": "Tell us about your baby",
+  "@setupTitle1": {
+    "description": "Setup screen 1 - title"
+  },
+  "setupDescription1": "Let's start with some basic information about your little one.",
+  "@setupDescription1": {
+    "description": "Setup screen 1 - description"
+  },
+  "setupTitle2": "How was your baby born?",
+  "@setupTitle2": {
+    "description": "Setup screen 2 - title"
+  },
+  "setupDescription2": "This helps us provide more accurate growth and health recommendations.",
+  "@setupDescription2": {
+    "description": "Setup screen 2 - description"
+  },
+  "setupTitle3": "Has your baby been vaccinated?",
+  "@setupTitle3": {
+    "description": "Setup screen 3 - title"
+  },
+  "setupDescription3": "Vaccination helps protect your baby from serious diseases.",
+  "@setupDescription3": {
+    "description": "Setup screen 3 - description"
+  },
+  "setupTitle4": "Select past vaccines",
+  "@setupTitle4": {
+    "description": "Setup screen 4 - title"
+  },
+  "setupDescription4": "Choose the vaccines your baby has already received (if any).",
+  "@setupDescription4": {
+    "description": "Setup screen 4 - description"
+  },
+  "setupTitle5": "Review selected vaccines",
+  "@setupTitle5": {
+    "description": "Setup screen 5 - title"
+  },
+  "setupDescription5": "Here's a summary of the vaccines you've selected.",
+  "@setupDescription5": {
+    "description": "Setup screen 5 - description"
+  },
+  "setupTitle6": "All set!",
+  "@setupTitle6": {
+    "description": "Setup screen 6 - title"
+  },
+  "setupDescription6": "Your baby's information has been saved.",
+  "@setupDescription6": {
+    "description": "Setup screen 6 - description"
+  },
+    "babyName": "Baby Name",
+  "@babyName": {
+    "description": "Baby name field label"
+  },
+  "babyNameHint": "Yousef",
+  "@babyNameHint": {
+    "description": "Baby name field hint"
+  },
+  "dateOfBirth": "Date of birth",
+  "@dateOfBirth": {
+    "description": "Date of birth field label"
+  },
+  "dateOfBirthHint": "Apr 15, 2026",
+  "@dateOfBirthHint": {
+    "description": "Date of birth field hint"
+  },
+  "gender": "Gender",
+  "@gender": {
+    "description": "Gender field label"
+  },
+  "boy": "Boy",
+  "@boy": {
+    "description": "Boy option"
+  },
+  "girl": "Girl",
+  "@girl": {
+    "description": "Girl option"
+  },
+  "addPhoto": "Add a photo",
+  "@addPhoto": {
+    "description": "Baby photo field label"
+  },
+  "optional": "(optional)",
+  "@optional": {
+    "description": "Label for optional fields"
+  },
+  "changePhoto": "Change photo",
+  "@changePhoto": {
+    "description": "Change photo button label"
+  },
+    "typeOfBirth": "Type of birth",
+  "@typeOfBirth": {
+    "description": "Type of birth field label"
+  },
+  "naturalBirth": "Natural birth",
+  "@naturalBirth": {
+    "description": "Natural birth option"
+  },
+  "cSection": "C-section",
+  "@cSection": {
+    "description": "C-section birth option"
+  },
+  "birthWeight": "Birth weight",
+  "@birthWeight": {
+    "description": "Birth weight field label"
+  },
+  "birthWeightHint": "3.2 kg",
+  "@birthWeightHint": {
+    "description": "Birth weight field hint"
+  },
+  "birthHeight": "Birth height",
+  "@birthHeight": {
+    "description": "Birth height field label"
+  },
+  "birthHeightHint": "50 cm",
+  "@birthHeightHint": {
+    "description": "Birth height field hint"
+  },
+   "vaccinatedAll": "Yes, all up to date",
+  "@vaccinatedAll": {
+    "description": "Vaccination option: all vaccines done - title"
+  },
+  "vaccinatedAllDesc": "Great! Keep it up.",
+  "@vaccinatedAllDesc": {
+    "description": "Vaccination option: all vaccines done - subtitle"
+  },
+  "vaccinatedSome": "Some of them, I'll choose",
+  "@vaccinatedSome": {
+    "description": "Vaccination option: some vaccines done - title"
+  },
+  "vaccinatedSomeDesc": "I'll select the vaccines later.",
+  "@vaccinatedSomeDesc": {
+    "description": "Vaccination option: some vaccines done - subtitle"
+  },
+  "vaccinatedNotSure": "Not sure, I'll check later",
+  "@vaccinatedNotSure": {
+    "description": "Vaccination option: not sure - title"
+  },
+  "vaccinatedNotSureDesc": "I prefer to review my records.",
+  "@vaccinatedNotSureDesc": {
+    "description": "Vaccination option: not sure - subtitle"
+  },
+    "addAnotherBaby": "Add another baby",
+  "@addAnotherBaby": {
+    "description": "Add another baby button label"
+  },
+  "twinDialogTitle": "Is this baby a twin?",
+  "@twinDialogTitle": {
+    "description": "Twin dialog - title"
+  },
+  "twinDialogDescription": "If this baby is a twin, we'll help you set up both profiles.",
+  "@twinDialogDescription": {
+    "description": "Twin dialog - description"
+  },
+  "yesTwin": "Yes, twin",
+  "@yesTwin": {
+    "description": "Twin dialog - confirm button"
+  },
+  "noDifferentBirthDate": "No, different birth date",
+  "@noDifferentBirthDate": {
+    "description": "Twin dialog - decline button"
+  },
+    "age": "Age",
+  "@age": {
+    "description": "Baby age label"
+  },
+  "vaccines": "Vaccines",
+  "@vaccines": {
+    "description": "Vaccines label"
+  },
+  "atBirth": "At birth",
+"@atBirth": { "description": "Vaccination group title: at birth" },
+"ageMonths": "{count, plural, =1{1 month} other{{count} months}}",
+"@ageMonths": {
+  "description": "Vaccination group title: age in months",
+  "placeholders": { "count": { "type": "int" } }
+},
+"selectAll": "Select all",
+"@selectAll": {
+  "description": "Select all vaccines label"
+}
+
 }

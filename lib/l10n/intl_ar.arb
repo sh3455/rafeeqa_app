@@ -1,7 +1,6 @@
 {
   "@@locale": "ar",
 
-
   "english": "الإنكليزية",
   "@english": {
     "description": "The English language name"
@@ -18,12 +17,10 @@
   "@egypt": {
     "description": "Egypt country name"
   },
-
   "appName": "رفيقة",
   "@appName": {
     "description": "The name of the app"
   },
-
   "onboardingTitle1": "افهمي طفلكِ",
   "@onboardingTitle1": {
     "description": "Onboarding screen 1 - title"
@@ -32,7 +29,6 @@
   "@onboardingDescription1": {
     "description": "Onboarding screen 1 - description"
   },
-
   "onboardingTitle2": "تابعي كل لحظة",
   "@onboardingTitle2": {
     "description": "Onboarding screen 2 - title"
@@ -41,7 +37,6 @@
   "@onboardingDescription2": {
     "description": "Onboarding screen 2 - description"
   },
-
   "onboardingTitle3": "اسألي رفيقة",
   "@onboardingTitle3": {
     "description": "Onboarding screen 3 - title"
@@ -50,19 +45,197 @@
   "@onboardingDescription3": {
     "description": "Onboarding screen 3 - description"
   },
-
   "next": "التالي",
   "@next": {
     "description": "Next button label"
   },
-
   "getStarted": "ابدأ الآن",
   "@getStarted": {
     "description": "Get Started button label (last onboarding screen)"
   },
-
   "skip": "تخطي",
   "@skip": {
     "description": "Skip button label"
-  }
+  },
+  "setupTitle1": "أخبرينا عن طفلكِ",
+  "@setupTitle1": {
+    "description": "Setup screen 1 - title"
+  },
+  "setupDescription1": "لنبدأ ببعض المعلومات الأساسية عن صغيركِ.",
+  "@setupDescription1": {
+    "description": "Setup screen 1 - description"
+  },
+  "setupTitle2": "كيف وُلد طفلكِ؟",
+  "@setupTitle2": {
+    "description": "Setup screen 2 - title"
+  },
+  "setupDescription2": "يساعدنا ذلك في تقديم توصيات أكثر دقة للنمو والصحة.",
+  "@setupDescription2": {
+    "description": "Setup screen 2 - description"
+  },
+  "setupTitle3": "هل تلقّى طفلكِ التطعيمات؟",
+  "@setupTitle3": {
+    "description": "Setup screen 3 - title"
+  },
+  "setupDescription3": "التطعيمات تحمي طفلكِ من الأمراض الخطيرة.",
+  "@setupDescription3": {
+    "description": "Setup screen 3 - description"
+  },
+  "setupTitle4": "اختاري التطعيمات السابقة",
+  "@setupTitle4": {
+    "description": "Setup screen 4 - title"
+  },
+  "setupDescription4": "اختاري التطعيمات التي تلقّاها طفلكِ من قبل إن وجدت.",
+  "@setupDescription4": {
+    "description": "Setup screen 4 - description"
+  },
+  "setupTitle5": "مراجعة التطعيمات المختارة",
+  "@setupTitle5": {
+    "description": "Setup screen 5 - title"
+  },
+  "setupDescription5": "هذا ملخص للتطعيمات التي اخترتيها، يمكنكِ التعديل إذا أردتِ.",
+  "@setupDescription5": {
+    "description": "Setup screen 5 - description"
+  },
+  "setupTitle6": "كل شيء جاهز!",
+  "@setupTitle6": {
+    "description": "Setup screen 6 - title"
+  },
+  "setupDescription6": "تم حفظ معلومات طفلكِ بنجاح.",
+  "@setupDescription6": {
+    "description": "Setup screen 6 - description"
+  },
+    "babyName": "اسم الطفل",
+  "@babyName": {
+    "description": "Baby name field label"
+  },
+  "babyNameHint": "يوسف",
+  "@babyNameHint": {
+    "description": "Baby name field hint"
+  },
+  "dateOfBirth": "تاريخ الميلاد",
+  "@dateOfBirth": {
+    "description": "Date of birth field label"
+  },
+  "dateOfBirthHint": "15 أبريل 2026",
+  "@dateOfBirthHint": {
+    "description": "Date of birth field hint"
+  },
+  "gender": "النوع",
+  "@gender": {
+    "description": "Gender field label"
+  },
+  "boy": "ولد",
+  "@boy": {
+    "description": "Boy option"
+  },
+  "girl": "بنت",
+  "@girl": {
+    "description": "Girl option"
+  },
+  "addPhoto": "أضيفي صورة",
+  "@addPhoto": {
+    "description": "Baby photo field label"
+  },
+  "optional": "(اختياري)",
+  "@optional": {
+    "description": "Label for optional fields"
+  },
+  "changePhoto": "تغيير الصورة",
+  "@changePhoto": {
+    "description": "Change photo button label"
+  },
+  "typeOfBirth": "نوع الولادة",
+  "@typeOfBirth": {
+    "description": "Type of birth field label"
+  },
+  "naturalBirth": "ولادة طبيعية",
+  "@naturalBirth": {
+    "description": "Natural birth option"
+  },
+  "cSection": "ولادة قيصرية",
+  "@cSection": {
+    "description": "C-section birth option"
+  },
+  "birthWeight": "وزن الميلاد",
+  "@birthWeight": {
+    "description": "Birth weight field label"
+  },
+  "birthWeightHint": "3.2 كجم",
+  "@birthWeightHint": {
+    "description": "Birth weight field hint"
+  },
+  "birthHeight": "طول الميلاد",
+  "@birthHeight": {
+    "description": "Birth height field label"
+  },
+  "birthHeightHint": "50 سم",
+  "@birthHeightHint": {
+    "description": "Birth height field hint"
+  },
+    "vaccinatedAll": "نعم، كل التطعيمات مكتملة",
+  "@vaccinatedAll": {
+    "description": "Vaccination option: all vaccines done - title"
+  },
+  "vaccinatedAllDesc": "رائع! استمري على ذلك.",
+  "@vaccinatedAllDesc": {
+    "description": "Vaccination option: all vaccines done - subtitle"
+  },
+  "vaccinatedSome": "بعضها، سأختارها بنفسي",
+  "@vaccinatedSome": {
+    "description": "Vaccination option: some vaccines done - title"
+  },
+  "vaccinatedSomeDesc": "سأحدد التطعيمات لاحقاً.",
+  "@vaccinatedSomeDesc": {
+    "description": "Vaccination option: some vaccines done - subtitle"
+  },
+  "vaccinatedNotSure": "لست متأكدة، سأراجع لاحقاً",
+  "@vaccinatedNotSure": {
+    "description": "Vaccination option: not sure - title"
+  },
+  "vaccinatedNotSureDesc": "أفضّل مراجعة سجلاتي أولاً.",
+  "@vaccinatedNotSureDesc": {
+    "description": "Vaccination option: not sure - subtitle"
+  },
+    "addAnotherBaby": "أضيفي طفلًا آخر",
+  "@addAnotherBaby": {
+    "description": "Add another baby button label"
+  },
+  "twinDialogTitle": "هل هذا الطفل توأم؟",
+  "@twinDialogTitle": {
+    "description": "Twin dialog - title"
+  },
+  "twinDialogDescription": "إذا كان هذا الطفل توأمًا، سنساعدكِ في إعداد الملفين الشخصيين.",
+  "@twinDialogDescription": {
+    "description": "Twin dialog - description"
+  },
+  "yesTwin": "نعم، توأم",
+  "@yesTwin": {
+    "description": "Twin dialog - confirm button"
+  },
+  "noDifferentBirthDate": "لا، تاريخ ميلاد مختلف",
+  "@noDifferentBirthDate": {
+    "description": "Twin dialog - decline button"
+  },
+    "age": "العمر",
+  "@age": {
+    "description": "Baby age label"
+  },
+  "vaccines": "التطعيمات",
+  "@vaccines": {
+    "description": "Vaccines label"
+  },
+  "atBirth": "عند الولادة",
+"@atBirth": { "description": "Vaccination group title: at birth" },
+"ageMonths": "{count, plural, =1{شهر} =2{شهران} few{{count} أشهر} other{{count} شهرًا}}",
+"@ageMonths": {
+  "description": "Vaccination group title: age in months",
+  "placeholders": { "count": { "type": "int" } }
+},
+"selectAll": "تحديد الكل",
+"@selectAll": {
+  "description": "Select all vaccines label"
+}
+
+
 }

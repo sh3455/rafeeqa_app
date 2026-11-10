@@ -82,17 +82,6 @@ class CustomText extends StatelessWidget {
   }
 }
 
-enum Type {
-  header,
-  overMedium,
-  medium,
-  overSmall,
-  small,
-}
+enum Type { header, overMedium, medium, overSmall, small }
 
-enum FontOpacity {
-  high,
-  medium,
-  overLow,
-  low,
-}
+enum FontOpacity { high, medium, overLow, low }
